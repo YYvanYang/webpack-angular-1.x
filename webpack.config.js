@@ -105,11 +105,17 @@ module.exports = function makeWebpackConfig () {
       test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
       loader: 'file'
     }, {
-      // HTML LOADER
-      // Reference: https://github.com/webpack/raw-loader
-      // Allow loading html through js
+      // HTML template LOADER
+      // Reference: https://github.com/teux/ng-cache-loader
+      // https://github.com/teux/ng-cache-loader/issues/20#issuecomment-226732135
+      // Webpack loader to put HTML partials in the Angular's $templateCache.
+      // please add include or exclude or both to fix 'window is not defined'!!!
       test: /\.html$/,
-      loader: 'raw'
+      include: [
+          path.resolve(__dirname, "src/page")
+      ],
+      //exclude: [path.resolve(__dirname, "src/index.tpl.html")],
+      loader: 'ng-cache?prefix=[dir]/[dir]'
     }]
   };
 
