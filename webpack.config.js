@@ -13,7 +13,6 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
  * Get npm lifecycle event to identify the environment
  */
 var ENV = process.env.npm_lifecycle_event;
-var isTest = ENV === 'test' || ENV === 'test-watch';
 var isProd = ENV === 'build';
 
 module.exports = function makeWebpackConfig () {
@@ -30,8 +29,7 @@ module.exports = function makeWebpackConfig () {
    * Should be an empty object if it's generating a test build
    * Karma will set this when it's a test build
    */
-  config.entry = isTest ? {} : {
-    //app: './src/app/app.js'
+  config.entry = {
     app: path.join(__dirname, 'src/app.js'),
     vendor: [
       path.join(__dirname, 'src/dep/angular/angular.js'),
@@ -45,7 +43,7 @@ module.exports = function makeWebpackConfig () {
    * Should be an empty object if it's generating a test build
    * Karma will handle setting it up for you when it's a test build
    */
-  config.output = isTest ? {} : {
+  config.output = {
     // Absolute output directory
     path: __dirname + '/dist',
 
@@ -67,9 +65,7 @@ module.exports = function makeWebpackConfig () {
    * Reference: http://webpack.github.io/docs/configuration.html#devtool
    * Type of sourcemap to use per build type
    */
-  if (isTest) {
-    config.devtool = 'inline-source-map';
-  } else if (isProd) {
+  if (isProd) {
     config.devtool = 'source-map';
   } else {
     config.devtool = 'eval-source-map';
@@ -86,14 +82,6 @@ module.exports = function makeWebpackConfig () {
   config.module = {
     preLoaders: [],
     loaders: [{
-      // JS LOADER
-      // Reference: https://github.com/babel/babel-loader
-      // Transpile .js files using babel-loader
-      // Compiles ES6 and ES7 into ES5 code
-      test: /\.js$/,
-      loader: 'babel',
-      exclude: [/node_modules/, /dep/]
-    }, {
       // CSS LOADER
       // Reference: https://github.com/webpack/css-loader
       // Allow loading css through js
@@ -106,7 +94,7 @@ module.exports = function makeWebpackConfig () {
       //
       // Reference: https://github.com/webpack/style-loader
       // Use style-loader in development.
-      loader: isTest ? 'null' : ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap!postcss-loader')
+      loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap!postcss-loader')
     }, {
       // ASSET LOADER
       // Reference: https://github.com/webpack/file-loader
@@ -124,21 +112,6 @@ module.exports = function makeWebpackConfig () {
       loader: 'raw'
     }]
   };
-
-  // ISPARTA LOADER
-  // Reference: https://github.com/ColCh/isparta-instrumenter-loader
-  // Instrument JS files with Isparta for subsequent code coverage reporting
-  // Skips node_modules and files that end with .test.js
-  if (isTest) {
-    config.module.preLoaders.push({
-      test: /\.js$/,
-      exclude: [
-        /node_modules/,
-        /\.spec\.js$/
-      ],
-      loader: 'isparta-loader'
-    })
-  }
 
   /**
    * PostCSS
@@ -158,23 +131,21 @@ module.exports = function makeWebpackConfig () {
    */
   config.plugins = [];
 
-  // Skip rendering index.html in test mode
-  if (!isTest) {
-    // Reference: https://github.com/ampedandwired/html-webpack-plugin
-    // Render index.html
-    config.plugins.push(
-      new HtmlWebpackPlugin({
-        template: './src/index.tpl.html',
-        inject: 'body',
-        filename: 'index.html'
-      }),
+  // Reference: https://github.com/ampedandwired/html-webpack-plugin
+  // Render index.html
+  config.plugins.push(
+    new HtmlWebpackPlugin({
+      template: './src/index.tpl.html',
+      inject: 'body',
+      filename: 'index.html'
+    }),
 
-      // Reference: https://github.com/webpack/extract-text-webpack-plugin
-      // Extract css files
-      // Disabled when in test mode or not in build mode
-      new ExtractTextPlugin('css/[name].[hash].css', {disable: !isProd})
-    )
-  }
+    // Reference: https://github.com/webpack/extract-text-webpack-plugin
+    // Extract css files
+    // Disabled when in test mode or not in build mode
+    new ExtractTextPlugin('css/[name].[hash].css', {disable: !isProd})
+  )
+
 
   // Add build specific plugins
   if (isProd) {
