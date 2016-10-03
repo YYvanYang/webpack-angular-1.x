@@ -1,6 +1,7 @@
 'use strict';
 
 // Modules
+var path = require('path');
 var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -30,7 +31,12 @@ module.exports = function makeWebpackConfig () {
    * Karma will set this when it's a test build
    */
   config.entry = isTest ? {} : {
-    app: './src/app/app.js'
+    //app: './src/app/app.js'
+    app: path.join(__dirname, 'src/app.js'),
+    vendor: [
+      path.join(__dirname, 'src/dep/angular/angular.js'),
+      path.join(__dirname, 'src/dep/angular-route/angular-route.js')
+    ]
   };
 
   /**
@@ -86,7 +92,7 @@ module.exports = function makeWebpackConfig () {
       // Compiles ES6 and ES7 into ES5 code
       test: /\.js$/,
       loader: 'babel',
-      exclude: /node_modules/
+      exclude: [/node_modules/, /dep/]
     }, {
       // CSS LOADER
       // Reference: https://github.com/webpack/css-loader
@@ -158,8 +164,9 @@ module.exports = function makeWebpackConfig () {
     // Render index.html
     config.plugins.push(
       new HtmlWebpackPlugin({
-        template: './src/public/index.html',
-        inject: 'body'
+        template: './src/index.tpl.html',
+        inject: 'body',
+        filename: 'index.html'
       }),
 
       // Reference: https://github.com/webpack/extract-text-webpack-plugin
@@ -187,7 +194,7 @@ module.exports = function makeWebpackConfig () {
       // Copy assets from the public folder
       // Reference: https://github.com/kevlened/copy-webpack-plugin
       new CopyWebpackPlugin([{
-        from: __dirname + '/src/public'
+        from: __dirname + '/src/img'
       }])
     )
   }
@@ -198,7 +205,7 @@ module.exports = function makeWebpackConfig () {
    * Reference: http://webpack.github.io/docs/webpack-dev-server.html
    */
   config.devServer = {
-    contentBase: './src/public',
+    contentBase: './src',
     stats: 'minimal'
   };
 
