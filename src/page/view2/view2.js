@@ -1,14 +1,10 @@
-'use strict';
+(function () {
+  'use strict';
 
-angular.module('jm-np.view2', ['ngRoute'])
+  angular.module('jm-np')
+      .controllerProvider.register('View2Ctrl', [function () {
+        var vm = this;
+        vm.val = 'from jm-np.view2';
+      }])
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view2', {
-    template: require('./view2.html'),
-    controller: 'View2Ctrl'
-  });
-}])
-
-.controller('View2Ctrl', [function() {
-
-}]);
+})();

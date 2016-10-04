@@ -1,13 +1,9 @@
-'use strict';
+(function () {
+  'use strict';
 
-angular.module('jm-np.view1', ['ngRoute'])
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {
-    template: require('./view1.html'),
-    controller: 'View1Ctrl'
-  });
-}])
-
-.controller('View1Ctrl', [function() {
-  
-}]);
+  angular.module('jm-np')
+    .controllerProvider.register('View1Ctrl', [function () {
+        var vm = this;
+        vm.val = 'from jm-np.view1';
+    }])
+})()
