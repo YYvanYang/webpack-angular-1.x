@@ -22,13 +22,16 @@
 
     core.config(configure);
 
-    configure.$inject = ['$logProvider', '$routeProvider', 'routehelperConfigProvider', 'exceptionHandlerProvider'];
+    configure.$inject = ['$logProvider', '$locationProvider', '$routeProvider', 'routehelperConfigProvider', 'exceptionHandlerProvider'];
 
-    function configure ($logProvider, $routeProvider, routehelperConfigProvider, exceptionHandlerProvider) {
+    function configure ($logProvider, $locationProvider, $routeProvider, routehelperConfigProvider, exceptionHandlerProvider) {
         // turn debugging off/on (no info or warn)
         if ($logProvider.debugEnabled) {
             $logProvider.debugEnabled(true);
         }
+
+        // http://stackoverflow.com/questions/16569841/reloading-the-page-gives-wrong-get-request-with-angularjs-html5-mode
+        $locationProvider.html5Mode(true);
 
         // Configure the common route provider
         routehelperConfigProvider.config.$routeProvider = $routeProvider;
