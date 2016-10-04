@@ -19,7 +19,9 @@
     "url": "https://github.com/Foxandxss/angular-webpack-workflow/issues"
   },
   "homepage": "https://github.com/Foxandxss/angular-webpack-workflow",
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "^1.12.4"
+  },
   "devDependencies": {
     "autoprefixer": "^6.0.3",
     "bundle-loader": "^0.5.4",

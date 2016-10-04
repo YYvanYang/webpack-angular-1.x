@@ -1,7 +1,12 @@
 'use strict';
 
 require('./dep/normalize-css/normalize.css')
+require('./dep/toastr/toastr.css')
 require('./css/app.css')
+
+require('./dep/toastr/toastr.js');
+
+
 require('./page/view1/view1.js')
 require('./page/view2/view2.js')
 

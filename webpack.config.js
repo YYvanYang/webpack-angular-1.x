@@ -30,9 +30,10 @@ module.exports = function makeWebpackConfig () {
    * Karma will set this when it's a test build
    */
   config.entry = {
-    app: path.join(__dirname, 'src/app.js'),
+    app: path.join(__dirname, 'src/app.module.js'),
     vendor: [
       path.join(__dirname, 'src/dep/angular/angular.js'),
+      path.join(__dirname, 'src/dep/angular-sanitize/angular-sanitize.js'),
       path.join(__dirname, 'src/dep/angular-route/angular-route.js')
     ]
   };
@@ -149,7 +150,13 @@ module.exports = function makeWebpackConfig () {
     // Reference: https://github.com/webpack/extract-text-webpack-plugin
     // Extract css files
     // Disabled when in test mode or not in build mode
-    new ExtractTextPlugin('css/[name].[hash].css', {disable: !isProd})
+    new ExtractTextPlugin('css/[name].[hash].css', {disable: !isProd}),
+
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery'
+      })
   )
 
 

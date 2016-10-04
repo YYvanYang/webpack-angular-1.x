@@ -1,13 +1,12 @@
-'use strict';
+(function () {
+  'use strict';
 
-angular.module('jm-np.view1', ['ngRoute'])
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {
-    template: require('./view1.html'),
-    controller: 'View1Ctrl'
-  });
-}])
+  angular.module('jm-np.view1')
+      .controller('View1Ctrl', ['logger', function(logger) {
+        var vm = this;
+        vm.val = 'from view1 controller'
+          logger.info('hello world!!!')
+      }]);
 
-.controller('View1Ctrl', [function() {
-  
-}]);
+})();
+
