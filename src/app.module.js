@@ -5,6 +5,15 @@
     require('./dep/toastr/toastr.css')
     require('./css/app.css')
 
+    // var abc = {a:'a',b:'b'};
+    // if (abc.hasOwnProperty('a')) {
+    //     alert('prop:'+abc['a'])
+    //
+    // }
+
+    // http://adamish.com/blog/archives/876
+    require("./js/core/helper.js")
+
     //<!-- Reusable Blocks/Modules -->
     require("./js/blocks/exception/exception.module.js")
     require("./js/blocks/exception/exception-handler.provider.js")
@@ -24,7 +33,10 @@
     require('./page/view1/config.route.js')
     require('./page/view1/view1.js')
 
+    require('./page/view2/view2.module.js');
+    require('./page/view2/config.route.js')
     require('./page/view2/view2.js')
+    //require('./page/view2/view2.js')
 
     angular.module('jm-np', [
         /*

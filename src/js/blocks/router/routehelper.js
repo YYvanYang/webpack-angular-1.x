@@ -31,6 +31,7 @@
             errors: 0,
             changes: 0
         };
+
         var routes = [];
         var $routeProvider = routehelperConfig.config.$routeProvider;
 
