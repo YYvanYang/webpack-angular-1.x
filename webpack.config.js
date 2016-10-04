@@ -152,11 +152,13 @@ module.exports = function makeWebpackConfig () {
     // Disabled when in test mode or not in build mode
     new ExtractTextPlugin('css/[name].[hash].css', {disable: !isProd}),
 
-      new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-        'window.jQuery': 'jquery'
-      })
+    //https://webpack.github.io/docs/shimming-modules.html
+    //Make $ and jQuery available in every module without writing require("jquery").
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery'
+    })
   )
 
 
