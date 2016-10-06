@@ -4,6 +4,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
+var ModernizrWebpackPlugin = require('modernizr-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -151,6 +152,66 @@ module.exports = function makeWebpackConfig () {
     // Extract css files
     // Disabled when in test mode or not in build mode
     new ExtractTextPlugin('css/[name].[hash].css', {disable: !isProd}),
+
+    new ModernizrWebpackPlugin({
+      //"minify": true,
+      "options": [
+        "setClasses"
+      ],
+      filename: 'js/modernizr-bundle.js',
+      minify: {
+        output: {
+          comments: true,
+          beautify: false
+        }
+      },
+      "feature-detects": [
+        "test/applicationcache",
+        "test/audio",
+        "test/canvas",
+        "test/canvastext",
+        "test/cookies",
+        "test/cors",
+        "test/fullscreen-api",
+        "test/geolocation",
+        "test/hashchange",
+        "test/history",
+        "test/indexeddb",
+        "test/postmessage",
+        "test/svg",
+        "test/touchevents",
+        "test/video",
+        "test/webanimations",
+        "test/webgl",
+        "test/websockets",
+        "test/xdomainrequest",
+        "test/css/animations",
+        "test/css/backgroundsize",
+        "test/css/borderimage",
+        "test/css/borderradius",
+        "test/css/boxshadow",
+        "test/css/columns",
+        "test/css/flexbox",
+        "test/css/flexboxlegacy",
+        "test/css/fontface",
+        "test/css/generatedcontent",
+        "test/css/gradients",
+        "test/css/hsla",
+        "test/css/multiplebgs",
+        "test/css/opacity",
+        "test/css/rgba",
+        "test/css/textshadow",
+        "test/css/transforms",
+        "test/css/transforms3d",
+        "test/css/transitions",
+        "test/storage/localstorage",
+        "test/storage/sessionstorage",
+        "test/storage/websqldatabase",
+        "test/svg/clippaths",
+        "test/svg/inline",
+        "test/svg/smil"
+      ]
+    }),
 
     //https://webpack.github.io/docs/shimming-modules.html
     //Make $ and jQuery available in every module without writing require("jquery").
