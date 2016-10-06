@@ -5,3 +5,5 @@ dep
 .idea/
 nginx-1.10.1/logs
 npm-debug.log.*
+nginx-1.10.1/logs/access.log
+nginx-1.10.1/logs/nginx.pid
