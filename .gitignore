@@ -3,5 +3,5 @@ dist
 coverage
 dep
 .idea/
-nginx-1.10.1/logs/
+nginx-1.10.1/logs
 npm-debug.log.*

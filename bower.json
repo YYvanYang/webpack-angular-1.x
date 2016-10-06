@@ -13,6 +13,7 @@
     "angular-mocks": "^1.2.30",
     "jquery": "1.x",
     "toastr": "^2.1.3",
-    "angular-sanitize": "1.2.30"
+    "angular-sanitize": "1.2.30",
+    "modernizr": "^3.3.1"
   }
 }
