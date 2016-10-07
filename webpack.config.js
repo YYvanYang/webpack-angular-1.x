@@ -33,13 +33,17 @@ module.exports = function makeWebpackConfig () {
   config.entry = {
     app: path.join(__dirname, 'src/app.module.js'),
     vendor: [
+        // todo：kartograph
+      // path.join(__dirname, 'src/dep/raphael/raphael.js'),
+      // path.join(__dirname, 'src/js/kartograph/dist/kartograph.js'),
       path.join(__dirname, 'src/dep/velocity/velocity.js'),
       path.join(__dirname, 'src/dep/velocity/velocity.ui.js'),
       // path.join(__dirname, 'src/dep/jquery-mousewheel/jquery.mousewheel.js'),
       path.join(__dirname, 'src/dep/jquery.kinetic/jquery.kinetic.js'),
       path.join(__dirname, 'src/dep/angular/angular.js'),
       path.join(__dirname, 'src/dep/angular-sanitize/angular-sanitize.js'),
-      path.join(__dirname, 'src/dep/angular-route/angular-route.js')
+      path.join(__dirname, 'src/dep/angular-route/angular-route.js'),
+      path.join(__dirname, 'src/dep/angular-bindonce/bindonce.js')
     ]
   };
 

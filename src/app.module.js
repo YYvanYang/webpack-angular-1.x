@@ -62,6 +62,7 @@
         'app.core',
         //'app.widgets',
 
+        'pasvaz.bindonce',
         'jm-np.directive',
 
         /*
