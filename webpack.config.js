@@ -33,6 +33,10 @@ module.exports = function makeWebpackConfig () {
   config.entry = {
     app: path.join(__dirname, 'src/app.module.js'),
     vendor: [
+      path.join(__dirname, 'src/dep/velocity/velocity.js'),
+      path.join(__dirname, 'src/dep/velocity/velocity.ui.js'),
+      // path.join(__dirname, 'src/dep/jquery-mousewheel/jquery.mousewheel.js'),
+      path.join(__dirname, 'src/dep/jquery.kinetic/jquery.kinetic.js'),
       path.join(__dirname, 'src/dep/angular/angular.js'),
       path.join(__dirname, 'src/dep/angular-sanitize/angular-sanitize.js'),
       path.join(__dirname, 'src/dep/angular-route/angular-route.js')
@@ -70,7 +74,7 @@ module.exports = function makeWebpackConfig () {
   if (isProd) {
     config.devtool = 'source-map';
   } else {
-    config.devtool = 'eval-source-map';
+    config.devtool ='source-map';// 'eval-source-map';
   }
 
   /**
@@ -165,6 +169,7 @@ module.exports = function makeWebpackConfig () {
           beautify: false
         }
       },
+      // https://github.com/Modernizr/Modernizr/blob/master/lib/config-all.json
       "feature-detects": [
         "test/applicationcache",
         "test/audio",

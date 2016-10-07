@@ -28,6 +28,14 @@
     require("./js/core/constants.js")
     require("./js/core/config.js")
     require("./js/core/dataservice.js")
+    require("./js/core/appService.js")
+
+    require("./js/directive/directive.module.js")
+    require("./js/directive/directive.js")
+
+    require('./page/home/home.module.js');
+    require('./page/home/config.route.js')
+    require('./page/home/home.js')
 
     require('./page/view1/view1.module.js');
     require('./page/view1/config.route.js')
@@ -54,12 +62,15 @@
         'app.core',
         //'app.widgets',
 
+        'jm-np.directive',
+
         /*
          * Feature areas
          */
         //'app.avengers',
         //'app.dashboard',
         //'app.layout'
+        'jm-np.app',
         'jm-np.view1',
         'jm-np.view2'
     ]);

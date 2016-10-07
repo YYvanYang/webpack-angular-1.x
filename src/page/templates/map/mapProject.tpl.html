@@ -1,0 +1,61 @@
+<div class="project" ng-click="openProject(); $event.stopPropagation();" ng-class="{'is-current': ctrl.currentProject(item.slug), 'is-active': state.popupVisible == true}">
+    <!-- Circle -->
+    <span class="circle-hover"></span>
+    <span class="circle"></span>
+    <span class="circle-2"></span>
+    <span class="circle-3"></span>
+    <span class="count-circle" data-ng-if="::item.points.length > 1">
+        <span class="number" ng-bind="::item.points.length"></span>
+        <span class="text-container">
+          <span class="text">projekt</span>
+        </span>
+      </span>
+    <!-- END circle -->
+
+    <!-- IF single project -->
+    <div ng-if="::item.points.length == 1">
+        <div class="project-popup project-popup-single" ng-if="state.popupVisible === true">
+            <div class="popup-container" ng-click="app.openView(item.points[0].project_number); $event.stopPropagation();">
+                <span class="btn-close icon icon_svk_close" ng-click="state.popupVisible = false; $event.stopPropagation();"></span>
+                <h3 class="h3 title">
+                    {{::item.points[0].city}}<span ng-if="::item.points[0].city.length">,</span> {{::item.points[0].country_name}}
+                </h3>
+                <div class="image-container">
+            <span ng-if="::item.points[0].video !== undefined && item.points[0].video !== null" class="m-has-video">
+              <svg class="svg-icon"><use xlink:href="/assets/svg/icons.svg#video"></use></svg>
+            </span>
+                    <img fallback-img="assets/images/projects/no_img.jpg" ng-src="project_images/{{::item.points[0].project_number}}_0_232.jpg" class="image" title="{{::item.points[0].title}}" />
+                </div>
+                <p class="paragraph project-type project-type-{{::item.points[0].theme_id}} description">{{::item.points[0].theme}}</p>
+            </div>
+        </div>
+    </div>
+    <!-- End single project -->
+
+    <!-- IF multiple projects -->
+    <div ng-if="::item.points.length > 1 || ( app.states.isBreakpoint == 'mobile' && app.states.isTouch == false)">
+        <div class="project-popup project-popup-merged" ng-class="{'show-compact': item.points.length >= 3}" ng-if="state.popupVisible === true"> <!--  -->
+            <div class="project-container">
+                <div class="popup-container">
+                    <span class="btn-close icon icon_svk_close" ng-click="state.popupVisible = false; $event.stopPropagation();"></span>
+                    <div class="popup" ng-class="{'is-active': $index == current.slide}" data-ng-repeat="popup in item.points" data-slug="{{::popup.project_number}}" ng-click="app.openView(popup.project_number); $event.stopPropagation();">
+                        <div class="image-container">
+                            <img fallback-img="assets/images/projects/no_img.jpg" ng-src="project_images/{{::popup.project_number}}_0_232.jpg" class="image" title="{{::popup.title}}" />
+                            <span ng-if="::popup.video !== undefined && popup.video !== null" class="m-has-video small">
+                    <svg class="svg-icon"><use xlink:href="/assets/svg/icons.svg#video"></use></svg>
+                  </span>
+                        </div>
+                        <div class="popup-content">
+                            <h3 class="h3 title">
+                                <span class="city" ng-if="::popup.city.length">{{::popup.city}}</span>
+                                <span class="country">{{::popup.country_name}}</span>
+                            </h3>
+                            <p class="paragraph description project-type project-type-{{::popup.theme_id}}" ng-class="::{'is-projectOfTheMonth': popup.projectOfTheMonth === true}" >{{::popup.theme}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END multiple projects -->
+</div>
