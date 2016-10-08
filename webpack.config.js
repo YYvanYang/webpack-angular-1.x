@@ -35,8 +35,8 @@ module.exports = function makeWebpackConfig () {
     vendor: [
       //path.join(__dirname, 'src/dep/jquery/dist/jquery.js'),
         // todo：kartograph
-      // path.join(__dirname, 'node_modules/raphael/raphael.js'),
-      // path.join(__dirname, 'node_modules/kartograph-js/dist/kartograph.js'),
+      path.join(__dirname, 'node_modules/raphael/raphael.js'),
+      path.join(__dirname, 'src/js/kartograph-js/dist/kartograph.js'),
       path.join(__dirname, 'src/dep/velocity/velocity.js'),
       path.join(__dirname, 'src/dep/velocity/velocity.ui.js'),
       // path.join(__dirname, 'src/dep/jquery-mousewheel/jquery.mousewheel.js'),

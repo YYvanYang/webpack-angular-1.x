@@ -127,4 +127,4 @@ MapUtilities = {
         return a
     }
 };
-var MapUtilities = MapUtilities
+window.MapUtilities = MapUtilities

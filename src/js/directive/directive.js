@@ -30,7 +30,7 @@
                 scope.app = AppService;
                 scope.clusters = [];
                 scope.filteredClusters = [];
-                scope.map = Kartograph.map("#map");
+                scope.map = kartograph.map("#map");
                 scope.filteredProjectsData = [];
                 scope.mouseover = false;
                 var mapContainer = angular.element("#m-map-container"),
@@ -48,7 +48,7 @@
                     }, 300)
                 };
                 var m = function() {
-                        angular.element.each(i.filteredProjectsData, function(a, b) {
+                        angular.element.each(scope.filteredProjectsData, function(a, b) {
                             if (b.has_position) {
                                 var c = scope.map.lonlat2xy([b.lon, b.lat]);
                                 b.x = c[0], b.y = c[1]
@@ -56,7 +56,7 @@
                         })
                     },
                     n = function() {
-                        scope.clusters = MapUtilities.cluster_hierarchical_agglomerative(i.filteredProjectsData, 40, 40), defer.resolve(), scope.app.states.isFiltering = !1, angular.element("#map .project").css({
+                        scope.clusters = MapUtilities.cluster_hierarchical_agglomerative(scope.filteredProjectsData, 40, 40), defer.resolve(), scope.app.states.isFiltering = !1, angular.element("#map .project").css({
                             visibility: "visible"
                         })
                     },
