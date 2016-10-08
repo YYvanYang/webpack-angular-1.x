@@ -20,6 +20,8 @@
 
   <script src="js/modernizr-bundle.js"></script>
 
+
+
 </head>
 <body>
   <!--[if lt IE 8]>
@@ -45,10 +47,18 @@
   <!-- App container -->
   <div class="l-container" data-ng-show="app.states.isInit == true">
 
+    <!-- Logo -->
+    <div class="m-brandLogo unselectable">
+      <a href="/" title="聚贸·国家馆 JUMORE•National Pavilion" class="logo">聚贸·国家馆 JUMORE•National Pavilion</a>
+    </div>
+
+    <!-- Navigation bar -->
+    <div navigation-bar></div>
+
     <!-- Map -->
     <section id="m-map-container" class="m-map-container" ng-mouseover="mouseOver = false;" ng-class="{'is-mobile': app.elements.mobilePopup == true}">
-      <div class="m-map unselectable kartograph" id="map">
-        <div map></div>
+      <div class="m-map unselectable" id="map">
+        <!--<div map></div>-->
       </div>
     </section>
   </div>
@@ -57,6 +67,8 @@
 
   <div ng-view></div>
 
-
+  <!--<script src="js/dep/jquery.js"></script>-->
+  <!--<script src="js/dep/raphael.js"></script>-->
+  <!--<script src="js/dep/kartograph.js"></script>-->
 </body>
 </html>

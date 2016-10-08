@@ -33,9 +33,10 @@ module.exports = function makeWebpackConfig () {
   config.entry = {
     app: path.join(__dirname, 'src/app.module.js'),
     vendor: [
+      //path.join(__dirname, 'src/dep/jquery/dist/jquery.js'),
         // todo：kartograph
-      // path.join(__dirname, 'src/dep/raphael/raphael.js'),
-      // path.join(__dirname, 'src/js/kartograph/dist/kartograph.js'),
+      // path.join(__dirname, 'node_modules/raphael/raphael.js'),
+      // path.join(__dirname, 'node_modules/kartograph-js/dist/kartograph.js'),
       path.join(__dirname, 'src/dep/velocity/velocity.js'),
       path.join(__dirname, 'src/dep/velocity/velocity.ui.js'),
       // path.join(__dirname, 'src/dep/jquery-mousewheel/jquery.mousewheel.js'),
@@ -126,6 +127,30 @@ module.exports = function makeWebpackConfig () {
       ],
       //exclude: [path.resolve(__dirname, "src/index.tpl.html")],
       loader: 'ng-cache?prefix=[dir]/[dir]'
+    // },{
+    //   // https://github.com/webpack/expose-loader
+    //   test: require.resolve("jquery"),
+    //   loader: "expose?$!expose?jQuery"
+    //   },{
+    //     // https://github.com/webpack/imports-loader
+    //     test: /[\/\\]node_modules[\/\\]kartograph-js[\/\\]dist[\/\\]kartograph\.js$/,
+    //     // include: [
+    //     //     path.resolve(__dirname, "src/js/kartograph")
+    //     // ],
+    //     loader: "imports?this=>window"
+    //     },{
+    //       // https://github.com/webpack/imports-loader
+    //       test: /[\/\\]node_modules[\/\\]kartograph-js[\/\\]dist[\/\\]kartograph\.js$/,
+    //       // include: [
+    //       //     path.resolve(__dirname, "src/js/kartograph")
+    //       // ],
+    //       loader: "imports?exports=>false"
+
+      // },{
+      //   // https://github.com/webpack/expose-loader
+      //
+      //   test: require.resolve("jquery"),
+      //   loader: "script"
     }]
   };
 
@@ -245,7 +270,7 @@ module.exports = function makeWebpackConfig () {
 
       // Reference: http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
       // Minify all javascript, switch loaders to minimizing mode
-      new webpack.optimize.UglifyJsPlugin(),
+      //new webpack.optimize.UglifyJsPlugin(),
 
       // Copy assets from the public folder
       // Reference: https://github.com/kevlened/copy-webpack-plugin

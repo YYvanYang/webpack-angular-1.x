@@ -184,3 +184,23 @@
     details.$inject = ["$timeout", "$rootScope", "Modernizr"];
     angular.module("jm-np.directive").directive("details", details)
 }());
+
+(function() {
+    function navigationBar(a, AppService) {
+        return {
+            restrict: "AE",
+            replace: "true",
+            scope: {},
+            link: function(scope, iElement) {
+                var d;
+                scope.app = AppService, scope.toggle = function($event, e) {
+                    iElement.find(".is-active").removeClass("is-active"), e === d ? d = "" : (d = e, angular.element($event.currentTarget).toggleClass("is-active")), scope.app.togglePanel(e)
+                }, scope.$watch("app.panel.navigationActive", function(value) {
+                    "" === value && (d = "", iElement.find(".is-active").removeClass("is-active"))
+                })
+            },
+            template: require("../../page/templates/navigation/navigation-bar.tpl.html")
+        }
+    }
+    navigationBar.$inject = ["$rootScope", "AppService"], angular.module("jm-np.directive").directive("navigationBar", navigationBar)
+}());

@@ -5,11 +5,16 @@
     require('./dep/toastr/toastr.css')
     require('./css/app.css')
 
+
+    // require("script!../node_modules/jquery/dist/jquery.js");
+    // require("script!../node_modules/raphael/raphael.js");
+    // require("script!../node_modules/kartograph-js/dist/kartograph.js");
     // var abc = {a:'a',b:'b'};
     // if (abc.hasOwnProperty('a')) {
     //     alert('prop:'+abc['a'])
     //
     // }
+    //require('expose?$!expose?jQuery!jquery');
 
     // http://adamish.com/blog/archives/876
     require("./js/core/helper.js")

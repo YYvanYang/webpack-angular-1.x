@@ -66,6 +66,12 @@
             //     $location.path("/karta/projekt/" + id);
             //     this.panel.navigationActive = "";
             // },
+            logo:"聚贸·国家馆 JUMORE•National Pavilion",
+            pavilions: {
+                national:"国家馆",
+                provincial: "省馆",
+                brand: "品牌馆"
+            },
             panel: {
                 navigationActive: "",
                 viewActive: false,
@@ -73,7 +79,7 @@
                 mobilePopupItems: []
             },
             elements: {
-                navigationBar: false,
+                navigationBar: true,//false,
                 backToStart: false,
                 mobilePopup: false,
                 scrollHelp: {
