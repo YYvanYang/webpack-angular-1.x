@@ -4,6 +4,8 @@
             link: function(scope, iElement, iAttrs) {
                 iElement.on("error", function() {
                     angular.element(this).attr("src", iAttrs.fallbackImg)
+
+                    // todo: if this img is already the no-img, then set to off.
                 })
             }
         }
@@ -192,15 +194,34 @@
             replace: "true",
             scope: {},
             link: function(scope, iElement) {
-                var d;
-                scope.app = AppService, scope.toggle = function($event, e) {
-                    iElement.find(".is-active").removeClass("is-active"), e === d ? d = "" : (d = e, angular.element($event.currentTarget).toggleClass("is-active")), scope.app.togglePanel(e)
-                }, scope.$watch("app.panel.navigationActive", function(value) {
-                    "" === value && (d = "", iElement.find(".is-active").removeClass("is-active"))
+                var activeItem;
+                scope.app = AppService;
+                scope.toggle = function($event, item) {
+                    iElement.find(".is-active").removeClass("is-active");
+                    item === activeItem ? activeItem = "" : (activeItem = item, angular.element($event.currentTarget).toggleClass("is-active"));
+                    scope.app.togglePanel(item)
+                };
+                scope.$watch("app.panel.navigationActive", function(value) {
+                    "" === value && (activeItem = "", iElement.find(".is-active").removeClass("is-active"))
                 })
             },
             template: require("../../page/templates/navigation/navigation-bar.tpl.html")
         }
     }
     navigationBar.$inject = ["$rootScope", "AppService"], angular.module("jm-np.directive").directive("navigationBar", navigationBar)
+}());
+
+(function() {
+    function overviewPanel($rootScope, AppService) {
+        return {
+            restrict: "AE",
+            replace: "true",
+            scope: {},
+            link: function(scope) {
+                scope.app = AppService, scope.listType = "thumbnails", scope.projectsData = $rootScope.projectsData
+            },
+            templateUrl: require("../../page/templates/navigation/overview/overview.tpl.html")
+        }
+    }
+    overviewPanel.$inject = ["$rootScope", "AppService"], angular.module("jm-np.directive").directive("overviewPanel", overviewPanel)
 }());

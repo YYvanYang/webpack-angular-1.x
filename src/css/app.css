@@ -83,7 +83,7 @@ body {
   background-color: #fff
 }
 a:focus {
-  outline: thin dotted
+  outline: 0;/*thin dotted*/
 }
 a:active,
 a:hover {

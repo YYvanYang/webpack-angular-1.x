@@ -10,62 +10,62 @@
     function appService($location, $timeout, $window) {
         var timer;
         return {
-            // togglePanel: function(active) {
-            //     if (this.panel.navigationActive === active) {
-            //         if (this.panel.viewActive) {
-            //             if (this.panel.viewVisible) {
-            //                 this.panel.viewVisible = false;
-            //             } else {
-            //                 this.panel.viewVisible = true;
-            //                 this.panel.navigationActive = "";
-            //             }
-            //         } else {
-            //             this.panel.navigationActive = "";
-            //         }
-            //     } else {
-            //         this.panel.navigationActive = active;
-            //         this.panel.viewVisible = false;
-            //     }
-            // },
-            // replacePoints: function() {
-            //     $timeout.cancel(timer);
-            //     angular.element("#m-map-container").css({
-            //         cursor: "wait"
-            //     });
-            //     angular.element("body").find(".projects").addClass("is-resizing");
-            //     timer = $timeout(function() {
-            //         angular.element("#m-map-container").css({
-            //             cursor: "move"
-            //         });
-            //         angular.element("body").find(".projects").removeClass("is-resizing")
-            //     }, 1000)
-            // },
-            setBreakpoint: function() {
-            //     var isBreakpoint, width = $window.innerWidth;
-            //     //return isBreakpoint = width >= 960 ? "desktop" : width >= 600 ? "tablet" : "mobile", isBreakpoint !== this.states.isBreakpoint ? (this.replacePoints(), this.states.isBreakpoint = isBreakpoint, !0) : !1
-            //     isBreakpoint = width >= 960 ? "desktop" : width >= 600 ? "tablet" : "mobile";
-            //
-            //     if (isBreakpoint !== this.states.isBreakpoint) {
-            //         this.replacePoints();
-            //         this.states.isBreakpoint = isBreakpoint;
-            //         return true;
-            //     }
-            //
-            //     return false;
-            //
+            togglePanel: function(active) {
+                if (this.panel.navigationActive === active) {
+                    if (this.panel.viewActive) {
+                        if (this.panel.viewVisible) {
+                            this.panel.viewVisible = false;
+                        } else {
+                            this.panel.viewVisible = true;
+                            this.panel.navigationActive = "";
+                        }
+                    } else {
+                        this.panel.navigationActive = "";
+                    }
+                } else {
+                    this.panel.navigationActive = active;
+                    this.panel.viewVisible = false;
+                }
             },
-            // openView: function(id) {
-            //     var url = "/karta/projekt/" + id;
-            //     url !== $location.path() ? $location.path(url) : (this.panel.navigationActive = "", this.panel.viewVisible = true)
-            // },
-            // closeView: function() {
-            //     this.panel.viewActive = false;
-            //     $location.path("/karta/");
-            // },
-            // openProject: function(id) {
-            //     $location.path("/karta/projekt/" + id);
-            //     this.panel.navigationActive = "";
-            // },
+            replacePoints: function() {
+                $timeout.cancel(timer);
+                angular.element("#m-map-container").css({
+                    cursor: "wait"
+                });
+                angular.element("body").find(".projects").addClass("is-resizing");
+                timer = $timeout(function() {
+                    angular.element("#m-map-container").css({
+                        cursor: "move"
+                    });
+                    angular.element("body").find(".projects").removeClass("is-resizing")
+                }, 1000)
+            },
+            setBreakpoint: function() {
+                var isBreakpoint, width = $window.innerWidth;
+                //return isBreakpoint = width >= 960 ? "desktop" : width >= 600 ? "tablet" : "mobile", isBreakpoint !== this.states.isBreakpoint ? (this.replacePoints(), this.states.isBreakpoint = isBreakpoint, !0) : !1
+                isBreakpoint = width >= 960 ? "desktop" : width >= 600 ? "tablet" : "mobile";
+
+                if (isBreakpoint !== this.states.isBreakpoint) {
+                    this.replacePoints();
+                    this.states.isBreakpoint = isBreakpoint;
+                    return true;
+                }
+
+                return false;
+
+            },
+            openView: function(id) {
+                var url = "/karta/projekt/" + id;
+                url !== $location.path() ? $location.path(url) : (this.panel.navigationActive = "", this.panel.viewVisible = true)
+            },
+            closeView: function() {
+                this.panel.viewActive = false;
+                $location.path("/karta/");
+            },
+            openProject: function(id) {
+                $location.path("/karta/projekt/" + id);
+                this.panel.navigationActive = "";
+            },
             logo:"聚贸·国家馆 JUMORE•National Pavilion",
             pavilions: {
                 national:"国家馆",
