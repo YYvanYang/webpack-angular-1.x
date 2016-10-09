@@ -8,6 +8,8 @@ var ModernizrWebpackPlugin = require('modernizr-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var ProgressBarPlugin = require('progress-bar-webpack-plugin');
+var chalk = require('chalk');
 
 /**
  * Env
@@ -79,7 +81,7 @@ module.exports = function makeWebpackConfig () {
   if (isProd) {
     config.devtool = 'source-map';
   } else {
-    config.devtool ='source-map';// 'eval-source-map';
+    config.devtool = 'eval-source-map';
   }
 
   /**
@@ -253,7 +255,13 @@ module.exports = function makeWebpackConfig () {
       $: 'jquery',
       jQuery: 'jquery',
       'window.jQuery': 'jquery'
-    })
+    }),
+
+      // https://github.com/clessg/progress-bar-webpack-plugin
+     new ProgressBarPlugin({
+       format: '  build [:bar] ' + chalk.green.bold(':percent') + ' (:elapsed seconds)',
+       clear: false
+     })
   )
 
 
