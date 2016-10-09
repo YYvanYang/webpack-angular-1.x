@@ -1057,8 +1057,8 @@ a:hover {
     overflow: visible;
     height: 210px;
     position: absolute;
-    top: 50%;
-    margin-top: -105px
+    top: 430px;/*50%;*/
+    /*margin-top: -105px*/
   }
   .m-navigation .m-navigation--primary .nav-item {
     padding-top: 10px;
@@ -4656,6 +4656,8 @@ a:hover {
 
 .pavilions{
   position: relative;
+  height:237px;
+
 }
 
 .pavilions .pavilion-item {
