@@ -24,7 +24,7 @@
             <span bo-if="item.points[0].video !== undefined && item.points[0].video !== null" class="m-has-video">
               <svg class="svg-icon"><use xlink:href="/assets/svg/icons.svg#video"></use></svg>
             </span>
-                    <img fallback-img="assets/images/projects/no_img.jpg" bo-src-i="project_images/{{item.points[0].project_number}}_0_232.jpg" class="image" bo-title="item.points[0].title" />
+                    <img fallback-img="img/projects/no_img.jpg" bo-src-i="project_images/{{item.points[0].project_number}}_0_232.jpg" class="image" bo-title="item.points[0].title" />
                 </div>
                 <p class="paragraph project-type project-type-{{item.points[0].theme_id}} description">{{item.points[0].theme}}</p>
             </div>
@@ -40,7 +40,7 @@
                     <span class="btn-close icon icon_svk_close" ng-click="state.popupVisible = false; $event.stopPropagation();"></span>
                     <div class="popup" ng-class="{'is-active': $index == current.slide}" bindonce data-ng-repeat="popup in item.points" data-slug="{{popup.project_number}}" ng-click="app.openView(popup.project_number); $event.stopPropagation();">
                         <div class="image-container">
-                            <img fallback-img="assets/images/projects/no_img.jpg" bo-src-i="project_images/{{popup.project_number}}_0_232.jpg" class="image" bo-title="{{popup.title}}" />
+                            <img fallback-img="img/projects/no_img.jpg" bo-src-i="project_images/{{popup.project_number}}_0_232.jpg" class="image" bo-title="{{popup.title}}" />
                             <span bo-if="popup.video !== undefined && popup.video !== null" class="m-has-video small">
                     <svg class="svg-icon"><use xlink:href="/assets/svg/icons.svg#video"></use></svg>
                   </span>
