@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="inner">
+
+        <!-- Title -->
+        <h2 class="h2 title">
+            Projektöversikt
+        </h2>
+
+        <!-- Header -->
+        <header class="m-listview-header">
+            <ul class="listType">
+                <li class="listType-item" ng-click="listType = 'thumbnails'" ng-class="{'is-active': listType == 'thumbnails'}">
+              <span class="icon">
+                <svg class="svg-icon"><use xlink:href="/assets/svg/icons.svg#list"></use></svg>
+              </span>Tumnaglar
+                </li>
+                <li class="listType-item" ng-click="listType = 'list'" ng-class="{'is-active': listType == 'list'}">
+              <span class="icon">
+                <svg class="svg-icon"><use xlink:href="/assets/svg/icons.svg#textList"></use></svg>
+              </span>Lista
+                </li>
+            </ul>
+        </header>
+
+        <!-- List -->
+        <ul class="m-listview" data-ng-class="{'listType-thumbnails': (listType == 'thumbnails'), 'listType-list': (listType == 'list') }">
+            <li bindonce ng-repeat="project in projectsData" class="listView-item" data-ng-class-odd="'odd'" data-ng-class="{'last': $last, 'before-last': (projectsData.length-2 == $index)}" data-ng-class-even="'even'" data-ng-click="app.openView( project.project_number )">
+                <h4 class="h4 title title-city" ng-class="{ 'is-empty': project.city.length == undefined }">{{project.city}},</h4>
+                <h4 class="h4 title title-country">{{project.country_name}}</h4>
+                <p class="paragraph">{{project.title}}</p>
+                <span class="projectType projectType-{{project.theme_id}}" ng-class="{'is-projectOfTheMonth': project.projectOfTheMonth == true}">{{project.theme}}</span>
+                <span class="projectNumber">Projektnummer: {{project.project_number}}</span>
+                <div class="thumbnail-container">
+                    <img class="thumbnail" fallback-img="img/projects/no_img.jpg" ng-src="project_images/{{project.project_number}}_0_232.jpg"  />
+                </div>
+            </li>
+        </ul>
+
+        <!-- Close -->
+        <span class="btn-close icon" ng-click="app.togglePanel('oversikt');">
+          <svg class="svg-icon"><use xlink:href="/assets/svg/icons.svg#close" /></svg>
+        </span>
+    </div>
+</div>

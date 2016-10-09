@@ -1,0 +1,51 @@
+<nav class="m-navigation" ng-show="app.elements.navigationBar && app.states.isInit == true">
+    <div class="m-navigation-bar">
+        <div class="m-nav-logo">
+            <span class="logo" ng-bind="app.logo"></span>
+        </div>
+        <ul class="pavilions">
+            <li class="pavilion-item national active"><a href="javascript:;"><span ng-bind="app.pavilions.national"></span></a></li>
+            <li class="pavilion-item provincial "><a href="javascript:;"><span ng-bind="app.pavilions.provincial"></span></a></li>
+            <li class="pavilion-item brand"><a href="javascript:;"><span ng-bind="app.pavilions.brand"></span></a></li>
+        </ul>
+        <ul class="m-navigation--primary">
+            <!-- Sök -->
+            <li ng-click="toggle($event, 'sok')" class="nav-item nav-search">
+            <span class="nav-item-icon">
+              <svg class="svg-icon">
+                <use xlink:href="/assets/svg/icons.svg#searchRound" />
+              </svg>
+            </span>
+                <span class="nav-item-title">搜索国家列表</span>
+                <span class="nav-item-background"></span>
+            </li>
+
+            <!-- Projekt -->
+            <li ng-click="toggle($event, 'oversikt')" class="nav-item nav-projects">
+            <span class="nav-item-icon">
+              <svg class="svg-icon"><use xlink:href="/assets/svg/icons.svg#listRound" /></svg>
+            </span>
+                <span class="nav-item-title">国家列表</span>
+                <span class="nav-item-background"></span>
+            </li>
+
+            <!-- Filter -->
+            <li ng-click="toggle($event, 'filtrering');" class="nav-item nav-filter">
+            <span class="nav-item-icon">
+              <svg class="svg-icon"><use xlink:href="/assets/svg/icons.svg#checkRound" /></svg>
+            </span>
+                <span class="nav-item-title">Filtrera & avgränsa</span>
+                <span class="nav-item-background"></span>
+            </li>
+
+            <!-- Filter -->
+            <li ng-click="toggle($event, 'mobile');"
+                class="nav-item nav-mobile"
+                ng-class="{ 'is-active': app.panel.navigationActive == 'mobile', 'is-clicked': navMobileClicked == true}">
+            <span class="nav-item-icon">
+              <svg class="svg-icon"><use xlink:href="/assets/svg/icons.svg#menu" /></svg>
+            </span>
+            </li>
+        </ul>
+    </div>
+</nav>

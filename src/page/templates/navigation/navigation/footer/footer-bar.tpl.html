@@ -1,0 +1,33 @@
+<footer class="l-footer is-navBar" data-ng-class=" { 'is-navBar' : app.elements.navigationBar == true } ">
+    <!-- Share -->
+    <ul class="share">
+        <li class="share-item unselectable">
+            <a ng-click="shareFacebook()" class="icon icon-facebook">
+                <svg class="svg-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/icons.svg#facebookRound"></use></svg>
+            </a>
+        </li>
+        <li class="share-item unselectable">
+            <a ng-click="shareTwitter()" class="icon icon-twitter">
+                <svg class="svg-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/icons.svg#twitterRound"></use></svg>
+            </a>
+        </li>
+        <li class="share-item unselectable">
+            <a ng-click="shareGooglePlus()" class="icon icon-google">
+                <svg class="svg-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/icons.svg#googleRound"></use></svg>
+            </a>
+        </li>
+    </ul>
+    <!-- Links -->
+    <ul class="links">
+        <li class="link-item unselectable">
+            <a href="#/karta/om-kartan" data-ng-click="app.toggleView('om-kartan')" class="link-item-text">
+                Om kartan
+            </a>
+        </li>
+        <li class="link-item unselectable last">
+            <a href="#/karta/om-oss" data-ng-click="app.toggleView('om-oss')" class="link-item-text">
+                Om oss
+            </a>
+        </li>
+    </ul>
+</footer>

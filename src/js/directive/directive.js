@@ -218,10 +218,24 @@
             replace: "true",
             scope: {},
             link: function(scope) {
-                scope.app = AppService, scope.listType = "thumbnails", scope.projectsData = $rootScope.projectsData
+                scope.app = AppService;
+                scope.listType = "thumbnails";
+                scope.projectsData = $rootScope.projectsData
             },
-            templateUrl: require("../../page/templates/navigation/overview/overview.tpl.html")
+            template: require("../../page/templates/navigation/overview/overview.tpl.html")
         }
     }
-    overviewPanel.$inject = ["$rootScope", "AppService"], angular.module("jm-np.directive").directive("overviewPanel", overviewPanel)
+    overviewPanel.$inject = ["$rootScope", "AppService"];
+    angular.module("jm-np.directive").directive("overviewPanel", overviewPanel)
+}());
+
+(function() {
+    function footerBar() {
+        return {
+            restrict: "AE",
+            replace: true,
+            template: require("../../page/templates/navigation/footer/footer-bar.tpl.html")
+        }
+    }
+    angular.module("jm-np.directive").directive("footerBar", footerBar)
 }());
