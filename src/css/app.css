@@ -937,7 +937,7 @@ a:hover {
   color: #a8a093;
   width: 220px;
   padding-top: 26px;
-  height: 86px;/*70px;*/
+  height: 73px;/*70px;*/
   text-align: center;
   background: #fff;
   font-size: 20px;
@@ -958,7 +958,7 @@ a:hover {
 }
 .m-navigation .m-navigation--primary .nav-item .nav-item-background {
   width: 86px;/*70px;*/
-  height: 70px;
+  height: 73px;/*70px;*/
   display: block;
   background: #142e40;/*#242429;*/
   z-index: 1;
@@ -972,7 +972,7 @@ a:hover {
 .m-navigation .m-navigation--primary .nav-item .nav-item-background:before {
   content: '';
   width: 0;
-  height: 70px;
+  height: 73px;/*70px;*/
   display: block;
   background: #0b1d29;/*#000;*/
   z-index: 2;
@@ -4686,6 +4686,9 @@ a:hover {
   right:0;
 }
 
+.pavilions .pavilion-item.national {
+  border-top: 1px solid #214965;
+}
 .pavilions .pavilion-item {
   border-bottom: 1px solid #214965;
 }
@@ -4697,6 +4700,8 @@ a:hover {
   position:absolute;
   right:0;
   background: #0967a8 url(../img/pavilion-bg.png) no-repeat;
+
+  box-shadow: 0 0 15px rgba(110, 131, 139, 0.7);
 }
 
 .pavilions .pavilion-item a {
