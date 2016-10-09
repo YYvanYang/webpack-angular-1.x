@@ -35,8 +35,6 @@ module.exports = function makeWebpackConfig () {
   config.entry = {
     app: path.join(__dirname, 'src/app.module.js'),
     vendor: [
-      //path.join(__dirname, 'src/dep/jquery/dist/jquery.js'),
-        // todo：kartograph
       path.join(__dirname, 'node_modules/raphael/raphael.js'),
       path.join(__dirname, 'src/js/kartograph-js/dist/kartograph.js'),
       path.join(__dirname, 'src/dep/velocity/velocity.js'),
@@ -129,31 +127,7 @@ module.exports = function makeWebpackConfig () {
       ],
       //exclude: [path.resolve(__dirname, "src/index.tpl.html")],
       loader: 'ng-cache?prefix=[dir]/[dir]'
-    // },{
-    //   // https://github.com/webpack/expose-loader
-    //   test: require.resolve("jquery"),
-    //   loader: "expose?$!expose?jQuery"
-    //   },{
-    //     // https://github.com/webpack/imports-loader
-    //     test: /[\/\\]node_modules[\/\\]kartograph-js[\/\\]dist[\/\\]kartograph\.js$/,
-    //     // include: [
-    //     //     path.resolve(__dirname, "src/js/kartograph")
-    //     // ],
-    //     loader: "imports?this=>window"
-    //     },{
-    //       // https://github.com/webpack/imports-loader
-    //       test: /[\/\\]node_modules[\/\\]kartograph-js[\/\\]dist[\/\\]kartograph\.js$/,
-    //       // include: [
-    //       //     path.resolve(__dirname, "src/js/kartograph")
-    //       // ],
-    //       loader: "imports?exports=>false"
-
-      // },{
-      //   // https://github.com/webpack/expose-loader
-      //
-      //   test: require.resolve("jquery"),
-      //   loader: "script"
-    }]
+       }]
   };
 
   /**
