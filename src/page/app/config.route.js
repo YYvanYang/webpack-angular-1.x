@@ -17,8 +17,8 @@
     //             url: '/',
     //             config: {
     //                 controller: 'HomeCtrl',
-    //                 controllerAs: 'home',
-    //                 title: 'home',
+    //                 controllerAs: 'app',
+    //                 title: 'app',
     //                 settings: {
     //                     // nav: 1,
     //                     // content: '<i class="fa fa-dashboard"></i> Dashboard'

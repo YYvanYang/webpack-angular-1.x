@@ -5,17 +5,6 @@
     require('./dep/toastr/toastr.css')
     require('./css/app.css')
 
-
-    // require("script!../node_modules/jquery/dist/jquery.js");
-    // require("script!../node_modules/raphael/raphael.js");
-    // require("script!../node_modules/kartograph-js/dist/kartograph.js");
-    // var abc = {a:'a',b:'b'};
-    // if (abc.hasOwnProperty('a')) {
-    //     alert('prop:'+abc['a'])
-    //
-    // }
-    //require('expose?$!expose?jQuery!jquery');
-
     // http://adamish.com/blog/archives/876
     require("./js/core/helper.js")
 
@@ -32,24 +21,14 @@
     require("./js/core/core.module.js")
     require("./js/core/constants.js")
     require("./js/core/config.js")
-    require("./js/core/dataservice.js")
     require("./js/core/appService.js")
 
     require("./js/directive/directive.module.js")
     require("./js/directive/directive.js")
 
-    require('./page/home/home.module.js');
-    require('./page/home/config.route.js')
-    require('./page/home/home.js')
-
-    require('./page/view1/view1.module.js');
-    require('./page/view1/config.route.js')
-    require('./page/view1/view1.js')
-
-    require('./page/view2/view2.module.js');
-    require('./page/view2/config.route.js')
-    require('./page/view2/view2.js')
-    //require('./page/view2/view2.js')
+    require('./page/app/app.module.js');
+    require('./page/app/config.route.js')
+    require('./page/app/app.js')
 
     angular.module('jm-np', [
         /*
@@ -76,9 +55,7 @@
         //'app.avengers',
         //'app.dashboard',
         //'app.layout'
-        'jm-np.app',
-        'jm-np.view1',
-        'jm-np.view2'
+        'jm-np.app'
     ]);
 
 })();
