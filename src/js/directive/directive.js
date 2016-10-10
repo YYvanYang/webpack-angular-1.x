@@ -239,3 +239,14 @@
     }
     angular.module("jm-np.directive").directive("footerBar", footerBar)
 }());
+
+(function() {
+    function searchPanel() {
+        return {
+            restrict: "AE",
+            replace: true,
+            template: require("../../page/templates/navigation/search/search.tpl.html")
+        }
+    }
+    angular.module("jm-np.directive").directive("searchPanel", searchPanel)
+}());

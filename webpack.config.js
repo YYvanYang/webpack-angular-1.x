@@ -151,6 +151,19 @@ module.exports = function makeWebpackConfig () {
   // Reference: https://github.com/ampedandwired/html-webpack-plugin
   // Render index.html
   config.plugins.push(
+      new webpack.optimize.CommonsChunkPlugin({
+        name: "vendor",
+        // (the commons chunk name)
+
+        filename: "js/vendor.[hash].js",
+        // (the filename of the commons chunk)
+
+        // minChunks: 3,
+        // (Modules must be shared between 3 entries)
+
+        // chunks: ["pageA", "pageB"],
+        // (Only use these entries)
+      }),
     new HtmlWebpackPlugin({
       template: './src/index.tpl.html',
       inject: 'body',
@@ -252,7 +265,7 @@ module.exports = function makeWebpackConfig () {
 
       // Reference: http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
       // Minify all javascript, switch loaders to minimizing mode
-      new webpack.optimize.UglifyJsPlugin(),
+      //new webpack.optimize.UglifyJsPlugin(),
 
       // Copy assets from the public folder
       // Reference: https://github.com/kevlened/copy-webpack-plugin

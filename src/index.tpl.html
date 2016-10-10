@@ -58,8 +58,7 @@
 
     <!-- Navigation panels -->
     <aside data-ng-if="app.panel.navigationActive == 'sok' && app.panel.viewVisible == false" class="is-init navigation-sok m-sidePanel">
-      <div class="container" data-ng-include="'page/templates/navigation/search/search.tpl.html'">
-      </div>
+      <div search-panel></div>
     </aside>
 
     <aside data-ng-if="app.panel.navigationActive == 'oversikt' && app.panel.viewVisible == false" class="is-init navigation-projektoversikt m-sidePanel">
