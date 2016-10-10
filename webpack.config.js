@@ -106,7 +106,7 @@ module.exports = function makeWebpackConfig () {
       // Reference: https://github.com/webpack/style-loader
       // Use style-loader in development.
       loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap!postcss-loader')
-    }, {
+    },{
       // ASSET LOADER
       // Reference: https://github.com/webpack/file-loader
       // Copy png, jpg, jpeg, gif, svg, woff, woff2, ttf, eot files to output
@@ -114,8 +114,8 @@ module.exports = function makeWebpackConfig () {
       // Pass along the updated reference to your code
       // You can add here any file extension you want to get copied to your output
       test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
-      loader: 'file'
-    }, {
+      loader: 'file?name=assets/[hash].[ext]'
+    },{
       // HTML template LOADER
       // Reference: https://github.com/teux/ng-cache-loader
       // https://github.com/teux/ng-cache-loader/issues/20#issuecomment-226732135
@@ -252,13 +252,15 @@ module.exports = function makeWebpackConfig () {
 
       // Reference: http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
       // Minify all javascript, switch loaders to minimizing mode
-      //new webpack.optimize.UglifyJsPlugin(),
+      new webpack.optimize.UglifyJsPlugin(),
 
       // Copy assets from the public folder
       // Reference: https://github.com/kevlened/copy-webpack-plugin
-      new CopyWebpackPlugin([{
-        from: __dirname + '/src/img'
-      }])
+      new CopyWebpackPlugin([
+        { from: __dirname + '/src/img', to: 'img' },
+        { from: __dirname + '/src/assets', to: 'assets' },
+        { from: __dirname + '/src/mocks', to: 'mocks' }
+      ])
     )
   }
 
