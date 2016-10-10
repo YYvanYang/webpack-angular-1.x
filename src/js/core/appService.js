@@ -42,7 +42,6 @@
             },
             setBreakpoint: function() {
                 var isBreakpoint, width = $window.innerWidth;
-                //return isBreakpoint = width >= 960 ? "desktop" : width >= 600 ? "tablet" : "mobile", isBreakpoint !== this.states.isBreakpoint ? (this.replacePoints(), this.states.isBreakpoint = isBreakpoint, !0) : !1
                 isBreakpoint = width >= 960 ? "desktop" : width >= 600 ? "tablet" : "mobile";
 
                 if (isBreakpoint !== this.states.isBreakpoint) {
@@ -204,7 +203,7 @@
                     RemoteCallService.get({
                         type: "GET",
                         url: "mocks/projektkartanprojekts.json",
-                        crossDomain: !0,
+                        crossDomain: true,
                         dataType: "json",
                         success: function(response) {
                             for (var arr = new Array, i = 0; i < response.value.length; i++) {
