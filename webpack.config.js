@@ -272,7 +272,8 @@ module.exports = function makeWebpackConfig () {
       new CopyWebpackPlugin([
         { from: __dirname + '/src/img', to: 'img' },
         { from: __dirname + '/src/assets', to: 'assets' },
-        { from: __dirname + '/src/mocks', to: 'mocks' }
+        { from: __dirname + '/src/mocks', to: 'mocks' },
+        { from: __dirname + '/src/project_images', to: 'project_images' } // todo: testing data
       ])
     )
   }
@@ -283,6 +284,7 @@ module.exports = function makeWebpackConfig () {
    * Reference: http://webpack.github.io/docs/webpack-dev-server.html
    */
   config.devServer = {
+    headers: { "Access-Control-Allow-Origin": "*" },
     contentBase: './src',
     stats: 'minimal'
   };
