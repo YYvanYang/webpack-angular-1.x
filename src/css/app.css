@@ -728,13 +728,14 @@ a:hover {
   -moz-box-shadow: rgba(0, 0, 0, .1) 0 0 10px;
   -webkit-box-shadow: rgba(0, 0, 0, .1) 0 0 10px;
   box-shadow: rgba(0, 0, 0, .1) 0 0 10px;
-  background: #fff;
+  background: #0967a8;
   height: 50px;
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   z-index: 9;
+  text-align: center;
   display: none
 }
 .l-footer .share {
@@ -773,6 +774,13 @@ a:hover {
   display: block;
   text-indent: 0
 }
+
+.l-footer .copyright {
+  line-height: 50px;
+  color:#e0e0e0;
+  font-size: 12px;
+}
+
 .l-footer .links {
   float: right;
   margin: 0 20px 0 0;
@@ -788,17 +796,20 @@ a:hover {
 }
 .l-footer .links .link-item {
   float: left;
-  margin: 14px 0 0 10px;
-  font-size: 13px
+  margin: 14px 0 0 0;
+  font-size: 18px
 }
 .l-footer .links .link-item .link-item-text {
-  padding-right: 6px
+  padding-right: 20px;
+  padding-left: 20px;
+  color:#e0e0e0;
 }
 .l-footer .links .link-item:after {
-  color: #6B6357;
-  content: '•';
-  font-size: 16px
+  color: #cccccc;
+  content: '|';
+  font-size: 18px
 }
+
 .l-footer .links .link-item.last:after {
   display: none
 }
