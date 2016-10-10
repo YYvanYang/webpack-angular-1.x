@@ -49,11 +49,11 @@
                         scrollLeft: left
                     }, 300)
                 };
-                var m = function() {
-                        angular.element.each(scope.filteredProjectsData, function(a, b) {
-                            if (b.has_position) {
-                                var c = scope.map.lonlat2xy([b.lon, b.lat]);
-                                b.x = c[0], b.y = c[1]
+                var lonlat2xy = function() {
+                        angular.element.each(scope.filteredProjectsData, function(index, project) {
+                            if (project.has_position) {
+                                var xy = scope.map.lonlat2xy([project.lon, project.lat]);
+                                project.x = xy[0], project.y = xy[1]
                             }
                         })
                     },
@@ -63,14 +63,14 @@
                         })
                     },
                     o = function(a) {
-                        scope.map.setMap(svgMap), scope.filteredProjectsData = a, m(), n()
+                        scope.map.setMap(svgMap), scope.filteredProjectsData = a, lonlat2xy(), n()
                     };
                 scope.disableScroll = function() {
                     angular.element("#m-map-container").kinetic("detach"), Modernizr.touch && (scope.app.states.isScrollable = !0)
                 }, scope.activateScroll = function() {
                     angular.element("#m-map-container").kinetic("attach")
                 }, scope.resizeProject = function() {
-                    scope.app.setBreakpoint() && (scope.map.resize(), scope.filteredProjectsData = $rootScope.filterData, m(), n(), scope.$$phase || scope.$apply())
+                    scope.app.setBreakpoint() && (scope.map.resize(), scope.filteredProjectsData = $rootScope.filterData, lonlat2xy(), n(), scope.$$phase || scope.$apply())
                 }, scope.$on("dataBroadcast", function() {
                     scope.app.setBreakpoint(), $timeout(function() {
                         o($rootScope.filterData)

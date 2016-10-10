@@ -206,9 +206,26 @@
                         crossDomain: true,
                         dataType: "json",
                         success: function(response) {
-                            for (var arr = new Array, i = 0; i < response.value.length; i++) {
+                            for (var arr = [], i = 0; i < response.value.length; i++) {
                                 var project = {};
-                                project.id = response.value[i].insamlingsprojektID, project.projectOfTheMonth = project.id === id, project.title = response.value[i].rubrik, project.type_id = response.value[i].projekttyp.projekttypID, project.type_name = response.value[i].projekttyp.namn, project.country_id = response.value[i].land.landID, project.country_name = response.value[i].land.namn, project.theme = response.value[i].tema.namn, project.theme_id = response.value[i].tema.temaID, project.city = response.value[i].ort, project.lat = response.value[i].latitud, project.lon = response.value[i].longitud, project.has_position = null !== project.lon && null !== project.lat, project.project_number = response.value[i].projektkod, project.video = response.value[i].filmUrl, project.slug = response.value[i].slug, project.image_query = response.value[i].bildApiSearchQueryUrl, project.keywords = new Array;
+                                project.id = response.value[i].insamlingsprojektID;
+                                project.projectOfTheMonth = project.id === id;
+                                project.title = response.value[i].rubrik;
+                                project.type_id = response.value[i].projekttyp.projekttypID;
+                                project.type_name = response.value[i].projekttyp.namn;
+                                project.country_id = response.value[i].land.landID;
+                                project.country_name = response.value[i].land.namn;
+                                project.theme = response.value[i].tema.namn;
+                                project.theme_id = response.value[i].tema.temaID;
+                                project.city = response.value[i].ort;
+                                project.lat = response.value[i].latitud;
+                                project.lon = response.value[i].longitud;
+                                project.has_position = null !== project.lon && null !== project.lat;
+                                project.project_number = response.value[i].projektkod;
+                                project.video = response.value[i].filmUrl;
+                                project.slug = response.value[i].slug;
+                                project.image_query = response.value[i].bildApiSearchQueryUrl;
+                                project.keywords = [];
                                 for (var j = 0; j < response.value[i].insamlingsprojektNyckelord.length; j++) project.keywords.push(response.value[i].insamlingsprojektNyckelord[j].nyckelord.namn);
                                 arr.push(project)
                             }
