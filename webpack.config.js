@@ -43,6 +43,7 @@ module.exports = function makeWebpackConfig () {
       path.join(__dirname, 'src/dep/jquery.kinetic/jquery.kinetic.js'),
       path.join(__dirname, 'src/dep/angular/angular.js'),
       path.join(__dirname, 'src/dep/angular-sanitize/angular-sanitize.js'),
+      path.join(__dirname, 'src/dep/angular-animate/angular-animate.js'),
       path.join(__dirname, 'src/dep/angular-route/angular-route.js'),
       path.join(__dirname, 'src/dep/angular-bindonce/bindonce.js')
     ]
