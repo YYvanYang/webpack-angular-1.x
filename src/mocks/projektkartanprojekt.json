@@ -1,1 +1,105 @@
-{"value":[{"insamlingsprojektID":188,"bildApiSearchQueryUrl":"http://api.svenskakyrkan.se/svkwebmisc/services/v1/bilder?projectCode=P220&PreviewSize=600&FileInfo=1&MetaData=1","rubrik":"Stöd till romer i Rumänien","projektkod":"P220","projekttypID":2,"ingress":"<p>En andra-chansen-skola f&ouml;r 10-30-&aring;ringar som inte g&aring;tt i vanlig skola, vatten och sanitet och ett m&aring;l mat om dagen till skolelever. &nbsp;Svenska kyrkans internationella arbete st&ouml;der romer som lever i utsatthet i Rum&auml;nien.</p>","projektsidaUrl":"http://svenskakyrkan.se/P220","giltigSkattereduktion":false,"temaID":0,"landID":"RO","beskrivning":"<p><ul><li>f&ouml;rskola och skola</li><li>andra chansen-skola f&ouml;r dem i &aring;ldern 10-30 &aring;r som inte g&aring;tt i skola tidigare</li><li>ett m&aring;l mat om dagen till skolelever</li><li>h&auml;lsov&aring;rd</li><li>aktiviteter f&ouml;r barn och unga</li><li>kurser i tr&auml;dg&aring;rdsarbete f&ouml;r att fler ska kunna odla gr&ouml;nsaker</li><li>arbete f&ouml;r kvinnors och barns r&auml;ttigheter</li><li>ge tillg&aring;ng till rent vatten och f&ouml;rb&auml;ttra sanit&auml;ra f&ouml;rh&aring;llanden</li><li>F&ouml;rhandlingar med myndigheter om b&auml;ttre boplatser f&ouml;r de 1200 romer i omr&aring;det som blivit tv&aring;ngsf&ouml;rflyttade och tvingas bo i ladug&aring;rdar</li></ul></p>","projektNummer":"700084","slug":"p220-stod-till-romer-i-rumanien","ort":null,"insamlingsmal":3000000,"introGavoformular":"Din g&aring;va&nbsp;g&aring;r till arbete f&ouml;r att romer i Rum&auml;nien ska f&aring; m&ouml;jlighet till ett tryggare liv. Din g&aring;va anv&auml;nds till barns skolg&aring;ng och mat, yrkesutbildningar, hygienartiklar, h&auml;lsov&aring;rd och st&ouml;dgrupper f&ouml;r kvinnor.","publiceraGodkand":false,"publiceraProjektkartan":false,"publiceraExternwebben":false,"statusID":null,"latitud":"46.932213","longitud":"26.930408","akutlage":false,"manadensProjektStart":null,"manadensProjektStopp":null,"Created":"2014-09-17T12:07:07.12+00:00","Updated":"2016-10-06T22:49:41.503+00:00","filmUrl":null,"status":{"statusID":2,"namn":"Pågående","insamlingsprojekt":[]},"land":{"landID":"RO","namn":"Rumänien","problembeskrivning":null,"regionID":null,"insamlingsprojekt":[],"region":null},"projekttyp":{"projekttypID":2,"namn":"Insamlingsprojekt","insamlingsprojekt":[]},"tema":{"temaID":4,"namn":"Hållbar försörjning","temasidaUrl":null,"problembeskrivning":null,"insamlingsprojekt":[]},"insamlingsprojektNyckelord":[{"insamlingsprojektID":188,"nyckelordID":14,"insamlingsprojektNyckelordID":4078637,"insamlingsprojekt":null,"nyckelord":{"nyckelordID":0,"namn":"barn","insamlingsprojektNyckelord":[]}},{"insamlingsprojektID":188,"nyckelordID":95,"insamlingsprojektNyckelordID":4078638,"insamlingsprojekt":null,"nyckelord":{"nyckelordID":0,"namn":"minoriteter","insamlingsprojektNyckelord":[]}},{"insamlingsprojektID":188,"nyckelordID":152,"insamlingsprojektNyckelordID":4078639,"insamlingsprojekt":null,"nyckelord":{"nyckelordID":0,"namn":"skolgång","insamlingsprojektNyckelord":[]}},{"insamlingsprojektID":188,"nyckelordID":170,"insamlingsprojektNyckelordID":4078640,"insamlingsprojekt":null,"nyckelord":{"nyckelordID":0,"namn":"utbildning","insamlingsprojektNyckelord":[]}}]}]}
+{
+  "value": [
+    {
+      "insamlingsprojektID": 188,
+      "bildApiSearchQueryUrl": "http://api.svenskakyrkan.se/svkwebmisc/services/v1/bilder?projectCode=P220&PreviewSize=600&FileInfo=1&MetaData=1",
+      "rubrik": "Stöd till romer i Rumänien",
+      "projektkod": "P220",
+      "projekttypID": 2,
+      "ingress": "<p>En andra-chansen-skola f&ouml;r 10-30-&aring;ringar som inte g&aring;tt i vanlig skola, vatten och sanitet och ett m&aring;l mat om dagen till skolelever. &nbsp;Svenska kyrkans internationella arbete st&ouml;der romer som lever i utsatthet i Rum&auml;nien.</p>",
+      "projektsidaUrl": "http://svenskakyrkan.se/P220",
+      "giltigSkattereduktion": false,
+      "temaID": 0,
+      "landID": "RO",
+      "beskrivning": "<p><ul><li>f&ouml;rskola och skola</li><li>andra chansen-skola f&ouml;r dem i &aring;ldern 10-30 &aring;r som inte g&aring;tt i skola tidigare</li><li>ett m&aring;l mat om dagen till skolelever</li><li>h&auml;lsov&aring;rd</li><li>aktiviteter f&ouml;r barn och unga</li><li>kurser i tr&auml;dg&aring;rdsarbete f&ouml;r att fler ska kunna odla gr&ouml;nsaker</li><li>arbete f&ouml;r kvinnors och barns r&auml;ttigheter</li><li>ge tillg&aring;ng till rent vatten och f&ouml;rb&auml;ttra sanit&auml;ra f&ouml;rh&aring;llanden</li><li>F&ouml;rhandlingar med myndigheter om b&auml;ttre boplatser f&ouml;r de 1200 romer i omr&aring;det som blivit tv&aring;ngsf&ouml;rflyttade och tvingas bo i ladug&aring;rdar</li></ul></p>",
+      "projektNummer": "700084",
+      "slug": "p220-stod-till-romer-i-rumanien",
+      "ort": null,
+      "insamlingsmal": 3000000,
+      "introGavoformular": "Din g&aring;va&nbsp;g&aring;r till arbete f&ouml;r att romer i Rum&auml;nien ska f&aring; m&ouml;jlighet till ett tryggare liv. Din g&aring;va anv&auml;nds till barns skolg&aring;ng och mat, yrkesutbildningar, hygienartiklar, h&auml;lsov&aring;rd och st&ouml;dgrupper f&ouml;r kvinnor.",
+      "publiceraGodkand": false,
+      "publiceraProjektkartan": false,
+      "publiceraExternwebben": false,
+      "statusID": null,
+      "latitud": "46.932213",
+      "longitud": "26.930408",
+      "akutlage": false,
+      "manadensProjektStart": null,
+      "manadensProjektStopp": null,
+      "Created": "2014-09-17T12:07:07.12+00:00",
+      "Updated": "2016-10-06T22:49:41.503+00:00",
+      "filmUrl": null,
+      "status": {
+        "statusID": 2,
+        "namn": "Pågående",
+        "insamlingsprojekt": []
+      },
+      "land": {
+        "landID": "RO",
+        "namn": "Rumänien",
+        "problembeskrivning": null,
+        "regionID": null,
+        "insamlingsprojekt": [],
+        "region": null
+      },
+      "projekttyp": {
+        "projekttypID": 2,
+        "namn": "Insamlingsprojekt",
+        "insamlingsprojekt": []
+      },
+      "tema": {
+        "temaID": 4,
+        "namn": "Hållbar försörjning",
+        "temasidaUrl": null,
+        "problembeskrivning": null,
+        "insamlingsprojekt": []
+      },
+      "insamlingsprojektNyckelord": [
+        {
+          "insamlingsprojektID": 188,
+          "nyckelordID": 14,
+          "insamlingsprojektNyckelordID": 4078637,
+          "insamlingsprojekt": null,
+          "nyckelord": {
+            "nyckelordID": 0,
+            "namn": "barn",
+            "insamlingsprojektNyckelord": []
+          }
+        },
+        {
+          "insamlingsprojektID": 188,
+          "nyckelordID": 95,
+          "insamlingsprojektNyckelordID": 4078638,
+          "insamlingsprojekt": null,
+          "nyckelord": {
+            "nyckelordID": 0,
+            "namn": "minoriteter",
+            "insamlingsprojektNyckelord": []
+          }
+        },
+        {
+          "insamlingsprojektID": 188,
+          "nyckelordID": 152,
+          "insamlingsprojektNyckelordID": 4078639,
+          "insamlingsprojekt": null,
+          "nyckelord": {
+            "nyckelordID": 0,
+            "namn": "skolgång",
+            "insamlingsprojektNyckelord": []
+          }
+        },
+        {
+          "insamlingsprojektID": 188,
+          "nyckelordID": 170,
+          "insamlingsprojektNyckelordID": 4078640,
+          "insamlingsprojekt": null,
+          "nyckelord": {
+            "nyckelordID": 0,
+            "namn": "utbildning",
+            "insamlingsprojektNyckelord": []
+          }
+        }
+      ]
+    }
+  ]
+}
