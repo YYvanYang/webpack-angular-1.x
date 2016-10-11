@@ -135,10 +135,22 @@
                     Modernizr.touch || (angular.element(this).scope().state.popupVisible = false, scope.activateScroll())
                 });
                 scope.openProject = function() {
-                    this.item.points.length > 1 ? (scope.app.panel.navigationActive = "mobile-popup", scope.app.panel.mobilePopupItems = window._.chain(this.item.points).groupBy("country_name").pairs().map(function(a) {
-                        return window._.object(window._.zip(["country_name", "contries"], a))
-                    }).value(), scope.app.panel.viewActive && (scope.app.panel.viewActive = !1, scope.app.panel.viewVisible = !1)) : scope.app.openView(this.item.points[0].project_number)
-                }, scope.setProjectState(), scope.setPosition()
+                    // this.item.points.length > 1 ? (scope.app.panel.navigationActive = "mobile-popup", scope.app.panel.mobilePopupItems = window._.chain(this.item.points).groupBy("country_name").pairs().map(function(a) {
+                    //     return window._.object(window._.zip(["country_name", "contries"], a))
+                    // }).value(), scope.app.panel.viewActive && (scope.app.panel.viewActive = !1, scope.app.panel.viewVisible = !1)) : scope.app.openView(this.item.points[0].project_number)
+
+                    if (this.item.points.length > 1) {
+                        scope.app.panel.navigationActive = "mobile-popup";
+                        scope.app.panel.mobilePopupItems = window._.chain(this.item.points).groupBy("country_name").pairs().map(function(a) {
+                            return window._.object(window._.zip(["country_name", "contries"], a))
+                        }).value();
+                        scope.app.panel.viewActive && (scope.app.panel.viewActive = false, scope.app.panel.viewVisible = false)
+                    } else {
+                        scope.app.openView(this.item.points[0].project_number)
+                    }
+                };
+                scope.setProjectState();
+                scope.setPosition()
             }
         }
     }
