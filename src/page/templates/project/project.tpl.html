@@ -1,0 +1,114 @@
+<div class="is-init container navigation-sok">
+
+    <!-- Overlay -->
+    <div class="overlay" ng-if="projectLoaded == false">
+        <div id="loading-bar-spinner">
+            <div class="spinner-icon"></div>
+        </div>
+    </div>
+    <!-- // overlay -->
+
+    <!-- Project -->
+    <div class="m-project">
+
+        <h2 class="h2 title">{{projectData.city}}</h2>
+        <h3 class="h2 subtitle">{{projectData.country_name}}</h3>
+
+        <!-- Close -->
+        <span class="btn-close icon icon_svk_close" ng-click="app.closeView()">
+          <svg class="svg-icon"><use xlink:href="/assets/svg/icons.svg#close" /></svg>
+        </span>
+
+        <!-- Carousel -->
+        <div class="slideContainer" ng-if="projectLoaded === true && images.length > 0">
+            <div id="rs-frontPage" class="royalSlider rsDefault heroSlider">
+                <div bindonce ng-repeat="image in images">
+
+                    <vimeo-player bo-if="projectData.video !== undefined && projectData.video !== null && $index === 0" video-url="{{projectData.video}}"></vimeo-player>
+
+                    <img class="rsImg" ng-src="{{image.url}}" />
+                    <span class="rsCaption"></span>
+                    <div class="description">
+                        <span class="btn-close icon icon_svk_close"></span>
+                        <span class="photographer"><span class="photographer-title">Fotograf:</span> {{image.photographer}}</span>
+                        <span class="information">{{image.description}}</span>
+                    </div>
+                </div>
+            </div>
+            <span class="btn-info unselectable">Om bilden</span>
+        </div>
+        <!-- // Carousel -->
+
+        <h1 class="m-project--title">{{projectData.title}}</h1>
+
+        <div class="text-container">
+            <a class="symbol" target="_blank" ng-click="trackEvent('Ge en gåva', 'bubbla', 'Projekt - ' + projectData.project_number)" href="http://www.svenskakyrkan.se/internationelltarbete/ge-direkt?pkod={{projectData.project_number}}">
+                <span class="symbol-text" >Insamlings-<br/>mål <br />{{projectData.fund_goal}}</span>
+                <span class="symbol-text-hover">Ge en gåva!</span>
+                <span class="symbol-icon icon">
+                <svg class="svg-icon"><use xlink:href="/assets/svg/icons.svg#bubble"></use></svg>
+              </span>
+            </a>
+            <p class="introduction">
+                <span class="category" ng-bind="projectData.theme"></span><span class="category">.</span>
+                <span ng-bind-html="projectData.text"></span>
+            </p>
+            <div class="extended">
+                <h3 class="extended-title">Det som görs i projektet:</h3>
+                <div ng-bind-html="projectData.text_extended"></div>
+            </div>
+            <div class="openNew">
+                <a href="{{projectData.link}}" class="openNew-link" target="_blank" ng-hide="extendedText == false">
+                    Läs mer om projektet<span class="openNew-icon icon">
+                <svg class="svg-icon"><use xlink:href="/assets/svg/icons.svg#openNew"></use></svg>
+                </span>
+                </a>
+            </div>
+
+            <div class="projectnumber">Projektnummer: {{projectData.project_number}}</div>
+        </div>
+
+        <!-- Show more/less -->
+        <div class="textToggle">
+            <a ng-show="extendedText == false" ng-click="extendText(true)">Visa vad projektet gör</a>
+            <a ng-show="extendedText == true"  ng-click="extendText(false)">Dölj</a>
+        </div>
+        <!-- // Show more/less -->
+
+        <!-- Share -->
+        <ul class="share">
+
+            <li class="share-item unselectable">
+                <a ng-click="shareFacebook()" class="icon icon-facebook">
+                    <svg class="svg-icon"><use xlink:href="/assets/svg/icons.svg#facebookRound"></use></svg>
+                </a>
+            </li>
+            <li class="share-item unselectable">
+                <a ng-click="shareTwitter()"class="icon icon-twitter">
+                    <svg class="svg-icon"><use xlink:href="/assets/svg/icons.svg#twitterRound"></use></svg>
+                </a>
+            </li>
+        </ul>
+        <!-- // Share -->
+
+        <a class="button m-btn m-btn-red" href="http://www.svenskakyrkan.se/internationelltarbete/ge-direkt?pkod={{projectData.project_number}}" ng-click="trackEvent('Ge en gåva', 'knapp', 'Projekt - ' + projectData.project_number)" target="_blank" title="Ge en gåva!">Ge en gåva!</a>
+
+    </div>
+    <!-- // Project -->
+
+    <!-- Similar projects -->
+    <div class="m-similarProjects" style="overflow:hidden; clear: both;" ng-if="similarProjects.length > 0">
+        <h2 class="h2 title">Liknande projekt</h2>
+
+            <ul class="m-listview listType-thumbnails">
+                <li data-ng-repeat="similar in similarProjects | limitTo: 4" data-ng-class-even="'even'" data-ng-class-odd="'odd'" data-ng-class="{'last': $last, 'before-last': (projectsData.length-2 == $index)}" class="listView-item" data-ng-click="app.openView( similar.project_number )">
+                    <div class="thumbnail-container">
+                        <img class="thumbnail" fallback-img="img/projects/no_img.jpg" ng-src="project_images/{{similar.project_number}}_0_232.jpg">
+                    </div>
+                    <h4 class="h4 title" ng-bind="similar.country_name"></h4>
+                </li>
+            </ul>
+    </div>
+    <!-- // Similar projects -->
+
+</div>

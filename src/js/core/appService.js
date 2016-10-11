@@ -173,22 +173,22 @@
 
     angular
         .module('app.core')
-        .factory("GetProjectService", ["RemoteCallService", function(a) {
+        .factory("GetProjectService", ["RemoteCallService", function(RemoteCallService) {
             return {
-                get: function(b, c) {
-                    a.get({
+                get: function(slug, callback) {
+                    RemoteCallService.get({
                         url: "mocks/projektkartanprojekt.json",
                         type: "GET",
                         crossDomain: !0,
                         dataType: "json",
                         success: function(a) {
-                            for (var b = {}, d = 0; d < a.value.length; d++) {
-                                b.id = a.value[d].insamlingsprojektID, b.title = a.value[d].rubrik, b.type_id = a.value[d].projekttyp.projekttypID, b.type_name = a.value[d].projekttyp.namn, b.country_id = a.value[d].land.landID, b.country_name = a.value[d].land.namn, b.theme = a.value[d].tema.namn, b.theme_id = a.value[d].tema.temaID, b.city = a.value[d].ort, b.lat = a.value[d].latitud, b.lon = a.value[d].longitud, b.has_position = 0 == b.lon && 0 == b.lat, b.project_number = a.value[d].projektkod;
+                            for (var project = {}, d = 0; d < a.value.length; d++) {
+                                project.id = a.value[d].insamlingsprojektID, project.title = a.value[d].rubrik, project.type_id = a.value[d].projekttyp.projekttypID, project.type_name = a.value[d].projekttyp.namn, project.country_id = a.value[d].land.landID, project.country_name = a.value[d].land.namn, project.theme = a.value[d].tema.namn, project.theme_id = a.value[d].tema.temaID, project.city = a.value[d].ort, project.lat = a.value[d].latitud, project.lon = a.value[d].longitud, project.has_position = 0 == project.lon && 0 == project.lat, project.project_number = a.value[d].projektkod;
                                 var e = a.value[d].insamlingsmal;
-                                b.fund_goal = e.toString().replace(/(\d)(?=(\d{3})+$)/g, "$1 "), b.slug = a.value[d].slug, b.video = a.value[d].filmUrl, b.text = a.value[d].ingress, b.text_extended = a.value[d].beskrivning, b.link = a.value[d].projektsidaUrl, b.keywords = new Array;
-                                for (var f = 0; f < a.value[d].insamlingsprojektNyckelord.length; f++) b.keywords.push(a.value[d].insamlingsprojektNyckelord[f].nyckelord.namn)
+                                project.fund_goal = e.toString().replace(/(\d)(?=(\d{3})+$)/g, "$1 "), project.slug = a.value[d].slug, project.video = a.value[d].filmUrl, project.text = a.value[d].ingress, project.text_extended = a.value[d].beskrivning, project.link = a.value[d].projektsidaUrl, project.keywords = new Array;
+                                for (var f = 0; f < a.value[d].insamlingsprojektNyckelord.length; f++) project.keywords.push(a.value[d].insamlingsprojektNyckelord[f].nyckelord.namn)
                             }
-                            c(b)
+                            callback(project)
                         }
                     })
                 }

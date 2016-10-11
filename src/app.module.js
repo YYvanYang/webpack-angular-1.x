@@ -5,6 +5,8 @@
     require('./dep/toastr/toastr.css')
     require('./css/app.css')
 
+    require('./lib/royalslider/royalslider.css')
+
     // http://adamish.com/blog/archives/876
     require("./js/core/helper.js")
 
@@ -30,6 +32,10 @@
     require('./page/app/config.route.js')
     require('./page/app/app.js')
 
+    require('./page/project/project.module.js');
+    require('./page/project/config.route.js')
+    require('./page/project/project.js')
+
     angular.module('jm-np', [
         /*
          * Order is not important. Angular makes a
@@ -49,13 +55,16 @@
         'pasvaz.bindonce',
         'jm-np.directive',
 
+        'royalSlider',
+
         /*
          * Feature areas
          */
         //'app.avengers',
         //'app.dashboard',
         //'app.layout'
-        'jm-np.app'
+        'jm-np.app',
+        'jm-np.project'
     ]);
 
 })();

@@ -35,6 +35,24 @@ module.exports = function makeWebpackConfig () {
   config.entry = {
     app: path.join(__dirname, 'src/app.module.js'),
     vendor: [
+      // royalslider
+      path.join(__dirname, 'src/lib/royalslider/jquery.easing-1.3.js'),
+      path.join(__dirname, 'src/lib/royalslider/src/jquery.royalslider.js'),
+      path.join(__dirname, 'src/lib/royalslider/src/modules/jquery.rs.bullets.js'),
+      path.join(__dirname, 'src/lib/royalslider/src/modules/jquery.rs.thumbnails.js'),
+      path.join(__dirname, 'src/lib/royalslider/src/modules/jquery.rs.tabs.js'),
+      path.join(__dirname, 'src/lib/royalslider/src/modules/jquery.rs.fullscreen.js'),
+      path.join(__dirname, 'src/lib/royalslider/src/modules/jquery.rs.autoplay.js'),
+      path.join(__dirname, 'src/lib/royalslider/src/modules/jquery.rs.video.js'),
+      path.join(__dirname, 'src/lib/royalslider/src/modules/jquery.rs.animated-blocks.js'),
+      path.join(__dirname, 'src/lib/royalslider/src/modules/jquery.rs.auto-height.js'),
+      path.join(__dirname, 'src/lib/royalslider/src/modules/jquery.rs.global-caption.js'),
+      path.join(__dirname, 'src/lib/royalslider/src/modules/jquery.rs.active-class.js'),
+      path.join(__dirname, 'src/lib/royalslider/src/modules/jquery.rs.deeplinking.js'),
+      path.join(__dirname, 'src/lib/royalslider/src/modules/jquery.rs.visible-nearby.js'),
+      path.join(__dirname, 'src/lib/royalslider/src/modules/jquery.rs.nav-auto-hide.js'),
+      // royalslider
+
       path.join(__dirname, 'node_modules/raphael/raphael.js'),
       path.join(__dirname, 'src/js/kartograph-js/dist/kartograph.js'),
       path.join(__dirname, 'src/dep/velocity/velocity.js'),
