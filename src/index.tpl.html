@@ -68,6 +68,11 @@
       <div overview-panel></div>
     </aside>
 
+    <!-- Navigation View -->
+    <!--todo: why viewVisible is invisible-->
+    <aside data-ng-view="" class="view m-sidePanel" data-ng-show="app.panel.viewVisible == true">
+    </aside>
+
     <!-- Map -->
     <section id="m-map-container" class="m-map-container" ng-mouseover="mouseOver = false;" ng-class="{'is-mobile': app.elements.mobilePopup == true}">
       <div class="m-map unselectable" id="map">
@@ -85,8 +90,6 @@
   </div>
   <!-- // App container -->
 
-
-  <div ng-view></div>
 
 </body>
 </html>
