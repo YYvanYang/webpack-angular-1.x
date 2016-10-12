@@ -16,7 +16,7 @@
             {
                 url: '/karta/projekt/:slug',
                 config: {
-                    template: require("../../page/templates/project/project.tpl.html"),
+                    template: require("../../../page/templates/project/project.tpl.html"),
                     controller: 'ProjectCtrl',
                     //controllerAs: 'app',
                     title: 'project',

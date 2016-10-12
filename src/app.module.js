@@ -28,13 +28,13 @@
     require("./js/directive/directive.module.js")
     require("./js/directive/directive.js")
 
-    require('./page/app/app.module.js');
-    require('./page/app/config.route.js')
-    require('./page/app/app.js')
+    require('./js/page/app/app.module.js');
+    require('./js/page/app/config.route.js')
+    require('./js/page/app/app.js')
 
-    require('./page/project/project.module.js');
-    require('./page/project/config.route.js')
-    require('./page/project/project.js')
+    require('./js/page/project/project.module.js');
+    require('./js/page/project/config.route.js')
+    require('./js/page/project/project.js')
 
     angular.module('jm-np', [
         /*
