@@ -38,13 +38,16 @@
                 var mapContainer = angular.element("#m-map-container"),
                     defer = $q.defer(),
                     svgMap = '<svg enable_background="new 0 0 1000 464" height="464px" pretty_print="False" style="stroke-linejoin: round; stroke:#000; fill: none;" version="1.1" viewBox="0 0 1000 464" width="1000px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css"><![CDATA[path { fill-rule: evenodd; }]]></style></defs><metadata><views><view h="464.28870594" padding="0" w="1000"><proj flip="auto" id="robinson" lon0="0"/><bbox h="2161.69" w="4665.97" x="-1999.7" y="-1168.29"/></view></views></metadata></svg>';
-                scope.countProjectPosition = function(a, b) {
+                scope.countProjectPosition = function(x, y) {
                     var c, left, top, width = $window.innerWidth,
                         height = $window.innerHeight,
                         i = 70,
                         k = .4,
                         l = -30;
-                    c = width * k, left = a - (c + i + l), top = b - height / 2, mapContainer.animate({
+                    c = width * k;
+                    left = x - (c + i + l);
+                    top = y - height / 2;
+                    mapContainer.animate({
                         scrollTop: top,
                         scrollLeft: left
                     }, 300)
@@ -58,22 +61,28 @@
                         })
                     },
                     n = function() {
-                        scope.clusters = MapUtilities.cluster_hierarchical_agglomerative(scope.filteredProjectsData, 40, 40), defer.resolve(), scope.app.states.isFiltering = !1, angular.element("#map .project").css({
+                        scope.clusters = MapUtilities.cluster_hierarchical_agglomerative(scope.filteredProjectsData, 40, 40);
+                        defer.resolve();
+                        scope.app.states.isFiltering = false;
+                        angular.element("#map .project").css({
                             visibility: "visible"
                         })
                     },
-                    o = function(a) {
-                        scope.map.setMap(svgMap), scope.filteredProjectsData = a, lonlat2xy(), n()
+                    setMap = function(filterData) {
+                        scope.map.setMap(svgMap);
+                        scope.filteredProjectsData = filterData;
+                        lonlat2xy();
+                        n()
                     };
                 scope.disableScroll = function() {
-                    angular.element("#m-map-container").kinetic("detach"), Modernizr.touch && (scope.app.states.isScrollable = !0)
+                    angular.element("#m-map-container").kinetic("detach"), Modernizr.touch && (scope.app.states.isScrollable = true)
                 }, scope.activateScroll = function() {
                     angular.element("#m-map-container").kinetic("attach")
                 }, scope.resizeProject = function() {
                     scope.app.setBreakpoint() && (scope.map.resize(), scope.filteredProjectsData = $rootScope.filterData, lonlat2xy(), n(), scope.$$phase || scope.$apply())
                 }, scope.$on("dataBroadcast", function() {
                     scope.app.setBreakpoint(), $timeout(function() {
-                        o($rootScope.filterData)
+                        setMap($rootScope.filterData)
                     }, 200);
                     var left = 900,
                         top = 200;
@@ -87,11 +96,12 @@
                     scope.resizeProject()
                 }), scope.$on("$routeChangeSuccess", function() {
                     void 0 === $routeParams.slug || Modernizr.touch || defer.promise.then(function() {
-                        var a = $filter("filter")(scope.clusters, {
+                        var cluster = $filter("filter")(scope.clusters, {
                             slug: $routeParams.slug
                         }, false);
-                        a.length && void 0 !== a[0].x && (angular.element("html").hasClass("lt-ie9") || $timeout(function() {
-                            scope.countProjectPosition(a[0].x, a[0].y)
+                        cluster.length && void 0 !== cluster[0].x && (angular.element("html").hasClass("lt-ie9") || $timeout(function() {
+                            // recalc the project position
+                            scope.countProjectPosition(cluster[0].x, cluster[0].y)
                         }, 500))
                     })
                 })
