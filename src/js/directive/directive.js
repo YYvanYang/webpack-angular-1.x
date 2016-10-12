@@ -105,6 +105,18 @@
                         }, 500))
                     })
                 })
+
+                $rootScope.$on('continent:broadcast', function (event, data) {
+                    console.log('continent:broadcast', data); // 'Broadcast!'
+                    var xy = scope.map.lonlat2xy([data[0], data[1]]);
+                    var x = xy[0], y = xy[1]
+                    console.log('var x = xy[0], y = xy[1]', x, y); // 'Broadcast!'
+
+                    $timeout(function() {
+                        // recalc the project position
+                        scope.countProjectPosition(x, y)
+                    }, 500)
+                });
             }
         }
     }
@@ -263,13 +275,20 @@
 }());
 
 (function() {
-    function continentNavBar() {
+    function continentNavBar($rootScope) {
         return {
             restrict: "AE",
             replace: true,
-            template: require("../../page/templates/navigation/continent-nav/continent-nav-bar.html")
+            template: require("../../page/templates/navigation/continent-nav/continent-nav-bar.html"),
+            link: function(scope, element, attrs) {
+
+                scope.gotoContinent = function (longitude, latitude) {
+                    $rootScope.$broadcast('continent:broadcast', [longitude, latitude]);
+                };
+            }
         }
     }
+    continentNavBar.$inject = ["$rootScope"];
     angular.module("jm-np.directive").directive("continentNavBar", continentNavBar)
 }());
 
