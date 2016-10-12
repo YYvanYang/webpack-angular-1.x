@@ -4981,3 +4981,34 @@ ul.rn-carousel-slides li {
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
 }
+
+/**************** left nav animation begin **************/
+.continent-nav-bar.ng-hide {
+  display: block!important;
+  left: -85px
+}
+.continent-nav-bar.ng-hide-add,
+.continent-nav-bar.ng-hide-remove {
+  -moz-transition-property: left;
+  -o-transition-property: left;
+  -webkit-transition-property: left;
+  transition-property: left;
+  -moz-transition-delay: .4s;
+  -o-transition-delay: .4s;
+  -webkit-transition-delay: .4s;
+  transition-delay: .4s;
+  -moz-transition-duration: .4s;
+  -o-transition-duration: .4s;
+  -webkit-transition-duration: .4s;
+  transition-duration: .4s;
+  display: block!important
+}
+.continent-nav-bar.ng-hide-add.ng-hide-add-active,
+.continent-nav-bar.ng-hide-remove {
+  right: -85px
+}
+.continent-nav-bar.ng-hide-add,
+.continent-nav-bar.ng-hide-remove.ng-hide-remove-active {
+  left: 0
+}
+/**************** left nav animation end **************/
