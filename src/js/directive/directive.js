@@ -253,6 +253,17 @@
 }());
 
 (function() {
+    function continentNavBar() {
+        return {
+            restrict: "AE",
+            replace: true,
+            template: require("../../page/templates/navigation/continent-nav/continent-nav-bar.html")
+        }
+    }
+    angular.module("jm-np.directive").directive("continentNavBar", continentNavBar)
+}());
+
+(function() {
     function searchPanel() {
         return {
             restrict: "AE",

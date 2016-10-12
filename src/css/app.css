@@ -4728,3 +4728,256 @@ ul.rn-carousel-slides li {
 .pavilions .pavilion-item.active a {
   color:#fff;
 }
+
+.continent-nav-bar {
+  position: fixed;
+  left:0;
+  top:50%;
+  width:85px;
+  /*height:495px;*/
+  margin-top:-247.5px;
+  background-color: #7aa8c8;
+  z-index: 8;
+  overflow: visible;
+
+  /*border-top-right-radius: 2px;*/
+  /*border-bottom-right-radius: 2px;*/
+}
+
+.continent-nav-bar ul {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.continent-nav-bar .continent-nav .nav-item {
+  /*display: none;*/
+  position: relative;
+  width: 85px;/*70px;*/
+  height: 82.5px;/*70px;*/
+  cursor: pointer;
+  border-top:1px solid transparent;
+  border-bottom:1px solid transparent;
+  /*display: block;*/
+}
+
+.continent-nav-bar .continent-nav .nav-item+.nav-item{
+  border-top:1px solid #b3cddb;
+}
+
+.continent-nav-bar .nav-item.north-america .nav-item-icon {
+  width: 60px;
+  height: 41px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  background: url(../img/icon-north-america.png) no-repeat;
+
+  top:50%;
+  margin-top: -20.5px;
+
+}
+
+.continent-nav-bar .nav-item.south-america .nav-item-icon {
+  width: 37px;
+  height: 58px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  top:50%;
+  margin-top: -29px;
+  z-index: 2;
+  background: url(../img/icon-south-america.png) no-repeat;
+}
+
+.continent-nav-bar .nav-item.europe .nav-item-icon {
+  width: 56px;
+  height: 50px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  top:50%;
+  margin-top: -25px;
+  z-index: 2;
+  background: url(../img/icon-europe.png) no-repeat;
+}
+
+.continent-nav-bar .nav-item.africa .nav-item-icon {
+  width: 45px;
+  height: 51px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  top:50%;
+  margin-top: -25.5px;
+  background: url(../img/icon-africa.png) no-repeat;
+}
+
+.continent-nav-bar .nav-item.oceania .nav-item-icon {
+  width: 43px;
+  height: 49px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  top:50%;
+  margin-top: -24.5px;
+  background: url(../img/icon-oceania.png) no-repeat;
+}
+
+.continent-nav-bar .nav-item.asia .nav-item-icon {
+  width: 48px;
+  height: 44px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  top:50%;
+  margin-top: -22px;
+  background: url(../img/icon-asia.png) no-repeat;
+}
+
+/*.continent-nav-bar .m-navigation--primary .nav-item .nav-item-icon {*/
+  /*width: 50px;*/
+  /*height: 50px;*/
+  /*display: block;*/
+  /*margin: 0 auto;*/
+  /*position: relative;*/
+  /*z-index: 2;*/
+  /*fill: #fff;*/
+  /*opacity: .5*/
+/*}*/
+.continent-nav-bar .continent-nav .nav-item.is-active .nav-item-icon,
+.continent-nav-bar .continent-nav.nav-item:hover .nav-item-icon {
+  -moz-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+  opacity: 1
+}
+
+/*todo: what this*/
+.continent-nav-bar .continent-nav .nav-item .nav-item-icon:before {
+  display: inline-block;
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  color: #fff;
+  opacity: .5;
+  text-align: center;
+  font-size: 50px;
+  line-height: 50px;
+  z-index: 2;
+  font-family: icons;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+/*.continent-nav-bar .m-navigation--primary .nav-item.nav-mobile {*/
+  /*padding-top: 0;*/
+  /*width: 44px;*/
+  /*height: 44px;*/
+  /*position: absolute;*/
+  /*top: 0;*/
+  /*right: 0*/
+/*}*/
+/*.continent-nav-bar .m-navigation--primary .nav-item.nav-mobile .nav-item-icon {*/
+  /*width: 100%;*/
+  /*height: 100%;*/
+  /*padding: 10px;*/
+  /*fill: #0b1d29;!*#000;*!*/
+  /*opacity: 1*/
+/*}*/
+.continent-nav-bar .continent-nav .nav-item .nav-item-title {
+  -moz-box-shadow: rgba(0, 0, 0, .2) -1px 1px 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, .2) -1px 1px 5px;
+  box-shadow: rgba(0, 0, 0, .2) -1px 1px 5px;
+  -moz-transition-property: left;
+  -o-transition-property: left;
+  -webkit-transition-property: left;
+  transition-property: left;
+  -moz-transition-duration: .2s;
+  -o-transition-duration: .2s;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  display: block;
+  color: #fff;
+  width: 86px;
+  padding-top: 30.5px;
+  height: 82.5px;
+  text-align: center;
+  background: #fff;
+  font-size: 20px;
+  line-height: 24px;
+  position: absolute;
+  left: -86px;
+  top: 0;
+  background-color: #2f8bc2;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  text-align: left;
+  padding-left:6.5px;
+}
+.continent-nav-bar .continent-nav .nav-item:hover .nav-item-title {
+  -moz-transition-delay: .1s;
+  -o-transition-delay: .1s;
+  -webkit-transition-delay: .1s;
+  transition-delay: .1s;
+  left: 85px;/*70px;*/
+}
+/*.continent-nav-bar .m-navigation--primary .nav-item.is-clicked .nav-item-title {*/
+  /*right: -220px*/
+/*}*/
+.continent-nav-bar .continent-nav .nav-item .nav-item-background {
+  width: 85px;/*70px;*/
+  height: 82.5px;/*70px;*/
+  display: block;
+  background: #7aa8c8;/*#242429;*/
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #b3cddb; /*todo:need remove this, try to add border*/
+}
+
+
+.continent-nav-bar .continent-nav .nav-item .nav-item-background.ng-hide {
+  display: block!important
+}
+.continent-nav-bar .continent-nav .nav-item .nav-item-background:before {
+  content: '';
+  width: 0;
+  height: 82.5px;/*70px;*/
+  display: block;
+  background: #2f8bc2;/*#000;*/
+  z-index: 2;
+  -moz-transition-property: width;
+  -o-transition-property: width;
+  -webkit-transition-property: width;
+  transition-property: width;
+  -moz-transition-duration: .2s;
+  -o-transition-duration: .2s;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  -moz-transition-delay: .1s;
+  -o-transition-delay: .1s;
+  -webkit-transition-delay: .1s;
+  transition-delay: .1s;
+  position: absolute;
+  top: 0;
+  left: 0
+}
+.continent-nav-bar .continent-nav .nav-item:hover .nav-item-background:before,
+.continent-nav-bar .continent-nav .nav-item.is-active .nav-item-background:before {
+  width: 86px;/*70px;*/
+  -moz-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
