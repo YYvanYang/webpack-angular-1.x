@@ -3807,8 +3807,8 @@ a:hover {
   background-repeat: no-repeat;
   background-size: 100% auto;
   display: block;
-  width: 157px;
-  height: 54px
+  width: 100px;
+  height: 55px
 }
 @media (-webkit-min-device-pixel-ratio: 1.5) {
   .m-brandLogo .logo {
