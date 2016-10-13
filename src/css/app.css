@@ -882,23 +882,66 @@ a:hover {
   cursor: pointer
 }
 .m-navigation .m-navigation--primary .nav-item .nav-item-icon {
-  width: 50px;
-  height: 50px;
+  /*width: 50px;*/
+  /*height: 50px;*/
+  width:38px;
+  height:38px;
   display: block;
   margin: 0 auto;
   position: relative;
   z-index: 2;
   fill: #fff;
-  opacity: .5
+  opacity: .5;
+
+
 }
+
+.m-navigation .m-navigation--primary .nav-item.nav-search .nav-item-icon {
+  width:38px;
+  height:38px;
+  background: url(../img/icon-search.png) no-repeat;
+}
+
+.m-navigation .m-navigation--primary .nav-item.nav-language .nav-item-icon {
+  width:38px;
+  height:38px;
+  text-align: center;
+  line-height:38px;
+  font-size:14px;
+  color:#fff;
+  background: url(../img/icon-language.png) no-repeat;
+}
+
 .m-navigation .m-navigation--primary .nav-item.is-active .nav-item-icon,
 .m-navigation .m-navigation--primary .nav-item:hover .nav-item-icon {
   -moz-transition-delay: 0s;
   -o-transition-delay: 0s;
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
-  opacity: 1
+  opacity: 1;
+
+  width: 51px;
+  height: 51px;
 }
+
+.m-navigation .m-navigation--primary .nav-item.nav-search.is-active .nav-item-icon,
+.m-navigation .m-navigation--primary .nav-item.nav-search:hover .nav-item-icon {
+  width: 51px;
+  height: 51px;
+  background: url(../img/icon-search-active.png) no-repeat;
+}
+
+.m-navigation .m-navigation--primary .nav-item.nav-language.is-active .nav-item-icon,
+.m-navigation .m-navigation--primary .nav-item.nav-language:hover .nav-item-icon {
+  width: 51px;
+  height: 51px;
+  text-align: center;
+  line-height:51px;
+  font-size:18px;
+  color:#949494;
+  background: url(../img/icon-language-active.png) no-repeat;
+}
+
 .m-navigation .m-navigation--primary .nav-item .nav-item-icon:before {
   display: inline-block;
   position: absolute;
