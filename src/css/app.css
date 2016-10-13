@@ -3522,7 +3522,7 @@ a:hover {
 .m-listview .listView-item .thumbnail-container {
   width: 100%;
   padding-bottom: 56.25%;
-  background: #f5f5f5;
+  /*background: #f5f5f5;*/
   overflow: hidden;
   position: relative
 }
