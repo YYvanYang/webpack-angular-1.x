@@ -4996,11 +4996,24 @@ ul.rn-carousel-slides li {
   left: -86px;
   top: 0;
   background-color: #2f8bc2;
-  border-top-right-radius: 2px;
+  /*border-top-right-radius: 2px;*/
   border-bottom-right-radius: 2px;
   text-align: left;
   padding-left:6.5px;
 }
+
+/*hack border*/
+.continent-nav-bar .continent-nav .nav-item .nav-item-title:before {
+  content: '';
+  width: 100%;
+  position: absolute;
+  left:0;
+  top:-1px;
+  height: 0;
+  border-top:2px solid #2f8bc2;
+  border-top-right-radius: 2px;
+}
+
 .continent-nav-bar .continent-nav .nav-item:hover .nav-item-title {
   -moz-transition-delay: .1s;
   -o-transition-delay: .1s;
@@ -5050,6 +5063,8 @@ ul.rn-carousel-slides li {
   top: 0;
   left: 0
 }
+
+
 .continent-nav-bar .continent-nav .nav-item:hover .nav-item-background:before,
 .continent-nav-bar .continent-nav .nav-item.is-active .nav-item-background:before {
   width: 86px;/*70px;*/
@@ -5057,6 +5072,20 @@ ul.rn-carousel-slides li {
   -o-transition-delay: 0s;
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
+}
+
+/*hack border*/
+.continent-nav-bar .continent-nav .nav-item:hover .nav-item-background:after,
+.continent-nav-bar .continent-nav .nav-item.is-active .nav-item-background:after {
+  content: '';
+  width: 100%;
+  position: absolute;
+  left:0;
+  top:-1px;
+  height: 0;
+  border-top:2px solid #2f8bc2;
+
+  z-index: 2;
 }
 
 /**************** left nav animation begin **************/
