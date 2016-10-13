@@ -894,11 +894,15 @@ a:hover {
   opacity: .5;
 
 
+  /*top:50%;*/
+  /*margin-top:-19px;*/
+
 }
 
 .m-navigation .m-navigation--primary .nav-item.nav-search .nav-item-icon {
   width:38px;
   height:38px;
+
   background: url(../img/icon-search.png) no-repeat;
 }
 
@@ -930,6 +934,8 @@ a:hover {
   height: 51px;
   background: url(../img/icon-search-active.png) no-repeat;
 }
+
+
 
 .m-navigation .m-navigation--primary .nav-item.nav-language.is-active .nav-item-icon,
 .m-navigation .m-navigation--primary .nav-item.nav-language:hover .nav-item-icon {
@@ -1115,9 +1121,17 @@ a:hover {
     /*margin-top: -105px*/
   }
   .m-navigation .m-navigation--primary .nav-item {
-    padding-top: 10px;
+    /*padding-top: 10px;*/
+    padding-top:18px;
     display: block
   }
+
+  .m-navigation .m-navigation--primary .nav-item.is-active,
+  .m-navigation .m-navigation--primary .nav-item:hover {
+  padding-top:12px;
+  display: block
+  }
+
   .m-navigation .m-navigation--primary .nav-item.nav-mobile {
     display: none
   }
