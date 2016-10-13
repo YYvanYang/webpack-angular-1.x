@@ -4794,7 +4794,7 @@ ul.rn-carousel-slides li {
   right:0;
   background: #0967a8 url(../img/pavilion-bg.png) no-repeat;
 
-  box-shadow: 0 0 15px rgba(110, 131, 139, 0.7);
+  box-shadow: 3px 3px 10px rgba(110, 131, 139, 0.7);
 }
 
 .pavilions .pavilion-item a {
