@@ -2,7 +2,7 @@
     <div class="inner">
 
         <!-- Title -->
-        <h2 class="h2 title">Sök projekt</h2>
+        <h2 class="h2 title">请输入要您需要查找的国家</h2>
 
         <!-- Search -->
         <div class="search">
@@ -20,15 +20,15 @@
         <header class="m-listview-header">
             <span class="searchResults" ng-show="search.term.length">Sökresultat för "{{search.term}}"</span>
             <ul class="listType">
-                <li class="listType-item" ng-click="listType = 'thumbnails'" ng-class="{'is-active': listType == 'thumbnails'}">
-                  <span class="icon">
-                    <svg class="svg-icon"><use xlink:href="/assets/svg/icons.svg#list"></use></svg>
-                  </span>Tumnaglar
+                <li class="listType-item unselectable" ng-click="listType = 'thumbnails'" ng-class="{'is-active': listType == 'thumbnails'}">
+                  <span class="icon all">
+                    <!--<svg class="svg-icon"><use xlink:href="/assets/svg/icons.svg#list"></use></svg>-->
+                  </span>全部国家
                 </li>
-                <li class="listType-item" ng-click="listType = 'list'" ng-class="{'is-active': listType == 'list'}">
-                  <span class="icon">
-                    <svg class="svg-icon"><use xlink:href="/assets/svg/icons.svg#textList"></use></svg>
-                  </span>Lista
+                <li class="listType-item unselectable" ng-click="listType = 'list'" ng-class="{'is-active': listType == 'list'}">
+                  <span class="icon hot">
+                    <!--<svg class="svg-icon"><use xlink:href="/assets/svg/icons.svg#textList"></use></svg>-->
+                  </span>热门国家
                 </li>
                 <li class="listType-item listType-item-search" ng-show="search.term.length">Träffar: {{filteredItems.length}}</li>
             </ul>
@@ -55,7 +55,7 @@
 
         <!-- Close -->
         <span class="btn-close icon" ng-click="app.togglePanel('sok');">
-              <svg class="svg-icon"><use xlink:href="/assets/svg/icons.svg#close"></use></svg>
+              <!--<svg class="svg-icon"><use xlink:href="/assets/svg/icons.svg#close"></use></svg>-->
             </span>
 
     </div>

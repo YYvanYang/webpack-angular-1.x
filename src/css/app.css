@@ -258,7 +258,8 @@ body .h1 {
 }
 body .h2 {
   font-family: foundrysterling-book, arial, sans-serif;
-  font-size: 40px;
+  /*font-size: 40px;*/
+  font-size:28px;
   line-height: 42px
 }
 body .h3 {
@@ -1233,7 +1234,8 @@ a:hover {
   top: 9px;
   left: 10px;
   width: 19px;
-  height: 18px
+  height: 19px;
+  background:url(../img/icon-input-search.png) no-repeat;
 }
 .m-sidePanel .search .icon-close {
   top: 7px;
@@ -1308,7 +1310,9 @@ a:hover {
   width: 30px;
   height: 30px;
   fill: #000;
-  padding: 6px
+  padding: 6px;
+
+  background:url(../img/icon-close.png) no-repeat;
 }
 .m-sidePanel {
   -moz-backface-visibility: hidden;
@@ -3599,10 +3603,25 @@ a:hover {
   position: relative;
   bottom: -2px;
   margin-right: 3px;
-  width: 11px;
-  height: 12px;
-  fill: #6B6357
+  width: 15px;
+  height: 15px;
+  fill: #6B6357;
+
+
 }
+
+.m-listview-header .listType .icon.all {
+  width: 15px;
+  height: 15px;
+  background: url(../img/icon-list.png) no-repeat;
+}
+
+.m-listview-header .listType .icon.hot {
+  width: 19px;
+  height: 13px;
+  background: url(../img/icon-hot-list.png) no-repeat;
+}
+
 .m-listview.listType-thumbnails .projectNumber {
   display: none
 }
