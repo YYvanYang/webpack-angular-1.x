@@ -2658,7 +2658,7 @@ a:hover {
     color: #212020;
     padding-top: 15px;
     padding-bottom: 8px;
-    margin: 0 4%;
+    margin: 0 4% 0 0;
     cursor: pointer;
     white-space: nowrap;
     overflow: hidden;
@@ -2843,7 +2843,7 @@ a:hover {
     transform: translateY(-50%);
     background: #fff;
     position: absolute;
-    text-align: center;
+    text-align: left;
     pointer-events: all;
     top: 50%;
     right: 30px
@@ -2876,12 +2876,13 @@ a:hover {
     overflow: hidden;
     *zoom: 1;
     display: block;
-    width: 328px;
+    /*width: 328px;*/
+    width:330px;
     list-style: none;
     margin: 0;
     padding: 0;
     position: relative;
-    padding: 0 14px;
+    padding: 0 36px;
     box-sizing: border-box
   }
   .m-map-container .project-popup-merged .popup-container .popup {
@@ -2896,9 +2897,9 @@ a:hover {
     border-top: 0
   }
   .m-map-container .project-popup-merged .popup-container .image-container {
-    width: 120px;
-    height: 69px;
-    float: left;
+    width: 258px;
+    height: 168px;
+    /*float: left;*/
     overflow: hidden
   }
   .m-map-container .project-popup-merged .popup-container .image-container .image {
@@ -5088,3 +5089,38 @@ ul.rn-carousel-slides li {
   left: 0
 }
 /**************** left nav animation end **************/
+
+.national-flag {
+  width:59px;
+  height:40px;
+  position:absolute;
+  left:45px;
+  top:-15px;
+  overflow: hidden;
+}
+
+.national-flag img {
+  width:59px;
+  height:40px;
+}
+
+
+/*// todo*/
+.m-map-container .project .country-name {
+  font-size: 14px;
+  color:#5b9fc7;
+  font-family: foundrysterling-bold, arial, sans-serif;
+  position: absolute;
+  left:0;
+  right:0;
+  margin: 0 auto;
+  white-space: nowrap;
+  /*width:100%;*/
+  text-align: center;
+  border:1px solid red;
+  /*width:auto;*/
+  /*top:28px;*/
+  /*top: -18px;*/
+  /*right: -14px;*/
+  z-index: 1;
+}
