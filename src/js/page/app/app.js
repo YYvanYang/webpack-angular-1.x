@@ -6,11 +6,15 @@
             //"RemoteCallService",
             "GetProjectsService",
             "GetProjectOfTheMonthService",
+            "queryMallTrmplate",
+            "queryFriendshipLink",
             // "GetThemes", "GetCountry",
             function($scope, $rootScope, $routeParams, $http, $q, $location, $filter, $timeout, AppService
                 //, RemoteCallService
                      , GetProjectsService
                      , GetProjectOfTheMonthService
+                     , queryMallTrmplate
+                     , queryFriendshipLink
             ) {
             $scope.app = AppService;
             $scope.listType = "thumbnails";
@@ -53,8 +57,20 @@
                                 $scope.broadcastData()
                             }, 1000)
                         })
+                        
+                        
                     })
                 });
+
+                queryMallTrmplate.get({lanType: 0}, function (data) {
+                    AppService.pavilionEntryList = data.pavilionEntryList;
+                    console.log(AppService.pavilionEntryList)
+                })
+
+                queryFriendshipLink.get({positionType: 1}, function (data) {
+                    AppService.friendshipLinkList = data.friendshipLinkList;
+                    console.log(AppService.friendshipLinkList)
+                })
 
             // $scope.click = function() {
             //     $scope.panel.active = ""
