@@ -37,8 +37,8 @@
             <!-- List -->
             <ul class="m-listview listType-thumbnails">
                 <li bindonce ng-repeat="project in filteredItems = (projectsData | filter: search.term)" class="listView-item" ng-class-odd="'odd'" ng-class="{'last': $last, 'before-last': filteredItems.length-2 == $index && $index != 1}" ng-class-even="'even'" ng-click="app.openView( project.project_number )">
-                    <h4 class="h4 title title-city" ng-class="{ 'is-empty': project.city.length == undefined }">{{project.city}}</h4>
-                    <!--<h4 class="h4 title title-country">{{project.country_name}}</h4>-->
+                    <!--<h4 class="h4 title title-city" ng-class="{ 'is-empty': project.city.length == undefined }">{{project.city}}</h4>-->
+                    <h4 class="h4 title title-country">{{project.country_name}}</h4>
                     <!--<p class="paragraph">{{project.title}}</p>-->
                     <span class="projectType projectType-4">{{project.theme}}</span>
                     <!--<span class="projectNumber">Projektnummer: {{project.project_number}}</span>-->

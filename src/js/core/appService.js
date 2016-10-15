@@ -210,15 +210,15 @@
                             for (var arr = [], i = 0; i < response.value.length; i++) {
                                 var project = {};
                                 project.id = response.value[i].insamlingsprojektID;
-                                project.projectOfTheMonth = project.id === id;
+                                //project.projectOfTheMonth = project.id === id;
                                 project.title = response.value[i].rubrik;
-                                project.type_id = response.value[i].projekttyp.projekttypID;
-                                project.type_name = response.value[i].projekttyp.namn;
-                                project.country_id = response.value[i].land.landID;
-                                project.country_name = response.value[i].land.namn;
-                                project.theme = response.value[i].tema.namn;
-                                project.theme_id = response.value[i].tema.temaID;
-                                project.city = response.value[i].ort;
+                                //project.type_id = response.value[i].projekttyp.projekttypID;
+                                //project.type_name = response.value[i].projekttyp.namn;
+                                project.country_id =11;//todo response.value[i].land.landID;
+                                project.country_name = "中国";//response.value[i].land.namn;
+                                project.theme ="china";// response.value[i].tema.namn;
+                                project.theme_id = null;//response.value[i].tema.temaID;
+                                //project.city = "北京";
                                 project.lat = response.value[i].latitud;
                                 project.lon = response.value[i].longitud;
                                 project.has_position = null !== project.lon && null !== project.lat;
