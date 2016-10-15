@@ -154,7 +154,7 @@
             return {
                 get: function(formatDate, callback) {
                     RemoteCallService.get({
-                        url: "mocks/manadensProjekt.json",
+                        url: "/dist/mocks/manadensProjekt.json",
                         type: "GET",
                         crossDomain: true,
                         dataType: "json",
@@ -195,6 +195,7 @@
     //         }
     //     }])
 
+
     angular
         .module('app.core')
         .factory("GetProjectsService", ["RemoteCallService", function(RemoteCallService) {
@@ -202,7 +203,7 @@
                 get: function(id, callback) {
                     RemoteCallService.get({
                         type: "GET",
-                        url: "mocks/projektkartanprojekts.json",
+                        url: "/dist/mocks/projektkartanprojekts.json",
                         crossDomain: true,
                         dataType: "json",
                         success: function(response) {
@@ -235,6 +236,54 @@
                 }
             }
         }])
+
+    // 搜索查询国家
+    angular
+        .module('app.core')
+        .factory("queryMallTrmplate", ["RemoteCallService", function(RemoteCallService) {
+            return {
+                /**
+                 * 搜索查询国家
+                 * @param req: lanType 0中文 1英文, name 过滤条件
+                 * @param callback
+                 */
+                get: function(req, callback) {
+                    RemoteCallService.get({
+                        type: "POST",
+                        url: "/gjgQuery.do?action=queryMallTrmplate&lanType="+req.lanType,
+                        crossDomain: true,
+                        dataType: "json",
+                        success: function(response) {
+                            callback(response);
+                        }
+                    })
+                }
+            }
+        }]);
+
+    // 搜索查询热门
+    angular
+        .module('app.core')
+        .factory("queryFriendshipLink", ["RemoteCallService", function(RemoteCallService) {
+            return {
+                /**
+                 * 搜索查询热门
+                 * @param req: positionType 1中文 2英文, name 过滤条件
+                 * @param callback
+                 */
+                get: function(req, callback) {
+                    RemoteCallService.get({
+                        type: "POST",
+                        url: "/gjgQuery.do?action=queryFriendshipLink&positionType="+req.positionType,
+                        crossDomain: true,
+                        dataType: "json",
+                        success: function(response) {
+                            callback(response);
+                        }
+                    })
+                }
+            }
+        }]);
 
 })();
 
