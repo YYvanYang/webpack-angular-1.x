@@ -34,8 +34,8 @@
     <!-- End single project -->
 
     <!-- IF multiple projects -->
-    <div bo-if="item.points.length > 1 || ( app.states.isBreakpoint == 'mobile' && app.states.isTouch == false)">
-        <div class="project-popup project-popup-merged" ng-class="{'show-compact': item.points.length >= 3}" ng-if="state.popupVisible === true"> <!--  -->
+    <div bo-if="item.points.length > 0 || ( app.states.isBreakpoint == 'mobile' && app.states.isTouch == false)">
+        <div class="project-popup project-popup-merged" ng-if="state.popupVisible === true"> <!--  -->
             <div class="project-container">
                 <div class="popup-container">
 
@@ -44,9 +44,9 @@
                         </h3>
                         <div class="image-container">
 
-                            <img fallback-img="img/projects/no_img.jpg" bo-src-i="project_images/{{item.points[0].project_number}}_0_232.jpg" class="image" bo-title="item.points[0].title" />
+                            <img fallback-img="img/projects/no_img.jpg" bo-src-i="project_images/{{item.points[0].project_number}}_0_232.jpg" class="image" />
                         </div>
-                        <p class="paragraph project-type project-type-{{item.points[0].theme_id}} description">{{item.points[0].theme}}</p>
+                        <p class="paragraph project-type project-type-4 description">{{item.points[0].theme}}</p>
 
                 </div>
             </div>

@@ -18,19 +18,19 @@
             ) {
             $scope.app = AppService;
             $scope.listType = "thumbnails";
-            $scope.searchedItems = [];
+            //$scope.searchedItems = [];
             $scope.mobilePopupItems = [];
             $scope.search = {
                 mobile: ""
             };
 
-            $rootScope.projectsData = [];
+            //$rootScope.projectsData = [];
             $rootScope.projectsImages = [];
 
             GetProjectsService.get(null, function(data) {
-                $rootScope.projectsData = data;
+                //$rootScope.projectsData = data;
                 $rootScope.filterData = data;
-                $scope.searchedItems = data;
+                //$scope.searchedItems = data;
                 $scope.broadcastData = function() {
                     $rootScope.$broadcast("dataBroadcast");
                     $scope.app.states.isInit = true
