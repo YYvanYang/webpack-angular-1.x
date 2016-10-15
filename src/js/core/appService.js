@@ -148,28 +148,28 @@
             }
         })
 
-    angular
-        .module('app.core')
-        .factory("GetProjectOfTheMonthService", ["RemoteCallService", function(RemoteCallService) {
-            return {
-                get: function(formatDate, callback) {
-                    RemoteCallService.get({
-                        url: "/dist/mocks/manadensProjekt.json",
-                        type: "GET",
-                        crossDomain: true,
-                        dataType: "json",
-                        success: function(response) {
-                            for (var project = {}, i = 0; i < response.value.length; i++) project.id = response.value[i].insamlingsprojektID;
-                            callback(project)
-                        },
-                        error: function() {
-                            var project = {};
-                            callback(project.id = 0)
-                        }
-                    })
-                }
-            }
-        }])
+    // angular
+    //     .module('app.core')
+    //     .factory("GetProjectOfTheMonthService", ["RemoteCallService", function(RemoteCallService) {
+    //         return {
+    //             get: function(formatDate, callback) {
+    //                 RemoteCallService.get({
+    //                     url: "mocks/manadensProjekt.json",
+    //                     type: "GET",
+    //                     crossDomain: true,
+    //                     dataType: "json",
+    //                     success: function(response) {
+    //                         for (var project = {}, i = 0; i < response.value.length; i++) project.id = response.value[i].insamlingsprojektID;
+    //                         callback(project)
+    //                     },
+    //                     error: function() {
+    //                         var project = {};
+    //                         callback(project.id = 0)
+    //                     }
+    //                 })
+    //             }
+    //         }
+    //     }])
 
     // angular
     //     .module('app.core')
@@ -203,7 +203,7 @@
                 get: function(id, callback) {
                     RemoteCallService.get({
                         type: "GET",
-                        url: "/dist/mocks/projektkartanprojekts.json",
+                        url: "mocks/projektkartanprojekts.json",
                         crossDomain: true,
                         dataType: "json",
                         success: function(response) {
@@ -223,11 +223,11 @@
                                 project.lon = response.value[i].longitud;
                                 project.has_position = null !== project.lon && null !== project.lat;
                                 project.project_number = response.value[i].projektkod;
-                                project.video = response.value[i].filmUrl;
+                                //project.video = response.value[i].filmUrl;
                                 project.slug = response.value[i].slug;
                                 project.image_query = response.value[i].bildApiSearchQueryUrl;
                                 project.keywords = [];
-                                for (var j = 0; j < response.value[i].insamlingsprojektNyckelord.length; j++) project.keywords.push(response.value[i].insamlingsprojektNyckelord[j].nyckelord.namn);
+                                //for (var j = 0; j < response.value[i].insamlingsprojektNyckelord.length; j++) project.keywords.push(response.value[i].insamlingsprojektNyckelord[j].nyckelord.namn);
                                 arr.push(project)
                             }
                             callback(arr)

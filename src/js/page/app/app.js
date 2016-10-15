@@ -5,14 +5,14 @@
         .controller('AppCtrl', ["$scope", "$rootScope", "$routeParams", "$http", "$q", "$location", "$filter", "$timeout", "AppService",
             //"RemoteCallService",
             "GetProjectsService",
-            "GetProjectOfTheMonthService",
+           // "GetProjectOfTheMonthService",
             "queryMallTrmplate",
             "queryFriendshipLink",
             // "GetThemes", "GetCountry",
             function($scope, $rootScope, $routeParams, $http, $q, $location, $filter, $timeout, AppService
                 //, RemoteCallService
                      , GetProjectsService
-                     , GetProjectOfTheMonthService
+                    // , GetProjectOfTheMonthService
                      , queryMallTrmplate
                      , queryFriendshipLink
             ) {
@@ -23,54 +23,47 @@
             $scope.search = {
                 mobile: ""
             };
-            var date = new Date,
-                year = date.getFullYear(),
-                month = date.getMonth() + 1,
-                day = date.getDate(),
-                formatDate = "";
-            10 >= day && (day = 10 > day ? "0" + day : day),
-            10 >= month && (month = 10 > month ? "0" + month : month),
-                formatDate = year + "-" + month + "-" + day,
-                $rootScope.projectsData = [];
-                $rootScope.projectsImages = [];
-                GetProjectOfTheMonthService.get(formatDate, function(project) {
-                    GetProjectsService.get(project.id, function(data) {
-                        $rootScope.projectsData = data;
-                        $rootScope.filterData = data;
-                        $scope.searchedItems = data;
-                        $scope.broadcastData = function() {
-                            $rootScope.$broadcast("dataBroadcast");
-                            $scope.app.states.isInit = true
-                        };
-                        $http({
-                            method: "GET",
-                            url: "/project_images/index.json",
-                            headers: {
-                                "Content-Type": "application/json; charset=utf-8"
-                            }
-                        }).success(function(data) {
-                            $rootScope.projectsImages = data, $timeout(function() {
-                                $scope.broadcastData()
-                            }, 1000)
-                        }).error(function() {
-                            $timeout(function() {
-                                $scope.broadcastData()
-                            }, 1000)
-                        })
-                        
-                        
-                    })
-                });
 
-                queryMallTrmplate.get({lanType: 0}, function (data) {
-                    AppService.pavilionEntryList = data.pavilionEntryList;
-                    console.log(AppService.pavilionEntryList)
+            $rootScope.projectsData = [];
+            $rootScope.projectsImages = [];
+
+            GetProjectsService.get(null, function(data) {
+                $rootScope.projectsData = data;
+                $rootScope.filterData = data;
+                $scope.searchedItems = data;
+                $scope.broadcastData = function() {
+                    $rootScope.$broadcast("dataBroadcast");
+                    $scope.app.states.isInit = true
+                };
+                $http({
+                    method: "GET",
+                    url: "/project_images/index.json",
+                    headers: {
+                        "Content-Type": "application/json; charset=utf-8"
+                    }
+                }).success(function(data) {
+                    $rootScope.projectsImages = data, $timeout(function() {
+                        $scope.broadcastData()
+                    }, 1000)
+                }).error(function() {
+                    $timeout(function() {
+                        $scope.broadcastData()
+                    }, 1000)
                 })
 
-                queryFriendshipLink.get({positionType: 1}, function (data) {
-                    AppService.friendshipLinkList = data.friendshipLinkList;
-                    console.log(AppService.friendshipLinkList)
-                })
+
+            })
+
+
+                // queryMallTrmplate.get({lanType: 0}, function (data) {
+                //     AppService.pavilionEntryList = data.pavilionEntryList;
+                //     console.log(AppService.pavilionEntryList)
+                // })
+                //
+                // queryFriendshipLink.get({positionType: 1}, function (data) {
+                //     AppService.friendshipLinkList = data.friendshipLinkList;
+                //     console.log(AppService.friendshipLinkList)
+                // })
 
             // $scope.click = function() {
             //     $scope.panel.active = ""
