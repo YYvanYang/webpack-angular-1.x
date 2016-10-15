@@ -4,33 +4,33 @@
     <span class="circle"></span>
     <span class="circle-2"></span>
     <span class="circle-3"></span>
-    <!--<span class="count-circle" bo-if="item.points.length > 1">-->
-        <!--<span class="number" bo-bind="item.points.length"></span>-->
-        <!--<span class="text-container">-->
-          <!--<span class="text">projekt</span>-->
-        <!--</span>-->
-      <!--</span>-->
+    <span class="count-circle" bo-if="item.points.length > 1">
+        <span class="number" bo-bind="item.points.length"></span>
+        <span class="text-container">
+          <span class="text">projekt</span>
+        </span>
+      </span>
     <!--<span class="country-name">中华人民共和国</span>-->
     <!-- END circle -->
 
     <!-- IF single project -->
-    <div bo-if="item.points.length == 1">
-        <div class="project-popup project-popup-single" ng-if="state.popupVisible === true">
-            <div class="popup-container" ng-click="app.openView(item.points[0].project_number); $event.stopPropagation();">
-                <span class="btn-close icon icon_svk_close" ng-click="state.popupVisible = false; $event.stopPropagation();"></span>
-                <h3 class="h3 title">
-                    <span bo-bind="item.points[0].city"></span><span bo-if="item.points[0].city.length">, </span><span bo-bind="item.points[0].country_name"></span>
-                </h3>
-                <div class="image-container">
-            <span bo-if="item.points[0].video !== undefined && item.points[0].video !== null" class="m-has-video">
-              <svg class="svg-icon"><use xlink:href="/assets/svg/icons.svg#video"></use></svg>
-            </span>
-                    <img fallback-img="img/projects/no_img.jpg" bo-src-i="project_images/{{item.points[0].project_number}}_0_232.jpg" class="image" bo-title="item.points[0].title" />
-                </div>
-                <p class="paragraph project-type project-type-{{item.points[0].theme_id}} description">{{item.points[0].theme}}</p>
-            </div>
-        </div>
-    </div>
+    <!--<div bo-if="item.points.length == 1">-->
+        <!--<div class="project-popup project-popup-single" ng-if="state.popupVisible === true">-->
+            <!--<div class="popup-container" ng-click="app.openView(item.points[0].project_number); $event.stopPropagation();">-->
+                <!--<span class="btn-close icon icon_svk_close" ng-click="state.popupVisible = false; $event.stopPropagation();"></span>-->
+                <!--<h3 class="h3 title">-->
+                    <!--<span bo-bind="item.points[0].city"></span><span bo-if="item.points[0].city.length">, </span><span bo-bind="item.points[0].country_name"></span>-->
+                <!--</h3>-->
+                <!--<div class="image-container">-->
+            <!--<span bo-if="item.points[0].video !== undefined && item.points[0].video !== null" class="m-has-video">-->
+              <!--<svg class="svg-icon"><use xlink:href="/assets/svg/icons.svg#video"></use></svg>-->
+            <!--</span>-->
+                    <!--<img fallback-img="img/projects/no_img.jpg" bo-src-i="project_images/{{item.points[0].project_number}}_0_232.jpg" class="image" bo-title="item.points[0].title" />-->
+                <!--</div>-->
+                <!--<p class="paragraph project-type project-type-{{item.points[0].theme_id}} description">{{item.points[0].theme}}</p>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
     <!-- End single project -->
 
     <!-- IF multiple projects -->
@@ -38,22 +38,6 @@
         <div class="project-popup project-popup-merged" ng-class="{'show-compact': item.points.length >= 3}" ng-if="state.popupVisible === true"> <!--  -->
             <div class="project-container">
                 <div class="popup-container">
-                    <!--<span class="btn-close icon icon_svk_close" ng-click="state.popupVisible = false; $event.stopPropagation();"></span>-->
-                    <!--<div class="popup" ng-class="{'is-active': $index == current.slide}" bindonce data-ng-repeat="popup in item.points" data-slug="{{popup.project_number}}" ng-click="app.openView(popup.project_number); $event.stopPropagation();">-->
-                        <!--<div class="image-container">-->
-                            <!--<img fallback-img="img/projects/no_img.jpg" bo-src-i="project_images/{{popup.project_number}}_0_232.jpg" class="image" bo-title="{{popup.title}}" />-->
-                            <!--<span bo-if="popup.video !== undefined && popup.video !== null" class="m-has-video small">-->
-                    <!--<svg class="svg-icon"><use xlink:href="/assets/svg/icons.svg#video"></use></svg>-->
-                  <!--</span>-->
-                        <!--</div>-->
-                        <!--<div class="popup-content">-->
-                            <!--<h3 class="h3 title">-->
-                                <!--<span class="city" bo-if="popup.city.length" bo-bind="popup.city"></span>-->
-                                <!--<span class="country" bo-bind="popup.country_name"></span>-->
-                            <!--</h3>-->
-                            <!--<p class="paragraph description project-type project-type-{{popup.theme_id}}" bo-class="{'is-projectOfTheMonth': popup.projectOfTheMonth === true}" >{{popup.theme}}</p>-->
-                        <!--</div>-->
-                    <!--</div>-->
 
                         <h3 class="h3 title">
                             <span bo-bind="item.points[0].country_name"></span>

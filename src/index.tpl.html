@@ -10,6 +10,8 @@
   <title>My AngularJS App</title>
   <meta name="description" content="">
 
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -33,7 +35,7 @@
     left: 0; right: 0; bottom: 0; background: #fff; z-index: 9999">
 
     <div class="m-brandLogo" data-ng-if="app.states.isInit == true">
-      <span class="logo">Svenska kyrkans Internationella arbete</span>
+      <span class="logo"></span>
     </div>
     <div id="loading-bar-spinner">
       <div class="spinner-icon"></div>
@@ -62,10 +64,6 @@
     <!-- Navigation panels -->
     <aside data-ng-if="app.panel.navigationActive == 'sok' && app.panel.viewVisible == false" class="is-init navigation-sok m-sidePanel">
       <div search-panel></div>
-    </aside>
-
-    <aside data-ng-if="app.panel.navigationActive == 'oversikt' && app.panel.viewVisible == false" class="is-init navigation-projektoversikt m-sidePanel">
-      <div overview-panel></div>
     </aside>
 
     <!-- Navigation View -->

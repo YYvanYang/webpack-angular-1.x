@@ -171,29 +171,29 @@
             }
         }])
 
-    angular
-        .module('app.core')
-        .factory("GetProjectService", ["RemoteCallService", function(RemoteCallService) {
-            return {
-                get: function(slug, callback) {
-                    RemoteCallService.get({
-                        url: "mocks/projektkartanprojekt.json",
-                        type: "GET",
-                        crossDomain: !0,
-                        dataType: "json",
-                        success: function(a) {
-                            for (var project = {}, d = 0; d < a.value.length; d++) {
-                                project.id = a.value[d].insamlingsprojektID, project.title = a.value[d].rubrik, project.type_id = a.value[d].projekttyp.projekttypID, project.type_name = a.value[d].projekttyp.namn, project.country_id = a.value[d].land.landID, project.country_name = a.value[d].land.namn, project.theme = a.value[d].tema.namn, project.theme_id = a.value[d].tema.temaID, project.city = a.value[d].ort, project.lat = a.value[d].latitud, project.lon = a.value[d].longitud, project.has_position = 0 == project.lon && 0 == project.lat, project.project_number = a.value[d].projektkod;
-                                var e = a.value[d].insamlingsmal;
-                                project.fund_goal = e.toString().replace(/(\d)(?=(\d{3})+$)/g, "$1 "), project.slug = a.value[d].slug, project.video = a.value[d].filmUrl, project.text = a.value[d].ingress, project.text_extended = a.value[d].beskrivning, project.link = a.value[d].projektsidaUrl, project.keywords = new Array;
-                                for (var f = 0; f < a.value[d].insamlingsprojektNyckelord.length; f++) project.keywords.push(a.value[d].insamlingsprojektNyckelord[f].nyckelord.namn)
-                            }
-                            callback(project)
-                        }
-                    })
-                }
-            }
-        }])
+    // angular
+    //     .module('app.core')
+    //     .factory("GetProjectService", ["RemoteCallService", function(RemoteCallService) {
+    //         return {
+    //             get: function(slug, callback) {
+    //                 RemoteCallService.get({
+    //                     url: "mocks/projektkartanprojekt.json",
+    //                     type: "GET",
+    //                     crossDomain: !0,
+    //                     dataType: "json",
+    //                     success: function(a) {
+    //                         for (var project = {}, d = 0; d < a.value.length; d++) {
+    //                             project.id = a.value[d].insamlingsprojektID, project.title = a.value[d].rubrik, project.type_id = a.value[d].projekttyp.projekttypID, project.type_name = a.value[d].projekttyp.namn, project.country_id = a.value[d].land.landID, project.country_name = a.value[d].land.namn, project.theme = a.value[d].tema.namn, project.theme_id = a.value[d].tema.temaID, project.city = a.value[d].ort, project.lat = a.value[d].latitud, project.lon = a.value[d].longitud, project.has_position = 0 == project.lon && 0 == project.lat, project.project_number = a.value[d].projektkod;
+    //                             var e = a.value[d].insamlingsmal;
+    //                             project.fund_goal = e.toString().replace(/(\d)(?=(\d{3})+$)/g, "$1 "), project.slug = a.value[d].slug, project.video = a.value[d].filmUrl, project.text = a.value[d].ingress, project.text_extended = a.value[d].beskrivning, project.link = a.value[d].projektsidaUrl, project.keywords = new Array;
+    //                             for (var f = 0; f < a.value[d].insamlingsprojektNyckelord.length; f++) project.keywords.push(a.value[d].insamlingsprojektNyckelord[f].nyckelord.namn)
+    //                         }
+    //                         callback(project)
+    //                     }
+    //                 })
+    //             }
+    //         }
+    //     }])
 
     angular
         .module('app.core')
