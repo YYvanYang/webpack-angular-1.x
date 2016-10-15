@@ -25,10 +25,12 @@
             };
 
             $rootScope.projectsData = [];
+                $rootScope.projectsHotData = [];
             $rootScope.projectsImages = [];
 
             GetProjectsService.get(null, function(data) {
                 $rootScope.projectsData = data;
+                //$rootScope.projectsHotData = data;
                 $rootScope.filterData = data;
                 $scope.searchedItems = data;
                 $scope.broadcastData = function() {
