@@ -2910,7 +2910,12 @@ a:hover {
     overflow: hidden
   }
   .m-map-container .project-popup-merged .popup-container .image-container .image {
-    float: left
+    float: left;
+
+
+    width:100%;
+    height: 100%;
+
   }
   .m-map-container .project-popup-merged .popup-container .popup-content {
     float: left;

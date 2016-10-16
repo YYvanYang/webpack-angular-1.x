@@ -302,7 +302,7 @@
                                 //project.type_name = response.value[i].projekttyp.namn;
                                 //project.country_id =11;//todo response.value[i].land.landID;
                                 project.country_name = friendshipLinkList[i].linkName;//response.value[i].land.namn;
-                                project.theme = friendshipLinkList[i].linkEnName;// response.value[i].tema.namn;
+                                project.forginName = friendshipLinkList[i].linkEnName;// response.value[i].tema.namn;
                                 project.nationalFlag = friendshipLinkList[i].linkImg;// response.value[i].tema.namn;
                                 //project.theme_id = null;//response.value[i].tema.temaID;
                                 //project.city = "北京";
