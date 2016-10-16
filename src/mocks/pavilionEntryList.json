@@ -1,15 +1,26 @@
 {
   "pavilionEntryList": [
     {
-      "name": "",
-      "shortName": "",
-      "flagUrl": "",
-      "link": "",
-      "genCoord": "",
-      "isEnable": "",
-      "customImageUrl": "",
-      "otherName": "",
-      "otherShortName": ""
+      "project_number":"P129",
+      "name": "中华人民共和国",
+      "shortName": "中国",
+      "flagUrl": "img/nationalFlag/syria.png",
+      "link": "http://www.baidu.com",
+      "genCoord": ["106.964489","36.491906"],
+      "customImageUrl": "project_images/P27_0_232.jpg",
+      "otherName": "republic of china",
+      "otherShortName": "china"
+    },
+    {
+      "project_number":"P130",
+      "name": "美利坚合众国",
+      "shortName": "美国",
+      "flagUrl": "img/nationalFlag/egypt.png",
+      "link": "http://www.baidu.com",
+      "genCoord": ["-103.094105","43.612156"],
+      "customImageUrl": "project_images/P50_0_232.jpg",
+      "otherName": "United States",
+      "otherShortName": "USA"
     }
   ]
 }

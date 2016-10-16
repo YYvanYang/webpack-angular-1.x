@@ -118,6 +118,62 @@
                         scope.countProjectPosition(x, y)
                     }, 500)
                 });
+
+                $rootScope.$on('country:broadcast', function (event, data) {
+                    var project_number = data;
+                    //scope.app.activing_project_number = project_number;
+                    //console.log('continent:broadcast', data);
+                    var cluster = $filter("filter")(scope.clusters, {
+                        slug: project_number
+                    }, false);
+
+                    // clear actived items
+                    for(var item in scope.clusters) {
+                        if (scope.clusters[item].slug != project_number) {
+                            scope.clusters[item].popupVisible = null;
+                        }
+                    }
+
+                    cluster.length && void 0 !== cluster[0].x && (angular.element("html").hasClass("lt-ie9") || $timeout(function() {
+                        // recalc the project position
+                        scope.countProjectPosition(cluster[0].x, cluster[0].y)
+
+                        $timeout(function () {
+                            // todo: display popup
+                            // var cluster = $filter("filter")(scope.clusters, {
+                            //     slug: $routeParams.slug
+                            // }, false);
+                            //var cluster = scope.clusters[0];
+                            cluster[0].popupVisible = true;
+
+                        },500)
+
+                    }, 500))
+
+
+                    // $timeout(function() {
+                    //     // recalc the project position
+                    //     scope.countProjectPosition(x, y)
+                    //     $timeout(function () {
+                    //         // todo: display popup
+                    //         // var cluster = $filter("filter")(scope.clusters, {
+                    //         //     slug: $routeParams.slug
+                    //         // }, false);
+                    //         var cluster = scope.clusters[0];
+                    //         cluster.popupVisible = true;
+                    //
+                    //     },300)
+                    // }, 500)
+                });
+
+                scope.$on('popupVisible:mouseenter', function (event, data) {
+                    var project_number = data;
+                    for(var item in scope.clusters) {
+                        if (scope.clusters[item].slug != project_number) {
+                            scope.clusters[item].popupVisible = null;
+                        }
+                    }
+                });
             }
         }
     }
@@ -126,7 +182,7 @@
 }());
 
 (function() {
-    function mapProject(a, b, c, d, e, Modernizr) {
+    function mapProject(a, b, c, $window, e, Modernizr) {
         return {
             restrict: "E",
             replace: true,
@@ -137,6 +193,15 @@
                 scope.state = {
                     popupVisible: false
                 };
+
+                // todo: add watch
+                scope.$watch("item.popupVisible", function(value) {
+                    //if (value) {
+                        scope.state.popupVisible = !!value;
+                    //}
+
+                })
+
                 scope.setProjectState = function() {
                     var className = "";
                     this.item.points.length > 1 && (className += "is-merged ");
@@ -152,25 +217,33 @@
                     })
                 };
                 angular.element(iElement).on("mouseenter", function() {
+                    // close popup that displayed by search
+                    var project_number = scope.item.slug;
+                    scope.$emit('popupVisible:mouseenter', project_number);
+
                     Modernizr.touch || (angular.element(this).scope().state.popupVisible = true, scope.disableScroll())
+
                 });
                 angular.element(iElement).on("mouseleave", function() {
                     Modernizr.touch || (angular.element(this).scope().state.popupVisible = false, scope.activateScroll())
+                    scope.item.popupVisible = false;
                 });
                 scope.openProject = function() {
                     // this.item.points.length > 1 ? (scope.app.panel.navigationActive = "mobile-popup", scope.app.panel.mobilePopupItems = window._.chain(this.item.points).groupBy("country_name").pairs().map(function(a) {
                     //     return window._.object(window._.zip(["country_name", "contries"], a))
                     // }).value(), scope.app.panel.viewActive && (scope.app.panel.viewActive = !1, scope.app.panel.viewVisible = !1)) : scope.app.openView(this.item.points[0].project_number)
 
-                    if (this.item.points.length > 1) {
-                        scope.app.panel.navigationActive = "mobile-popup";
-                        scope.app.panel.mobilePopupItems = window._.chain(this.item.points).groupBy("country_name").pairs().map(function(a) {
-                            return window._.object(window._.zip(["country_name", "contries"], a))
-                        }).value();
-                        scope.app.panel.viewActive && (scope.app.panel.viewActive = false, scope.app.panel.viewVisible = false)
-                    } else {
-                        scope.app.openView(this.item.points[0].project_number)
-                    }
+                    // if (this.item.points.length > 1) {
+                    //     scope.app.panel.navigationActive = "mobile-popup";
+                    //     scope.app.panel.mobilePopupItems = window._.chain(this.item.points).groupBy("country_name").pairs().map(function(a) {
+                    //         return window._.object(window._.zip(["country_name", "contries"], a))
+                    //     }).value();
+                    //     scope.app.panel.viewActive && (scope.app.panel.viewActive = false, scope.app.panel.viewVisible = false)
+                    // } else {
+                       // scope.app.openView(this.item.points[0].project_number)
+                    // }
+
+                    $window.open(this.item.points[0].link, '_blank');
                 };
                 scope.setProjectState();
                 scope.setPosition()

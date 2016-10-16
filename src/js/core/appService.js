@@ -5,9 +5,9 @@
         .module('app.core')
         .factory('AppService', appService);
 
-    appService.$inject = ['$location', '$timeout', '$window'];
+    appService.$inject = ['$location', '$timeout', '$window','$rootScope'];
 
-    function appService($location, $timeout, $window) {
+    function appService($location, $timeout, $window,$rootScope) {
         var timer;
         return {
             togglePanel: function(active) {
@@ -53,6 +53,13 @@
                 return false;
 
             },
+            // project_number
+            displayPopup: function (id) {
+                var project_number = id;
+                $rootScope.$broadcast('country:broadcast', project_number);
+                this.panel.navigationActive = ""
+            },
+
             openView: function(id) {
                 var url = "/karta/projekt/" + id;
                 url !== $location.path() ? $location.path(url) : (this.panel.navigationActive = "", this.panel.viewVisible = true)
@@ -201,51 +208,35 @@
         .factory("GetProjectsService", ["RemoteCallService", function(RemoteCallService) {
             return {
                 get: function(id, callback) {
-                    // var defer1 = RemoteCallService.get({
-                    //                 type: "GET",
-                    //                 url: "mocks/pavilionEntryList.json",
-                    //                 crossDomain: true,
-                    //                 dataType: "json" }),
-                    //     defer2 = RemoteCallService.get({
-                    //                 type: "GET",
-                    //                 url: "mocks/friendshipLinkList.json",
-                    //                 crossDomain: true,
-                    //                 dataType: "json" });
-                    //
-                    // $.when( defer1, defer2 ).done(function ( pavilion, friendship ) {
-                    //     // Each argument is an array with the following structure: [ data, statusText, jqXHR ]
-                    //     console.log( pavilion );
-                    //     console.log( friendship );
-                    // }).fail(function() {
-                    //     console.log( "$.get failed!" );
-                    // });
-
 
                     RemoteCallService.get({
                         type: "GET",
-                        url: "mocks/projektkartanprojekts.json",
+                        url: "mocks/pavilionEntryList.json",
                         crossDomain: true,
                         dataType: "json",
                         success: function(response) {
-                            for (var projects = [], i = 0; i < response.value.length; i++) {
+                            var pavilionEntryList = response.pavilionEntryList;
+                            for (var projects = [], i = 0; i < pavilionEntryList.length; i++) {
                                 var project = {};
-                                project.id = response.value[i].insamlingsprojektID;
+                                //project.id = response.value[i].insamlingsprojektID;
                                 //project.projectOfTheMonth = project.id === id;
-                                project.title = response.value[i].rubrik;
+                                //project.title = response.value[i].rubrik;
                                 //project.type_id = response.value[i].projekttyp.projekttypID;
                                 //project.type_name = response.value[i].projekttyp.namn;
-                                project.country_id =11;//todo response.value[i].land.landID;
-                                project.country_name = "中国";//response.value[i].land.namn;
-                                project.theme ="china";// response.value[i].tema.namn;
-                                project.nationalFlag = response.value[i].linkImg;
+                                //project.country_id =11;//todo response.value[i].land.landID;
+                                project.country_name = pavilionEntryList[i].name;//response.value[i].land.namn;
+                                project.theme = pavilionEntryList[i].otherName;//"china";// response.value[i].tema.namn;
+                                project.nationalFlag = pavilionEntryList[i].flagUrl;//response.value[i].linkImg;
                                 //project.theme_id = null;//response.value[i].tema.temaID;
                                 //project.city = "北京";
-                                project.lat = response.value[i].latitud;
-                                project.lon = response.value[i].longitud;
+                                project.lat = pavilionEntryList[i].genCoord[1];
+                                project.lon = pavilionEntryList[i].genCoord[0];
                                 project.has_position = null !== project.lon && null !== project.lat;
-                                project.project_number = response.value[i].projektkod;
+                                project.project_number = pavilionEntryList[i].project_number;
+                                project.link = pavilionEntryList[i].link;
+                                project.customImageUrl = pavilionEntryList[i].customImageUrl;
                                 //project.video = response.value[i].filmUrl;
-                                project.slug = response.value[i].slug;
+                                //project.slug = response.value[i].slug;
                                 // project.image_query = response.value[i].bildApiSearchQueryUrl;
                                 // project.keywords = [];
                                 //for (var j = 0; j < response.value[i].insamlingsprojektNyckelord.length; j++) project.keywords.push(response.value[i].insamlingsprojektNyckelord[j].nyckelord.namn);
@@ -318,9 +309,9 @@
                                 // project.lat = response.value[i].latitud;
                                 // project.lon = response.value[i].longitud;
                                 // project.has_position = null !== project.lon && null !== project.lat;
-                                project.project_number =null;//todo response.value[i].projektkod;
+                                project.project_number = friendshipLinkList[i].project_number;//todo response.value[i].projektkod;
                                 //project.video = response.value[i].filmUrl;
-                                project.slug =null;//todo; response.value[i].slug;
+                                //project.slug =null;//todo; response.value[i].slug;
                                 // project.image_query = response.value[i].bildApiSearchQueryUrl;
                                 // project.keywords = [];
                                 //for (var j = 0; j < response.value[i].insamlingsprojektNyckelord.length; j++) project.keywords.push(response.value[i].insamlingsprojektNyckelord[j].nyckelord.namn);
