@@ -201,13 +201,33 @@
         .factory("GetProjectsService", ["RemoteCallService", function(RemoteCallService) {
             return {
                 get: function(id, callback) {
+                    // var defer1 = RemoteCallService.get({
+                    //                 type: "GET",
+                    //                 url: "mocks/pavilionEntryList.json",
+                    //                 crossDomain: true,
+                    //                 dataType: "json" }),
+                    //     defer2 = RemoteCallService.get({
+                    //                 type: "GET",
+                    //                 url: "mocks/friendshipLinkList.json",
+                    //                 crossDomain: true,
+                    //                 dataType: "json" });
+                    //
+                    // $.when( defer1, defer2 ).done(function ( pavilion, friendship ) {
+                    //     // Each argument is an array with the following structure: [ data, statusText, jqXHR ]
+                    //     console.log( pavilion );
+                    //     console.log( friendship );
+                    // }).fail(function() {
+                    //     console.log( "$.get failed!" );
+                    // });
+
+
                     RemoteCallService.get({
                         type: "GET",
                         url: "mocks/projektkartanprojekts.json",
                         crossDomain: true,
                         dataType: "json",
                         success: function(response) {
-                            for (var arr = [], i = 0; i < response.value.length; i++) {
+                            for (var projects = [], i = 0; i < response.value.length; i++) {
                                 var project = {};
                                 project.id = response.value[i].insamlingsprojektID;
                                 //project.projectOfTheMonth = project.id === id;
@@ -217,7 +237,8 @@
                                 project.country_id =11;//todo response.value[i].land.landID;
                                 project.country_name = "中国";//response.value[i].land.namn;
                                 project.theme ="china";// response.value[i].tema.namn;
-                                project.theme_id = null;//response.value[i].tema.temaID;
+                                project.nationalFlag = response.value[i].linkImg;
+                                //project.theme_id = null;//response.value[i].tema.temaID;
                                 //project.city = "北京";
                                 project.lat = response.value[i].latitud;
                                 project.lon = response.value[i].longitud;
@@ -225,12 +246,12 @@
                                 project.project_number = response.value[i].projektkod;
                                 //project.video = response.value[i].filmUrl;
                                 project.slug = response.value[i].slug;
-                                project.image_query = response.value[i].bildApiSearchQueryUrl;
-                                project.keywords = [];
+                                // project.image_query = response.value[i].bildApiSearchQueryUrl;
+                                // project.keywords = [];
                                 //for (var j = 0; j < response.value[i].insamlingsprojektNyckelord.length; j++) project.keywords.push(response.value[i].insamlingsprojektNyckelord[j].nyckelord.namn);
-                                arr.push(project)
+                                projects.push(project)
                             }
-                            callback(arr)
+                            callback(projects)
                         }
                     })
                 }
@@ -272,13 +293,40 @@
                  * @param callback
                  */
                 get: function(req, callback) {
-                    RemoteCallService.get({
-                        type: "POST",
-                        url: "/gjgQuery.do?action=queryFriendshipLink&positionType="+req.positionType,
+                    return RemoteCallService.get({
+                        // todo;
+                        // type: "POST",
+                        // url: "/gjgQuery.do?action=queryFriendshipLink&positionType="+req.positionType,
+                        url: "mocks/friendshipLinkList.json",
                         crossDomain: true,
                         dataType: "json",
                         success: function(response) {
-                            callback(response);
+                            var friendshipLinkList = response.friendshipLinkList;
+                            for (var projects = [], i = 0; i < friendshipLinkList.length; i++) {
+                                var project = {};
+                                //project.id = response.value[i].insamlingsprojektID;
+                                //project.projectOfTheMonth = project.id === id;
+                                //project.title = response.value[i].rubrik;
+                                //project.type_id = response.value[i].projekttyp.projekttypID;
+                                //project.type_name = response.value[i].projekttyp.namn;
+                                //project.country_id =11;//todo response.value[i].land.landID;
+                                project.country_name = friendshipLinkList[i].linkName;//response.value[i].land.namn;
+                                project.theme = friendshipLinkList[i].linkEnName;// response.value[i].tema.namn;
+                                project.nationalFlag = friendshipLinkList[i].linkImg;// response.value[i].tema.namn;
+                                //project.theme_id = null;//response.value[i].tema.temaID;
+                                //project.city = "北京";
+                                // project.lat = response.value[i].latitud;
+                                // project.lon = response.value[i].longitud;
+                                // project.has_position = null !== project.lon && null !== project.lat;
+                                project.project_number =null;//todo response.value[i].projektkod;
+                                //project.video = response.value[i].filmUrl;
+                                project.slug =null;//todo; response.value[i].slug;
+                                // project.image_query = response.value[i].bildApiSearchQueryUrl;
+                                // project.keywords = [];
+                                //for (var j = 0; j < response.value[i].insamlingsprojektNyckelord.length; j++) project.keywords.push(response.value[i].insamlingsprojektNyckelord[j].nyckelord.namn);
+                                projects.push(project)
+                            }
+                            callback(projects);
                         }
                     })
                 }

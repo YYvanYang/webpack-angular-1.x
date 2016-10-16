@@ -1,10 +1,16 @@
 {
   "friendshipLinkList": [
     {
-      "linkAdress": "",
-      "linkName":"",
-      "linkEnName":"",
-      "linkImg":""
+      "linkAdress": "http://www.baidu.com",
+      "linkName":"美国",
+      "linkEnName":"USA",
+      "linkImg":"img/nationalFlag/syria.png"
+    },
+    {
+      "linkAdress": "http://www.baidu.com",
+      "linkName":"加拿大",
+      "linkEnName":"Canada",
+      "linkImg":"img/nationalFlag/syria.png"
     }
   ]
 }

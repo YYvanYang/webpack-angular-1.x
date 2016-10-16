@@ -37,17 +37,27 @@
                     $rootScope.$broadcast("dataBroadcast");
                     $scope.app.states.isInit = true
                 };
-                $http({
-                    method: "GET",
-                    url: "/project_images/index.json",
-                    headers: {
-                        "Content-Type": "application/json; charset=utf-8"
-                    }
-                }).success(function(data) {
-                    $rootScope.projectsImages = data, $timeout(function() {
-                        $scope.broadcastData()
-                    }, 1000)
-                }).error(function() {
+                // $http({
+                //     method: "GET",
+                //     url: "/project_images/index.json",
+                //     headers: {
+                //         "Content-Type": "application/json; charset=utf-8"
+                //     }
+                // }).success(function(data) {
+                //     $rootScope.projectsImages = data, $timeout(function() {
+                //         $scope.broadcastData()
+                //     }, 1000)
+                // }).error(function() {
+                //     $timeout(function() {
+                //         $scope.broadcastData()
+                //     }, 1000)
+                // })
+
+                queryFriendshipLink.get({positionType: 1}, function (data) {
+                    // AppService.friendshipLinkList = data.friendshipLinkList;
+                    // console.log(AppService.friendshipLinkList)
+                    $rootScope.projectsHotData = data;
+                }).always(function () {
                     $timeout(function() {
                         $scope.broadcastData()
                     }, 1000)
