@@ -1,16 +1,16 @@
-<div class="project" ng-click="openProject(); $event.stopPropagation();" ng-class="{'is-current': ctrl.currentProject(item.slug), 'is-active': state.popupVisible == true}">
+<div class="project" ng-click="openProject($event); $event.stopPropagation();" ng-class="{'is-current': ctrl.currentProject(item.slug), 'is-active': state.popupVisible == true}">
     <!-- Circle -->
     <span class="circle-hover"></span>
     <span class="circle"></span>
     <span class="circle-2"></span>
     <span class="circle-3"></span>
-    <span class="count-circle" bo-if="item.points.length > 1">
-        <span class="number" bo-bind="item.points.length"></span>
-        <span class="text-container">
-          <span class="text">projekt</span>
-        </span>
-      </span>
-    <!--<span class="country-name">中华人民共和国</span>-->
+    <!--<span class="count-circle" bo-if="item.points.length > 1">-->
+        <!--<span class="number" bo-bind="item.points.length"></span>-->
+        <!--<span class="text-container">-->
+          <!--<span class="text">projekt</span>-->
+        <!--</span>-->
+      <!--</span>-->
+    <span class="map-point-country-name" ng-class="{'hidden': state.popupVisible == true}">{{item.points[0].country_name}}</span>
     <!-- END circle -->
 
     <!-- IF single project -->
@@ -46,7 +46,7 @@
 
                             <img fallback-img="img/projects/no_img.jpg" bo-src-i="{{item.points[0].customImageUrl}}" class="image" />
                         </div>
-                        <p class="paragraph project-type project-type-4 description">{{item.points[0].theme}}</p>
+                        <p class="paragraph project-type project-type-4 description">{{item.points[0].forginName}}</p>
                 </div>
             </div>
         </div>

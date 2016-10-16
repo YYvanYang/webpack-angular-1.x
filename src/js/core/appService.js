@@ -225,7 +225,7 @@
                                 //project.type_name = response.value[i].projekttyp.namn;
                                 //project.country_id =11;//todo response.value[i].land.landID;
                                 project.country_name = pavilionEntryList[i].name;//response.value[i].land.namn;
-                                project.theme = pavilionEntryList[i].otherName;//"china";// response.value[i].tema.namn;
+                                project.forginName = pavilionEntryList[i].otherName;//"china";// response.value[i].tema.namn;
                                 project.nationalFlag = pavilionEntryList[i].flagUrl;//response.value[i].linkImg;
                                 //project.theme_id = null;//response.value[i].tema.temaID;
                                 //project.city = "北京";

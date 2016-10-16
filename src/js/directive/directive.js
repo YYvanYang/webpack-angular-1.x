@@ -216,7 +216,11 @@
                         left: scope.item.x + "px"
                     })
                 };
-                angular.element(iElement).on("mouseenter", function() {
+                angular.element(iElement).on("mouseenter", function(event) {
+
+                    if (jQuery(event.target).hasClass('map-point-country-name')) {
+                        return;
+                    }
                     // close popup that displayed by search
                     var project_number = scope.item.slug;
                     scope.$emit('popupVisible:mouseenter', project_number);
@@ -224,11 +228,15 @@
                     Modernizr.touch || (angular.element(this).scope().state.popupVisible = true, scope.disableScroll())
 
                 });
-                angular.element(iElement).on("mouseleave", function() {
+                angular.element(iElement).on("mouseleave", function(event) {
+                    if (jQuery(event.target).hasClass('map-point-country-name')) {
+                        return;
+                    }
+
                     Modernizr.touch || (angular.element(this).scope().state.popupVisible = false, scope.activateScroll())
                     scope.item.popupVisible = false;
                 });
-                scope.openProject = function() {
+                scope.openProject = function(event) {
                     // this.item.points.length > 1 ? (scope.app.panel.navigationActive = "mobile-popup", scope.app.panel.mobilePopupItems = window._.chain(this.item.points).groupBy("country_name").pairs().map(function(a) {
                     //     return window._.object(window._.zip(["country_name", "contries"], a))
                     // }).value(), scope.app.panel.viewActive && (scope.app.panel.viewActive = !1, scope.app.panel.viewVisible = !1)) : scope.app.openView(this.item.points[0].project_number)
@@ -242,7 +250,9 @@
                     // } else {
                        // scope.app.openView(this.item.points[0].project_number)
                     // }
-
+                    if (jQuery(event.target).hasClass('map-point-country-name')) {
+                        return;
+                    }
                     $window.open(this.item.points[0].link, '_blank');
                 };
                 scope.setProjectState();

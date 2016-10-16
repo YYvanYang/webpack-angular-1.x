@@ -5144,21 +5144,30 @@ a:hover {
 
 
 /*// todo*/
-.m-map-container .project .country-name {
+.m-map-container .project .map-point-country-name {
   font-size: 14px;
   color:#5b9fc7;
   font-family: foundrysterling-bold, arial, sans-serif;
   position: absolute;
-  left:0;
-  right:0;
-  margin: 0 auto;
+  /*left:0;*/
+  /*right:0;*/
+  /*margin: 0 auto;*/
+  top: 25px;
+  left: 50%;
+  transform: translate(-50%, 0);
   white-space: nowrap;
   /*width:100%;*/
   text-align: center;
-  border:1px solid red;
+  /*border:1px solid red;*/
   /*width:auto;*/
   /*top:28px;*/
   /*top: -18px;*/
   /*right: -14px;*/
+  cursor: move;
   z-index: 1;
 }
+
+
+/*.m-map-container .project .map-point-country-name.hide-country-name {*/
+  /*display: none;*/
+/*}*/
