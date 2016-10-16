@@ -306,7 +306,7 @@
 }());
 
 (function() {
-    function navigationBar(a, AppService) {
+    function navigationBar($rootScope, AppService) {
         return {
             restrict: "AE",
             replace: "true",
@@ -319,6 +319,19 @@
                     item === activeItem ? activeItem = "" : (activeItem = item, angular.element($event.currentTarget).toggleClass("is-active"));
                     scope.app.togglePanel(item)
                 };
+
+                // scope.language = AppService.language;
+                // scope.fullLanguage = AppService.localization[AppService.language]["fullKeyName"];
+                
+                scope.switchLanguage = function ($event, item) {
+                    if (item == "CN") {
+                        scope.app.language = "EN";
+                    } else {
+                        scope.app.language = "CN";
+                    }
+
+                }
+                
                 scope.$watch("app.panel.navigationActive", function(value) {
                     "" === value && (activeItem = "", iElement.find(".is-active").removeClass("is-active"))
                 })

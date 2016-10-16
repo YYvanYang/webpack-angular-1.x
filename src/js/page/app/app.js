@@ -27,7 +27,8 @@
             $rootScope.projectsData = [];
                 $rootScope.projectsHotData = [];
             $rootScope.projectsImages = [];
-
+                $rootScope.localization = {};
+                AppService.localization = {};
             GetProjectsService.get(null, function(data) {
                 $rootScope.projectsData = data;
                 //$rootScope.projectsHotData = data;
@@ -37,32 +38,29 @@
                     $rootScope.$broadcast("dataBroadcast");
                     $scope.app.states.isInit = true
                 };
-                // $http({
-                //     method: "GET",
-                //     url: "/project_images/index.json",
-                //     headers: {
-                //         "Content-Type": "application/json; charset=utf-8"
-                //     }
-                // }).success(function(data) {
-                //     $rootScope.projectsImages = data, $timeout(function() {
-                //         $scope.broadcastData()
-                //     }, 1000)
-                // }).error(function() {
-                //     $timeout(function() {
-                //         $scope.broadcastData()
-                //     }, 1000)
-                // })
 
-                queryFriendshipLink.get({positionType: 1}, function (data) {
-                    // AppService.friendshipLinkList = data.friendshipLinkList;
-                    // console.log(AppService.friendshipLinkList)
-                    $rootScope.projectsHotData = data;
-                }).always(function () {
-                    $timeout(function() {
-                        $scope.broadcastData()
-                    }, 1000)
+                var promise = $http({
+                    method: "GET",
+                    url: "/localization/language.json",
+                    headers: {
+                        "Content-Type": "application/json; charset=utf-8"
+                    }
+                }).success(function(data) {
+                    $rootScope.localization = data.localization;
+                    AppService.localization = data.localization;
                 })
 
+                $q.when(promise).then(function () {
+                    queryFriendshipLink.get({positionType: 1}, function (data) {
+                        // AppService.friendshipLinkList = data.friendshipLinkList;
+                        // console.log(AppService.friendshipLinkList)
+                        $rootScope.projectsHotData = data;
+                    }).always(function () {
+                        $timeout(function() {
+                            $scope.broadcastData()
+                        }, 1000)
+                    })
+                })
 
             })
 

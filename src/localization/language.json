@@ -1,0 +1,31 @@
+{
+  "localization": {
+    "CN": {
+      "key": "CN",
+      "fullKeyName":"中文",
+      "appTitle":"聚贸·国家馆",
+      "continent": ["南美洲","北美洲","欧洲","非洲","大洋洲","亚洲"],
+      "pavilions": {
+        "national":"国家馆",
+        "provincial": "省馆",
+        "brand": "品牌馆"
+      },
+      "aboutUs": "关于我们",
+      "contactUs": "联系我们"
+    },
+    "EN": {
+      "key": "EN",
+      "fullKeyName":"English",
+      "appTitle":"JUMORE National Pavilion",
+      "continent": ["South America","North America","Europe","Africa","Oceania","Asia"],
+      "pavilions": {
+        "national":"National Pavilion",
+        "provincial": "Provincial Pavilion",
+        "brand": "Brand Pavilion"
+      },
+      "aboutUs": "About Us",
+      "contactUs": "Contact Us"
+    }
+  }
+
+}

@@ -4,9 +4,9 @@
             <span class="logo" ng-bind="app.logo"></span>
         </div>
         <ul class="pavilions">
-            <li class="pavilion-item national active"><a href="javascript:;"><span ng-bind="app.pavilions.national"></span></a></li>
-            <li class="pavilion-item provincial "><a href="javascript:;"><span ng-bind="app.pavilions.provincial"></span></a></li>
-            <li class="pavilion-item brand"><a href="javascript:;"><span ng-bind="app.pavilions.brand"></span></a></li>
+            <li class="pavilion-item national active" ng-class="{'en': app.language === 'EN'}"><a href="javascript:;"><span ng-bind="app.localization[app.language].pavilions.national"></span></a></li>
+            <li class="pavilion-item provincial " ng-class="{'en': app.language === 'EN'}"><a href="javascript:;"><span ng-bind="app.localization[app.language].pavilions.provincial"></span></a></li>
+            <li class="pavilion-item brand" ng-class="{'en': app.language === 'EN'}"><a href="javascript:;"><span ng-bind="app.localization[app.language].pavilions.brand"></span></a></li>
         </ul>
         <ul class="m-navigation--primary">
             <!-- Sök -->
@@ -30,12 +30,12 @@
             <!--</li>-->
 
             <!--language switch-->
-            <li ng-click="toggle($event, 'language');" class="nav-item nav-language">
+            <li ng-click="switchLanguage($event, app.language);" class="nav-item nav-language">
             <span class="nav-item-icon unselectable">
-                CN
+                {{app.localization[app.language].key}}
               <!--<svg class="svg-icon"><use xlink:href="/assets/svg/icons.svg#checkRound" /></svg>-->
             </span>
-                <span class="nav-item-title unselectable">中文</span>
+                <span class="nav-item-title unselectable">{{app.localization[app.language].fullKeyName}}</span>
                 <span class="nav-item-background"></span>
             </li>
 
