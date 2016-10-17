@@ -39,7 +39,9 @@
       },
       "aboutUs": "About Us",
       "contactUs": "Contact Us"
-    }
+    },
+    "aboutUsLink": "http://www.jumore.com/bottom-376.shtml",
+    "contactUsLink": "http://www.jumore.com/bottom-380.shtml"
   }
 
 }

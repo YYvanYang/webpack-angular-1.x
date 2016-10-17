@@ -99,6 +99,13 @@
             $scope.shareWeibo = function() {
                 window.open('http://weibo.com/jumore', '_blank');
             };
+
+                $scope.aboutUs = function() {
+                    window.open($scope.app.localization.aboutUsLink, '_blank');
+                };
+                $scope.contactUs = function() {
+                    window.open($scope.app.localization.contactUsLink, '_blank');
+                };
             // "mobile" === $scope.app.states.isBreakpoint && $scope.$watch("search.mobile", function(c) {
             //     $scope.searchedItems = "" !== c ? $filter("filter")($rootScope.projectsData, $scope.search.mobile) : $rootScope.projectsData
             // })

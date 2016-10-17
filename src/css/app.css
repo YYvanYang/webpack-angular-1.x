@@ -852,6 +852,7 @@ a:hover {
   padding-right: 20px;
   padding-left: 20px;
   color:#e0e0e0;
+  cursor: pointer;
 }
 .l-footer .links .link-item:after {
   color: #cccccc;
@@ -4788,6 +4789,7 @@ a:hover {
   -webkit-user-select: none;
   user-select: none
 }
+
 .m-nav-logo .logo {
   text-indent: -119988px;
   overflow: hidden;
@@ -4855,8 +4857,8 @@ a:hover {
   position:absolute;
   right:0;
   background: #0967a8 url(../img/pavilion-bg.png) no-repeat;
-
-  box-shadow: 3px 3px 10px rgba(110, 131, 139, 0.7);
+  border-radius: 3px;
+  box-shadow: 0px 5px 5px 0px rgba(79, 96, 108, 0.75);
 }
 
 .pavilions .pavilion-item a {
@@ -4892,6 +4894,7 @@ a:hover {
   list-style: none;
   margin: 0;
   padding: 0;
+  /*box-shadow: 0px 2px 3px 0px rgba(144, 171, 186, 0.75);*/
 }
 
 .continent-nav-bar .continent-nav .nav-item {
