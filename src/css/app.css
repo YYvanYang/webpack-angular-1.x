@@ -1188,9 +1188,9 @@ a:hover {
 .touch .m-navigation .m-navigation--primary .nav-item .nav-item-title {
   display: none
 }
-.pc.firefox .m-navigation .m-navigation--primary .nav-item {
-  padding-top: 20px
-}
+/*.pc.firefox .m-navigation .m-navigation--primary .nav-item {*/
+  /*padding-top: 20px*/
+/*}*/
 .ie .m-navigation .m-navigation--primary .nav-item.is-active .nav-item-icon:before,
 .ie .m-navigation .m-navigation--primary .nav-item:hover .nav-item-icon:before {
   color: #fff
@@ -3564,6 +3564,11 @@ a:hover {
 .m-listview .listView-item .title-country {
   font-family: foundrysterling-book, arial, sans-serif;
   margin-bottom: 3px
+}
+
+.m-listview .listView-item .title-country.en {
+  margin-bottom: 8px;
+  font-size: 16px;
 }
 .m-listview .listView-item .projectType {
   font-size: 14px;
