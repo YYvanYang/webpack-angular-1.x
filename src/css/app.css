@@ -748,29 +748,70 @@ a:hover {
 }
 .l-footer .share {
   list-style: none;
-  margin: 0 0 0 10px;
+  margin: 0 0 0 30px;
   padding: 0
 }
 .l-footer .share .share-item {
   float: left;
   display: block;
-  margin: 10px 4px 0 0
+  margin: 15px 4px 0 0
 }
 .l-footer .share .icon {
   display: block;
-  width: 30px;
-  height: 30px;
-  fill: #887e6f
+  width: 25px;
+  height: 25px;
+  /*fill: #887e6f*/
+  vertical-align: middle;
+  text-align: center;
+  margin-right:15px;
 }
-.l-footer .share .icon-facebook:hover {
-  fill: #3b5998
+
+.l-footer .share .icon .img-icon {
+  display: inline-block;
+
 }
-.l-footer .share .icon-twitter:hover {
-  fill: #2ba9e1
+
+.l-footer .share .icon-twitter .img-icon {
+  width:16px;
+  height: 14px;
+  background: url(../img/icon-bird.png) no-repeat;
 }
-.l-footer .share .icon-google:hover {
-  fill: #dd4b39
+.l-footer .share .icon-twitter:hover .img-icon {
+  width:25px;
+  height: 25px;
+  background: url(../img/icon-bird-active.png) no-repeat;
 }
+
+.l-footer .share .icon-weixin .img-icon{
+  width:17px;
+  height: 14px;
+  background: url(../img/icon-weixin.png) no-repeat;
+}
+.l-footer .share .icon-weixin:hover .img-icon{
+  width:25px;
+  height: 25px;
+  background: url(../img/icon-weixin-active.png) no-repeat;
+}
+
+.l-footer .share .icon-weibo .img-icon{
+  width:18px;
+  height: 14px;
+  background: url(../img/icon-weibo.png) no-repeat;
+}
+.l-footer .share .icon-weibo:hover .img-icon{
+  width:25px;
+  height: 25px;
+  background: url(../img/icon-weibo-active.png) no-repeat;
+}
+/*.l-footer .share .icon-facebook:hover {*/
+  /*fill: #3b5998*/
+/*}*/
+/*.l-footer .share .icon-twitter:hover {*/
+  /*fill: #2ba9e1*/
+/*}*/
+/*.l-footer .share .icon-google:hover {*/
+  /*fill: #dd4b39*/
+/*}*/
 .l-footer .share .icon-text {
   text-indent: -119988px;
   overflow: hidden;
@@ -822,7 +863,7 @@ a:hover {
   display: none
 }
 .l-footer.is-navBar .links {
-  margin-right: 90px
+  margin-right: 110px
 }
 @media (min-width: 600px) {
   .l-footer {

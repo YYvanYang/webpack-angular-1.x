@@ -2,18 +2,18 @@
     <!-- Share -->
     <ul class="share">
         <li class="share-item unselectable">
-            <a ng-click="shareFacebook()" class="icon icon-facebook">
-                <svg class="svg-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/icons.svg#facebookRound"></use></svg>
-            </a>
-        </li>
-        <li class="share-item unselectable">
             <a ng-click="shareTwitter()" class="icon icon-twitter">
-                <svg class="svg-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/icons.svg#twitterRound"></use></svg>
+                <span class="img-icon"></span>
             </a>
         </li>
         <li class="share-item unselectable">
-            <a ng-click="shareGooglePlus()" class="icon icon-google">
-                <svg class="svg-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/icons.svg#googleRound"></use></svg>
+            <a ng-click="shareWeichat()" class="icon icon-weixin">
+                <span class="img-icon"></span>
+            </a>
+        </li>
+        <li class="share-item unselectable">
+            <a ng-click="shareWeibo()" class="icon icon-weibo">
+                <span class="img-icon"></span>
             </a>
         </li>
     </ul>
@@ -28,7 +28,7 @@
                 {{app.localization[app.language].aboutUs}}
             </a>
         </li>
-        <li class="link-item unselectable last">
+        <li class="link-item unselectable">
             <a href="http://www.jumore.com/bottom-380.shtml" target="_blank" class="link-item-text">
                 {{app.localization[app.language].contactUs}}
             </a>

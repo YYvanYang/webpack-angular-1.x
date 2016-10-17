@@ -90,24 +90,15 @@
             // $scope.closeKeyboard = function() {
             //     angular.element(".input-search").blur()
             // };
-            // $scope.shareFacebook = function() {
-            //     FB.ui({
-            //         method: "feed",
-            //         link: "http://projektkartan.svenskakyrkan.se",
-            //         caption: "Svenska kyrkan - Internationellt arbete",
-            //         description: "Vi tror på människan. Var med och förändra liv.",
-            //         picture: "http://projektkartan.svenskakyrkan.se/assets/project_images/P173_0_420.jpg"
-            //     }, function() {})
-            // };
-            // $scope.shareTwitter = function() {
-            //     var a = "http://projektkartan.svenskakyrkan.se",
-            //         b = "Vi tror på människan. Var med och förändra liv.";
-            //     window.open("http://twitter.com/share?url=" + encodeURIComponent(a) + "&text=" + encodeURIComponent(b) + "&count=horiztonal", "sharer", "toolbar=0,status=0,width=600,height=400,left=" + (screen.availWidth / 2 - 300) + ",top=" + (screen.availHeight / 2 - 200))
-            // };
-            // $scope.shareGooglePlus = function() {
-            //     var a = "http://projektkartan.svenskakyrkan.se";
-            //     window.open("https://plusone.google.com/_/+1/confirm?hl=en&url=" + encodeURIComponent(a), "gplusshare", "width=450,height=300,left=" + (screen.availWidth / 2 - 225) + ",top=" + (screen.availHeight / 2 - 150))
-            // };
+            $scope.shareWeichat = function() {
+                window.open('https://wx.qq.com/JUMORE_ECOMMERCE', '_blank');
+            };
+            $scope.shareTwitter = function() {
+                window.open('https://twitter.com/jumoremedia', '_blank');
+            };
+            $scope.shareWeibo = function() {
+                window.open('http://weibo.com/jumore', '_blank');
+            };
             // "mobile" === $scope.app.states.isBreakpoint && $scope.$watch("search.mobile", function(c) {
             //     $scope.searchedItems = "" !== c ? $filter("filter")($rootScope.projectsData, $scope.search.mobile) : $rootScope.projectsData
             // })

@@ -40,7 +40,7 @@
                     <!--<h4 class="h4 title title-city" ng-class="{ 'is-empty': project.city.length == undefined }">{{project.city}}</h4>-->
                     <h4 class="h4 title title-country">{{project.country_name}}</h4>
                     <!--<p class="paragraph">{{project.title}}</p>-->
-                    <span class="projectType projectType-4">{{project.forginName}}</span>
+                    <span class="projectType projectType-4" ng-if="app.language === 'CN'">{{project.forginName}}</span>
                     <!--<span class="projectNumber">Projektnummer: {{project.project_number}}</span>-->
                     <div class="thumbnail-container">
                         <img class="thumbnail" fallback-img="img/projects/no_img.jpg" ng-src="{{project.nationalFlag}}" />
