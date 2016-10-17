@@ -2,7 +2,7 @@
     <div class="inner">
 
         <!-- Title -->
-        <h2 class="h2 title">请输入要您需要查找的国家</h2>
+        <h2 class="h2 title" ng-bind-html="app.localization[app.language].searchPanel.searchTitle"></h2>
 
         <!-- Search -->
         <div class="search">
@@ -21,11 +21,11 @@
             <ul class="listType">
                 <li class="listType-item unselectable" ng-click="listType = 'thumbnails'" ng-class="{'is-active': listType == 'thumbnails'}">
                   <span class="icon all">
-                  </span>全部国家
+                  </span>{{app.localization[app.language].searchPanel.allCountry}}
                 </li>
                 <li class="listType-item unselectable" ng-click="listType = 'list'" ng-class="{'is-active': listType == 'list'}">
                   <span class="icon hot">
-                  </span>热门国家
+                  </span>{{app.localization[app.language].searchPanel.hotCountry}}
                 </li>
                 <!--<li class="listType-item listType-item-search" ng-show="search.term.length">Träffar: {{filteredItems.length}}</li>-->
             </ul>
@@ -47,7 +47,7 @@
                     </div>
                 </li>
             </ul>
-            <p class="h4" ng-if="!filteredItems.length">未搜索到相应国家</p>
+            <p class="h4" ng-if="!filteredItems.length" ng-bind-html="app.localization[app.language].searchPanel.searchResult"></p>
         </div>
 
         <!-- Close -->

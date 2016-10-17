@@ -3,37 +3,37 @@
         <li class="nav-item north-america" ng-click="gotoContinent('-107.648111','65.328574')">
           <span class="nav-item-icon">
           </span>
-            <span class="nav-item-title unselectable" ng-class="{'en': app.language === 'EN'}">{{app.localization[app.language].continent[0]}}</span>
+            <span class="nav-item-title unselectable" ng-class="{'en': app.language === 'EN'}" ng-bind="app.localization[app.language].continent[0]"></span>
             <span class="nav-item-background"></span>
         </li>
         <li class="nav-item south-america" ng-click="gotoContinent('-56.927', '-20.9911')">
           <span class="nav-item-icon">
           </span>
-            <span class="nav-item-title unselectable" ng-class="{'en': app.language === 'EN'}">{{app.localization[app.language].continent[1]}}</span>
+            <span class="nav-item-title unselectable" ng-class="{'en': app.language === 'EN'}"  ng-bind="app.localization[app.language].continent[1]"></span>
             <span class="nav-item-background"></span>
         </li>
         <li class="nav-item europe" ng-click="gotoContinent('19.60544', '48.807678')">
           <span class="nav-item-icon">
           </span>
-            <span class="nav-item-title unselectable">{{app.localization[app.language].continent[2]}}</span>
+            <span class="nav-item-title unselectable"  ng-bind="app.localization[app.language].continent[2]"></span>
             <span class="nav-item-background"></span>
         </li>
         <li class="nav-item africa" ng-click="gotoContinent('26.687367','-0.938468')">
           <span class="nav-item-icon">
           </span>
-            <span class="nav-item-title unselectable">{{app.localization[app.language].continent[3]}}</span>
+            <span class="nav-item-title unselectable"  ng-bind="app.localization[app.language].continent[3]"></span>
             <span class="nav-item-background"></span>
         </li>
         <li class="nav-item oceania" ng-click="gotoContinent('134.603429','-25.098416')">
           <span class="nav-item-icon">
           </span>
-            <span class="nav-item-title unselectable">{{app.localization[app.language].continent[4]}}</span>
+            <span class="nav-item-title unselectable"  ng-bind="app.localization[app.language].continent[4]"></span>
             <span class="nav-item-background"></span>
         </li>
         <li class="nav-item asia" ng-click="gotoContinent('98.39754','45.582582')">
           <span class="nav-item-icon">
           </span>
-            <span class="nav-item-title unselectable">{{app.localization[app.language].continent[5]}}</span>
+            <span class="nav-item-title unselectable"  ng-bind="app.localization[app.language].continent[5]"></span>
             <span class="nav-item-background"></span>
         </li>
     </ul>
