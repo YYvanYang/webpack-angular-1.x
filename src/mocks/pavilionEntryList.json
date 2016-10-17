@@ -6,7 +6,7 @@
       "shortName": "中国",
       "flagUrl": "img/nationalFlag/syria.png",
       "link": "http://www.baidu.com",
-      "genCoord": ["106.964489","36.491906"],
+      "geoCoord": ["106.964489","36.491906"],
       "customImageUrl": "project_images/P27_0_232.jpg",
       "otherName": "republic of china",
       "otherShortName": "china"
@@ -17,7 +17,7 @@
       "shortName": "美国",
       "flagUrl": "img/nationalFlag/egypt.png",
       "link": "http://www.baidu.com",
-      "genCoord": ["-103.094105","43.612156"],
+      "geoCoord": ["-103.094105","43.612156"],
       "customImageUrl": "project_images/P50_0_232.jpg",
       "otherName": "United States",
       "otherShortName": "USA"

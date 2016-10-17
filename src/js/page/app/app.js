@@ -29,7 +29,9 @@
             $rootScope.projectsImages = [];
                 $rootScope.localization = {};
                 AppService.localization = {};
-            GetProjectsService.get(null, function(data) {
+                var lanType = 0;// 中文
+                $scope.app.language === 'CN' ? lanType = 0 : lanType = 1;
+            GetProjectsService.get(lanType, function(data) {
                 $rootScope.projectsData = data;
                 //$rootScope.projectsHotData = data;
                 $rootScope.filterData = data;
@@ -41,7 +43,7 @@
 
                 var promise = $http({
                     method: "GET",
-                    url: "/localization/language.json",
+                    url: "/dist/localization/language.json",
                     headers: {
                         "Content-Type": "application/json; charset=utf-8"
                     }
@@ -51,7 +53,9 @@
                 })
 
                 $q.when(promise).then(function () {
-                    queryFriendshipLink.get({positionType: 1}, function (data) {
+                    var positionType = 1;
+                    $scope.app.language === 'CN' ? positionType = 1 : positionType = 2;
+                    queryFriendshipLink.get({positionType: positionType}, function (data) {
                         // AppService.friendshipLinkList = data.friendshipLinkList;
                         // console.log(AppService.friendshipLinkList)
                         $rootScope.projectsHotData = data;

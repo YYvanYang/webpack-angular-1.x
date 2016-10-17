@@ -79,7 +79,7 @@ module.exports = function makeWebpackConfig () {
 
     // Output path from the view of the page
     // Uses webpack-dev-server in development
-    publicPath: isProd ? '/' : 'http://localhost:8080/',
+    publicPath: isProd ? '/dist/' : 'http://localhost:8080/',
 
     // Filename for entry points
     // Only adds hash in build mode
@@ -284,7 +284,7 @@ module.exports = function makeWebpackConfig () {
 
       // Reference: http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
       // Minify all javascript, switch loaders to minimizing mode
-      new webpack.optimize.UglifyJsPlugin(),
+      //new webpack.optimize.UglifyJsPlugin(),
 
       // Copy assets from the public folder
       // Reference: https://github.com/kevlened/copy-webpack-plugin
@@ -292,6 +292,7 @@ module.exports = function makeWebpackConfig () {
         { from: __dirname + '/src/img', to: 'img' },
         { from: __dirname + '/src/assets', to: 'assets' },
         { from: __dirname + '/src/mocks', to: 'mocks' },
+        { from: __dirname + '/src/localization', to: 'localization' },
         { from: __dirname + '/src/project_images', to: 'project_images' } // todo: testing data
       ])
     )

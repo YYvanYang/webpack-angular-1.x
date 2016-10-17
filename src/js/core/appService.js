@@ -211,12 +211,14 @@
                 get: function(id, callback) {
 
                     RemoteCallService.get({
-                        type: "GET",
-                        url: "mocks/pavilionEntryList.json",
+                        // type: "GET",
+                        // url: "/mocks/pavilionEntryList.json",
+                        type: "POST",
+                        url: "/gjgQuery.do?action=queryMallTrmplate&lanType="+id,
                         crossDomain: true,
                         dataType: "json",
                         success: function(response) {
-                            var pavilionEntryList = response.pavilionEntryList;
+                            var pavilionEntryList = JSON.parse(response.pavilionEntryList);
                             for (var projects = [], i = 0; i < pavilionEntryList.length; i++) {
                                 var project = {};
                                 //project.id = response.value[i].insamlingsprojektID;
@@ -230,10 +232,10 @@
                                 project.nationalFlag = pavilionEntryList[i].flagUrl;//response.value[i].linkImg;
                                 //project.theme_id = null;//response.value[i].tema.temaID;
                                 //project.city = "北京";
-                                project.lat = pavilionEntryList[i].genCoord[1];
-                                project.lon = pavilionEntryList[i].genCoord[0];
+                                project.lat = pavilionEntryList[i].geoCoord[1];
+                                project.lon = pavilionEntryList[i].geoCoord[0];
                                 project.has_position = null !== project.lon && null !== project.lat;
-                                project.project_number = pavilionEntryList[i].project_number;
+                                project.project_number = pavilionEntryList[i].name;//todo//pavilionEntryList[i].project_number;
                                 project.link = pavilionEntryList[i].link;
                                 project.customImageUrl = pavilionEntryList[i].customImageUrl;
                                 //project.video = response.value[i].filmUrl;
@@ -287,9 +289,9 @@
                 get: function(req, callback) {
                     return RemoteCallService.get({
                         // todo;
-                        // type: "POST",
-                        // url: "/gjgQuery.do?action=queryFriendshipLink&positionType="+req.positionType,
-                        url: "mocks/friendshipLinkList.json",
+                        type: "POST",
+                        url: "/gjgQuery.do?action=queryFriendshipLink&positionType="+req.positionType,
+                        // url: "/mocks/friendshipLinkList.json",
                         crossDomain: true,
                         dataType: "json",
                         success: function(response) {
@@ -310,7 +312,7 @@
                                 // project.lat = response.value[i].latitud;
                                 // project.lon = response.value[i].longitud;
                                 // project.has_position = null !== project.lon && null !== project.lat;
-                                project.project_number = friendshipLinkList[i].project_number;//todo response.value[i].projektkod;
+                                project.project_number = friendshipLinkList[i].linkName;//todo friendshipLinkList[i].project_number;//todo response.value[i].projektkod;
                                 //project.video = response.value[i].filmUrl;
                                 //project.slug =null;//todo; response.value[i].slug;
                                 // project.image_query = response.value[i].bildApiSearchQueryUrl;

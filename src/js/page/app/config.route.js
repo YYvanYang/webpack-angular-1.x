@@ -16,8 +16,8 @@
     //         {
     //             url: '/',
     //             config: {
-    //                 controller: 'HomeCtrl',
-    //                 controllerAs: 'app',
+    //                 controller: 'AppCtrl',
+    //                 //controllerAs: 'app',
     //                 title: 'app',
     //                 settings: {
     //                     // nav: 1,
