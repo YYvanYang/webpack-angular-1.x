@@ -208,34 +208,36 @@
         .module('app.core')
         .factory("GetProjectsService", ["RemoteCallService", function(RemoteCallService) {
             return {
-                get: function(id, callback) {
+                get: function(params, callback) {
 
-                    RemoteCallService.get({
+                    return RemoteCallService.get({
                         // type: "GET",
                         // url: "/mocks/pavilionEntryList.json",
                         type: "POST",
-                        url: "/gjgQuery.do?action=queryMallTrmplate&lanType="+id,
+                        url: "/gjgQuery.do?action=queryMallTrmplate&"+jQuery.param(params),
                         crossDomain: true,
                         dataType: "json",
                         success: function(response) {
-                            var pavilionEntryList = JSON.parse(response.pavilionEntryList);
+                            var pavilionEntryList = response.pavilionEntryList;
                             for (var projects = [], i = 0; i < pavilionEntryList.length; i++) {
                                 var project = {};
-                                //project.id = response.value[i].insamlingsprojektID;
+                                project.id = pavilionEntryList[i].id;
                                 //project.projectOfTheMonth = project.id === id;
                                 //project.title = response.value[i].rubrik;
                                 //project.type_id = response.value[i].projekttyp.projekttypID;
                                 //project.type_name = response.value[i].projekttyp.namn;
                                 //project.country_id =11;//todo response.value[i].land.landID;
                                 project.country_name = pavilionEntryList[i].name;//response.value[i].land.namn;
+                                project.short_country_name = pavilionEntryList[i].shortName;
                                 project.forginName = pavilionEntryList[i].otherName;//"china";// response.value[i].tema.namn;
+                                project.short_forginName = pavilionEntryList[i].otherShortName;
                                 project.nationalFlag = pavilionEntryList[i].flagUrl;//response.value[i].linkImg;
                                 //project.theme_id = null;//response.value[i].tema.temaID;
                                 //project.city = "北京";
                                 project.lat = pavilionEntryList[i].geoCoord[1];
                                 project.lon = pavilionEntryList[i].geoCoord[0];
                                 project.has_position = null !== project.lon && null !== project.lat;
-                                project.project_number = pavilionEntryList[i].name;//todo//pavilionEntryList[i].project_number;
+                                project.project_number = project.id+"";
                                 project.link = pavilionEntryList[i].link;
                                 project.customImageUrl = pavilionEntryList[i].customImageUrl;
                                 //project.video = response.value[i].filmUrl;

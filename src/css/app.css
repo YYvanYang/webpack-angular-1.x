@@ -303,7 +303,7 @@ h6,
 .h5,
 .h6 {
   font-weight: 400;
-  color: #212020
+  color: #666464
 }
 h1 a,
 h2 a,
@@ -1232,7 +1232,7 @@ a:hover {
   padding: 10px 40px;
   font-family: foundrysterling-book, arial, sans-serif;
   font-size: 16px;
-  color: #787878
+  color: #333333;
 }
 .m-sidePanel .search .input-search:focus {
   background: #dfded9

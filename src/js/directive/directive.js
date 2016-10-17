@@ -306,7 +306,7 @@
 }());
 
 (function() {
-    function navigationBar($rootScope,$window, AppService) {
+    function navigationBar($rootScope,$window,$location, AppService) {
         return {
             restrict: "AE",
             replace: "true",
@@ -330,6 +330,7 @@
                         scope.app.language = "CN";
                     }
 
+                    $location.path('/index.html?'+scope.app.language);
                     $window.location.reload();
                     // $location.path('/');
                     // $route.reload();
@@ -342,7 +343,7 @@
             template: require("../../page/templates/navigation/navigation-bar.tpl.html")
         }
     }
-    navigationBar.$inject = ["$rootScope","$window", "AppService"], angular.module("jm-np.directive").directive("navigationBar", navigationBar)
+    navigationBar.$inject = ["$rootScope","$window","$location", "AppService"], angular.module("jm-np.directive").directive("navigationBar", navigationBar)
 }());
 
 (function() {

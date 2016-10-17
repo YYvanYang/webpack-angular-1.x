@@ -16,6 +16,10 @@
                      , queryMallTrmplate
                      , queryFriendshipLink
             ) {
+                // todo: this should change to $routeParams or $location.path()
+                var language = $location.search();
+                AppService.language = language.EN ? "EN" : AppService.language;
+
             $scope.app = AppService;
             $scope.listType = "thumbnails";
             $scope.searchedItems = [];
@@ -31,7 +35,7 @@
                 AppService.localization = {};
                 var lanType = 0;// 中文
                 $scope.app.language === 'CN' ? lanType = 0 : lanType = 1;
-            GetProjectsService.get(lanType, function(data) {
+            GetProjectsService.get({lanType: lanType}, function(data) {
                 $rootScope.projectsData = data;
                 //$rootScope.projectsHotData = data;
                 $rootScope.filterData = data;
@@ -43,7 +47,7 @@
 
                 var promise = $http({
                     method: "GET",
-                    url: "/dist/localization/language.json",
+                    url: "localization/language.json",
                     headers: {
                         "Content-Type": "application/json; charset=utf-8"
                     }
@@ -53,9 +57,7 @@
                 })
 
                 $q.when(promise).then(function () {
-                    var positionType = 1;
-                    $scope.app.language === 'CN' ? positionType = 1 : positionType = 2;
-                    queryFriendshipLink.get({positionType: positionType}, function (data) {
+                    GetProjectsService.get({lanType: lanType, isHot: 1}, function (data) {
                         // AppService.friendshipLinkList = data.friendshipLinkList;
                         // console.log(AppService.friendshipLinkList)
                         $rootScope.projectsHotData = data;
