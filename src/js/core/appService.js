@@ -291,9 +291,9 @@
                 get: function(req, callback) {
                     return RemoteCallService.get({
                         // todo;
-                        type: "POST",
-                        url: "/gjgQuery.do?action=queryFriendshipLink&positionType="+req.positionType,
-                        // url: "/mocks/friendshipLinkList.json",
+                        // type: "POST",
+                        // url: "/gjgQuery.do?action=queryFriendshipLink&positionType="+req.positionType,
+                        url: "/mocks/friendshipLinkList.json",
                         crossDomain: true,
                         dataType: "json",
                         success: function(response) {

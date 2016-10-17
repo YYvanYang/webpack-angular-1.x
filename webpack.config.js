@@ -290,7 +290,7 @@ module.exports = function makeWebpackConfig () {
       // Reference: https://github.com/kevlened/copy-webpack-plugin
       new CopyWebpackPlugin([
         { from: __dirname + '/src/img', to: 'img' },
-        { from: __dirname + '/src/assets', to: 'assets' },
+        // { from: __dirname + '/src/assets', to: 'assets' },
         { from: __dirname + '/src/mocks', to: 'mocks' },
         { from: __dirname + '/src/localization', to: 'localization' },
         { from: __dirname + '/src/project_images', to: 'project_images' } // todo: testing data
