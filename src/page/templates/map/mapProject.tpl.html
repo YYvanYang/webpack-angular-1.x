@@ -10,7 +10,7 @@
           <!--<span class="text">projekt</span>-->
         <!--</span>-->
       <!--</span>-->
-    <span class="map-point-country-name" ng-class="{'hidden': state.popupVisible == true}">{{item.points[0].country_name}}</span>
+    <span class="map-point-country-name" ng-class="{'hidden': state.popupVisible == true}">{{item.points[0].short_country_name}}</span>
     <!-- END circle -->
 
     <!-- IF single project -->
@@ -40,13 +40,13 @@
                 <div class="popup-container" ng-class="{'en':app.language === 'EN'}">
 
                         <h3 class="h3 title">
-                            <span bo-bind="item.points[0].country_name"></span>
+                            <span bo-bind="item.points[0].displyPopupCountryName"></span>
                         </h3>
                         <div class="image-container">
 
                             <img fallback-img="img/projects/no_img.jpg" bo-src="item.points[0].customImageUrl" class="image" />
                         </div>
-                        <p class="paragraph project-type project-type-4 description" ng-if="app.language === 'CN'" >{{item.points[0].forginName}}</p>
+                        <p class="paragraph project-type project-type-4 description" ng-if="app.language === 'CN'" >{{item.points[0].short_forginName}}</p>
                 </div>
             </div>
         </div>

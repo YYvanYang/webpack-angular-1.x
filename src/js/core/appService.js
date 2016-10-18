@@ -171,18 +171,28 @@
                         dataType: "json",
                         success: function(response) {
                             var pavilionEntryList = response.pavilionEntryList;
+                            var language = window.GJG_LOCALIZATION || 'CN';
                             for (var projects = [], i = 0; i < pavilionEntryList.length; i++) {
                                 var project = {};
                                 project.id = pavilionEntryList[i].id;
 
-                                project.country_name = pavilionEntryList[i].name;
+                                project.country_name = pavilionEntryList[i].name || '';
                                 project.short_country_name = pavilionEntryList[i].shortName;
+
+                                project.displyPopupCountryName = project.country_name;
+                                if (language === 'EN') {
+                                    if (project.country_name.length>26) {
+                                        project.displyPopupCountryName=project.short_country_name;
+                                    }
+                                }
+
                                 project.forginName = pavilionEntryList[i].otherName;
                                 project.short_forginName = pavilionEntryList[i].otherShortName;
                                 project.nationalFlag = pavilionEntryList[i].flagUrl;
 
-                                project.lat = pavilionEntryList[i].geoCoord[1];
                                 project.lon = pavilionEntryList[i].geoCoord[0];
+                                project.lat = pavilionEntryList[i].geoCoord[1];
+
                                 project.has_position = null !== project.lon && null !== project.lat;
                                 project.project_number = project.id+"";
                                 project.link = pavilionEntryList[i].link;

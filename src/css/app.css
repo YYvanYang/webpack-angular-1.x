@@ -2703,7 +2703,7 @@ a:hover {
 }
 @media (min-width: 600px) {
   .m-map-container .project-popup .title {
-    width: 92%;
+    width: 100%;
     color: #212020;
     padding-top: 15px;
     padding-bottom: 8px;
