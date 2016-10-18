@@ -100,12 +100,12 @@
                 window.open('http://weibo.com/jumore', '_blank');
             };
 
-                $scope.aboutUs = function() {
-                    window.open('http://www.jumore.com/bottom-376.shtml', '_blank');
-                };
-                $scope.contactUs = function() {
-                    window.open('http://www.jumore.com/bottom-380.shtml', '_blank');
-                };
+                // $scope.aboutUs = function() {
+                //     window.open('http://www.jumore.com/bottom-376.shtml', '_blank');
+                // };
+                // $scope.contactUs = function() {
+                //     window.open('http://www.jumore.com/bottom-380.shtml', '_blank');
+                // };
             // "mobile" === $scope.app.states.isBreakpoint && $scope.$watch("search.mobile", function(c) {
             //     $scope.searchedItems = "" !== c ? $filter("filter")($rootScope.projectsData, $scope.search.mobile) : $rootScope.projectsData
             // })

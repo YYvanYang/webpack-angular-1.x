@@ -27,7 +27,6 @@
     require("./js/directive/directive.js")
 
     require('./js/page/app/app.module.js');
-    require('./js/page/app/config.route.js')
     require('./js/page/app/app.js')
 
     angular.module('jm-np', [

@@ -742,7 +742,7 @@ a:hover {
   bottom: 0;
   left: 0;
   width: 100%;
-  z-index: 9;
+  z-index: 12;
   text-align: center;
   display: none
 }
@@ -832,7 +832,7 @@ a:hover {
 
 .l-footer .links {
   float: right;
-  margin: 0 20px 0 0;
+  margin: 0 15px 0 0;
   list-style: none;
   -moz-transition-property: margin;
   -o-transition-property: margin;
@@ -864,7 +864,7 @@ a:hover {
   display: none
 }
 .l-footer.is-navBar .links {
-  margin-right: 110px
+  /*margin-right: 110px*/
 }
 @media (min-width: 600px) {
   .l-footer {
