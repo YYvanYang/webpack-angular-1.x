@@ -32,10 +32,10 @@
             <!--language switch-->
             <li ng-click="switchLanguage($event, app.language);" class="nav-item nav-language">
             <span class="nav-item-icon unselectable">
-                {{app.localization[app.language].key}}
+                {{toLanguageName}}
               <!--<svg class="svg-icon"><use xlink:href="/assets/svg/icons.svg#checkRound" /></svg>-->
             </span>
-                <span class="nav-item-title unselectable">{{app.localization[app.language].fullKeyName}}</span>
+                <span class="nav-item-title unselectable">{{toLanguageFullName}}</span>
                 <span class="nav-item-background"></span>
             </li>
 

@@ -37,7 +37,7 @@
     <div bo-if="item.points.length > 0 || ( app.states.isBreakpoint == 'mobile' && app.states.isTouch == false)">
         <div class="project-popup project-popup-merged" ng-if="state.popupVisible === true"> <!--  -->
             <div class="project-container">
-                <div class="popup-container">
+                <div class="popup-container" ng-class="{'en':app.language === 'EN'}">
 
                         <h3 class="h3 title">
                             <span bo-bind="item.points[0].country_name"></span>
@@ -46,7 +46,7 @@
 
                             <img fallback-img="img/projects/no_img.jpg" bo-src="item.points[0].customImageUrl" class="image" />
                         </div>
-                        <p class="paragraph project-type project-type-4 description">{{item.points[0].forginName}}</p>
+                        <p class="paragraph project-type project-type-4 description" ng-if="app.language === 'CN'" >{{item.points[0].forginName}}</p>
                 </div>
             </div>
         </div>

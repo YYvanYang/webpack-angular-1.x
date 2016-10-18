@@ -2731,8 +2731,10 @@ a:hover {
     user-select: none
   }
   .m-map-container .project-popup .description {
-    margin-top: 5px;
+    margin-top: 10px;
+    margin-bottom:0;
     color: #333;
+    fonit-size:14px;
     cursor: pointer
   }
   .m-map-container .project-popup .description:before {
@@ -2932,8 +2934,14 @@ a:hover {
     padding: 0;
     position: relative;
     padding: 0 36px;
-    box-sizing: border-box
+    padding-bottom:10px;
+    box-sizing: border-box;
   }
+
+  .m-map-container .project-popup-merged .popup-container.en {
+    padding-bottom:30px;
+  }
+
   .m-map-container .project-popup-merged .popup-container .popup {
     overflow: hidden;
     *zoom: 1;

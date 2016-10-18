@@ -111,7 +111,7 @@
                     //console.log('continent:broadcast', data);
                     var xy = scope.map.lonlat2xy([data[0], data[1]]);
                     var x = xy[0], y = xy[1]
-                    console.log('var x = xy[0], y = xy[1]', x, y);
+                    //console.log('var x = xy[0], y = xy[1]', x, y);
 
                     $timeout(function() {
                         // recalc the project position
@@ -319,6 +319,16 @@
                     item === activeItem ? activeItem = "" : (activeItem = item, angular.element($event.currentTarget).toggleClass("is-active"));
                     scope.app.togglePanel(item)
                 };
+
+                scope.toLanguageName = "EN";
+                scope.toLanguageFullName = "English";
+                if (scope.app.language === "CN") {
+                    scope.toLanguageName = "EN";
+                    scope.toLanguageFullName = "English";
+                } else {
+                    scope.toLanguageName = "CN";
+                    scope.toLanguageFullName = "中文";
+                }
 
                 scope.refreshPage = function () {
                     $window.location.reload();
