@@ -277,27 +277,38 @@
                     iElement.addClass("is-loaded");
                     iElement.find(".boat-container").addClass("animate");
                     iElement.find(".airplane-container").addClass("animate");
-                }, 2000), Modernizr.csstransforms3d && angular.element("#m-map-container").on("scroll", function() {
-                    var _$this = angular.element(this),
-                        top = _$this.scrollTop(),
-                        left = _$this.scrollLeft();
-                    angular.element(".cloud-1").css({
-                        "-webkit-transform": "translate3d(" + left * -.1 + "px, " + .3 * top + "px, 0)",
-                        transform: "translate3d(" + left * -.1 + "px, " + .3 * top + "px, 0)"
-                    }), angular.element(".cloud-2").css({
-                        "-webkit-transform": "translate3d(" + .3 * left + "px, " + .2 * top + "px, 0)",
-                        transform: "translate3d(" + .3 * left + "px, " + .2 * top + "px, 0)"
-                    }), angular.element(".cloud-3").css({
-                        "-webkit-transform": "translate3d(" + left * -.1 + "px, " + top * -.1 + "px, 0)",
-                        transform: "translate3d(" + left * -.1 + "px, " + top * -.1 + "px, 0)"
-                    }), angular.element(".cloud-4").css({
-                        "-webkit-transform": "translate3d(" + .2 * left + "px, " + .3 * top + "px, 0)",
-                        transform: "translate3d(" + .2 * left + "px, " + .3 * top + "px, 0)"
-                    }), angular.element(".cloud-5").css({
-                        "-webkit-transform": "translate3d(" + left * -.2 + "px, " + .2 * top + "px, 0)",
-                        transform: "translate3d(" + left * -.2 + "px, " + .2 * top + "px, 0)"
-                    })
-                }))
+
+                    if (Modernizr.csstransforms3d) {
+                        iElement.find(".cloud-1").addClass("move-right");
+                        iElement.find(".cloud-2").addClass("move-right");
+                        iElement.find(".cloud-3").addClass("move-right");
+                        iElement.find(".cloud-4").addClass("move-right");
+                        iElement.find(".cloud-5").addClass("move-right");
+                    }
+
+                }, 2000)
+                    // , Modernizr.csstransforms3d && angular.element("#m-map-container").on("scroll", function() {
+                    // var _$this = angular.element(this),
+                    //     top = _$this.scrollTop(),
+                    //     left = _$this.scrollLeft();
+                    // angular.element(".cloud-1").css({
+                    //     "-webkit-transform": "translate3d(" + left * -.1 + "px, " + .3 * top + "px, 0)",
+                    //     transform: "translate3d(" + left * -.1 + "px, " + .3 * top + "px, 0)"
+                    // }), angular.element(".cloud-2").css({
+                    //     "-webkit-transform": "translate3d(" + .3 * left + "px, " + .2 * top + "px, 0)",
+                    //     transform: "translate3d(" + .3 * left + "px, " + .2 * top + "px, 0)"
+                    // }), angular.element(".cloud-3").css({
+                    //     "-webkit-transform": "translate3d(" + left * -.1 + "px, " + top * -.1 + "px, 0)",
+                    //     transform: "translate3d(" + left * -.1 + "px, " + top * -.1 + "px, 0)"
+                    // }), angular.element(".cloud-4").css({
+                    //     "-webkit-transform": "translate3d(" + .2 * left + "px, " + .3 * top + "px, 0)",
+                    //     transform: "translate3d(" + .2 * left + "px, " + .3 * top + "px, 0)"
+                    // }), angular.element(".cloud-5").css({
+                    //     "-webkit-transform": "translate3d(" + left * -.2 + "px, " + .2 * top + "px, 0)",
+                    //     transform: "translate3d(" + left * -.2 + "px, " + .2 * top + "px, 0)"
+                    // })
+                //})
+                )
             }
         }
     }
