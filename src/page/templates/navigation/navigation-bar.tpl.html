@@ -4,7 +4,7 @@
             <a href="http://www.jumore.com/" target="_blank"><span class="logo" ng-bind="app.logo"></span></a>
         </div>
         <ul class="pavilions">
-            <li class="pavilion-item national active" ng-class="{'en': app.language === 'EN'}"><a ng-href="/"><span ng-bind="app.localization[app.language].pavilions.national"></span></a></li>
+            <li class="pavilion-item national active" ng-click="refreshPage()" ng-class="{'en': app.language === 'EN'}"><a href="javascript:;"><span ng-bind="app.localization[app.language].pavilions.national"></span></a></li>
             <li class="pavilion-item provincial " ng-class="{'en': app.language === 'EN'}"><a href="http://s.jumore.com/" target="_blank"><span ng-bind="app.localization[app.language].pavilions.provincial"></span></a></li>
             <li class="pavilion-item brand" ng-class="{'en': app.language === 'EN'}"><a href="http://b.jumore.com/" target="_blank"><span ng-bind="app.localization[app.language].pavilions.brand"></span></a></li>
         </ul>

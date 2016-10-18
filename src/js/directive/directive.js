@@ -85,8 +85,8 @@
                     scope.app.setBreakpoint(), $timeout(function() {
                         setMap($rootScope.filterData)
                     }, 200);
-                    var left = 900,
-                        top = 200;
+                    var left = 2110,
+                        top = 0;
                     $timeout(function() {
                         angular.element("#m-map-container").animate({
                             scrollTop: top,
@@ -111,7 +111,7 @@
                     //console.log('continent:broadcast', data);
                     var xy = scope.map.lonlat2xy([data[0], data[1]]);
                     var x = xy[0], y = xy[1]
-                    //console.log('var x = xy[0], y = xy[1]', x, y);
+                    console.log('var x = xy[0], y = xy[1]', x, y);
 
                     $timeout(function() {
                         // recalc the project position
@@ -320,8 +320,9 @@
                     scope.app.togglePanel(item)
                 };
 
-                // scope.language = AppService.language;
-                // scope.fullLanguage = AppService.localization[AppService.language]["fullKeyName"];
+                scope.refreshPage = function () {
+                    $window.location.reload();
+                }
                 
                 scope.switchLanguage = function ($event, item) {
                     if (item == "CN") {

@@ -164,9 +164,9 @@
 
                     return RemoteCallService.get({
                         // type: "GET",
-                        //url: "/mocks/pavilionEntryList.json",
-                        type: "POST",
-                        url: "/gjgQuery.do?action=queryMallTrmplate&"+jQuery.param(params),
+                        url: "mocks/pavilionEntryList.json",
+                        // type: "POST",
+                        // url: "/gjgQuery.do?action=queryMallTrmplate&"+jQuery.param(params),
                         crossDomain: true,
                         dataType: "json",
                         success: function(response) {

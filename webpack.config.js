@@ -81,7 +81,7 @@ module.exports = function makeWebpackConfig () {
 
     // Output path from the view of the page
     // Uses webpack-dev-server in development
-    publicPath: isProd ? '/dist/' : 'http://localhost:8080/',
+    publicPath: isProd ? '/' : 'http://localhost:8080/',
 
     // Filename for entry points
     // Only adds hash in build mode
@@ -300,7 +300,7 @@ module.exports = function makeWebpackConfig () {
       new CopyWebpackPlugin([
         { from: __dirname + '/src/img', to: 'img' },
         // { from: __dirname + '/src/assets', to: 'assets' },
-        //{ from: __dirname + '/src/mocks', to: 'mocks' },
+        { from: __dirname + '/src/mocks', to: 'mocks' },
         { from: __dirname + '/src/localization', to: 'localization' },
         //{ from: __dirname + '/src/project_images', to: 'project_images' } // todo: testing data
       ])
