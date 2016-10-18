@@ -4,8 +4,8 @@
       "key": "EN",
       "fullKeyName":"English",
       "searchPanel": {
-        "searchLabel": "Search country list",
-        "searchTitle": "Please input the country for searching",
+        "searchLabel": "Search countries",
+        "searchTitle": "What country are you looking for ?",
         "allCountry": "All Counties",
         "hotCountry": "Hot Countries",
         "searchResult": "Not found the specific country"

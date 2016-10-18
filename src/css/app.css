@@ -1,23 +1,23 @@
 /* app css stylesheet */
 
 @charset "UTF-8";
-@font-face {
-  font-family: plakat;
-  src: url(../font/plakat_medium-webfont.eot);
-  src: url(../font/plakat_medium-webfont.eot?#iefix) format("embedded-opentype"), url(../font/plakat_medium-webfont.woff) format("woff"), url(../font/plakat_medium-webfont.ttf) format("truetype"), url(../font/plakat_medium-webfont.svg#plakatmedium) format("svg");
-  font-weight: 400;
-  font-style: normal
-}
-@font-face {
-  font-family: foundrysterling-bold;
-  src: url(../font/foundry/c38e285c-f21e-4adc-92bd-8b51ea465101.eot?#iefix);
-  src: url(../font/foundry/c38e285c-f21e-4adc-92bd-8b51ea465101.eot?#iefix) format("eot"), url(../font/foundry/811fbecc-62c1-4b3d-8542-db71a661e012.woff) format("woff"), url(../font/foundry/70189f1b-eed0-4625-992e-f4867c80eb5c.ttf) format("truetype"), url(../font/foundry/babf4e66-b5fc-48af-a276-77c327d9ac9a.svg#babf4e66-b5fc-48af-a276-77c327d9ac9a) format("svg")
-}
-@font-face {
-  font-family: foundrysterling-book;
-  src: url(../font/foundry/0fa8c670-f412-45ca-849d-1aded30eb86a.eot?#iefix);
-  src: url(../font/foundry/0fa8c670-f412-45ca-849d-1aded30eb86a.eot?#iefix) format("eot"), url(../font/foundry/1c874867-515c-4fdd-9fae-7c37237fba27.woff) format("woff"), url(../font/foundry/a5c117b0-930c-40ac-b4b7-1fac7ea445f7.ttf) format("truetype"), url(../font/foundry/7c3bed3a-232e-4f9b-9013-16f12661a829.svg#7c3bed3a-232e-4f9b-9013-16f12661a829) format("svg")
-}
+/*@font-face {*/
+  /*font-family: plakat;*/
+  /*src: url(../font/plakat_medium-webfont.eot);*/
+  /*src: url(../font/plakat_medium-webfont.eot?#iefix) format("embedded-opentype"), url(../font/plakat_medium-webfont.woff) format("woff"), url(../font/plakat_medium-webfont.ttf) format("truetype"), url(../font/plakat_medium-webfont.svg#plakatmedium) format("svg");*/
+  /*font-weight: 400;*/
+  /*font-style: normal*/
+/*}*/
+/*@font-face {*/
+  /*font-family: foundrysterling-bold;*/
+  /*src: url(../font/foundry/c38e285c-f21e-4adc-92bd-8b51ea465101.eot?#iefix);*/
+  /*src: url(../font/foundry/c38e285c-f21e-4adc-92bd-8b51ea465101.eot?#iefix) format("eot"), url(../font/foundry/811fbecc-62c1-4b3d-8542-db71a661e012.woff) format("woff"), url(../font/foundry/70189f1b-eed0-4625-992e-f4867c80eb5c.ttf) format("truetype"), url(../font/foundry/babf4e66-b5fc-48af-a276-77c327d9ac9a.svg#babf4e66-b5fc-48af-a276-77c327d9ac9a) format("svg")*/
+/*}*/
+/*@font-face {*/
+  /*font-family: foundrysterling-book;*/
+  /*src: url(../font/foundry/0fa8c670-f412-45ca-849d-1aded30eb86a.eot?#iefix);*/
+  /*src: url(../font/foundry/0fa8c670-f412-45ca-849d-1aded30eb86a.eot?#iefix) format("eot"), url(../font/foundry/1c874867-515c-4fdd-9fae-7c37237fba27.woff) format("woff"), url(../font/foundry/a5c117b0-930c-40ac-b4b7-1fac7ea445f7.ttf) format("truetype"), url(../font/foundry/7c3bed3a-232e-4f9b-9013-16f12661a829.svg#7c3bed3a-232e-4f9b-9013-16f12661a829) format("svg")*/
+/*}*/
 .svg-icon {
   width: 100%;
   height: 100%
@@ -251,20 +251,20 @@ table {
   border-collapse: collapse;
   border-spacing: 0
 }
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-  @font-face {
-    font-family: icons;
-    src: url(../font/icons.svg?#icons) format("svg")
-  }
-}
+/*@media screen and (-webkit-min-device-pixel-ratio: 0) {*/
+  /*@font-face {*/
+    /*font-family: icons;*/
+    /*src: url(../font/icons.svg?#icons) format("svg")*/
+  /*}*/
+/*}*/
 body {
-  font-family: foundrysterling-book, arial, sans-serif
+  font-family: "Microsoft Yahei", arial, sans-serif
 }
 body .h1 {
   font-family: plakat, arial, sans-serif
 }
 body .h2 {
-  font-family: foundrysterling-book, arial, sans-serif;
+  font-family: "Microsoft Yahei", arial, sans-serif;
   /*font-size: 40px;*/
   font-size:28px;
   line-height: 42px
@@ -275,7 +275,7 @@ body .h3 {
   line-height: 20px
 }
 body .h4 {
-  font-family: foundrysterling-bold, arial, sans-serif;
+  font-family: "Microsoft Yahei", arial, sans-serif;
   font-weight: 400;
   line-height: 1em
 }
@@ -846,7 +846,7 @@ a:hover {
 .l-footer .links .link-item {
   float: left;
   margin: 14px 0 0 0;
-  font-size: 18px
+  font-size: 14px
 }
 .l-footer .links .link-item .link-item-text {
   padding-right: 20px;
@@ -857,7 +857,7 @@ a:hover {
 .l-footer .links .link-item:after {
   color: #cccccc;
   content: '|';
-  font-size: 18px
+  font-size: 14px
 }
 
 .l-footer .links .link-item.last:after {
@@ -1295,7 +1295,7 @@ a:hover {
   height: 13px;
 }
 .m-sidePanel .panel-about strong {
-  font-family: foundrysterling-bold, arial, sans-serif;
+  font-family: "Microsoft Yahei", arial, sans-serif;
   font-weight: 400
 }
 .m-sidePanel .panel-about .no-break {
@@ -1566,7 +1566,7 @@ a:hover {
   float: left
 }
 .navigation-mobile-popup .popup .text-container .title {
-  font-family: foundrysterling-bold, arial, sans-serif;
+  font-family: "Microsoft Yahei", arial, sans-serif;
   margin: 0;
   padding: 0;
   font-size: 18px
@@ -2053,7 +2053,7 @@ a:hover {
   margin: 0
 }
 .m-project .text-container .introduction .category {
-  font-family: foundrysterling-bold, arial, sans-serif;
+  font-family: "Microsoft Yahei", arial, sans-serif;
   text-transform: uppercase;
   font-size: .9em;
   display: none
@@ -2289,7 +2289,7 @@ a:hover {
 }
 .m-map-container .project .count-circle {
   font-size: 11px;
-  font-family: foundrysterling-bold, arial, sans-serif;
+  font-family: "Microsoft Yahei", arial, sans-serif;
   background: #fff;
   width: 18px;
   height: 18px;
@@ -3791,7 +3791,7 @@ a:hover {
   float: left
 }
 .navigation-mobile .m-listview .listView-item .text-container .title {
-  font-family: foundrysterling-bold, arial, sans-serif;
+  font-family: "Microsoft Yahei", arial, sans-serif;
   margin: 0;
   padding: 0;
   font-size: 16px
@@ -3840,7 +3840,7 @@ a:hover {
   border-bottom: 1px solid #efeeec
 }
 .m-filter .subtitle {
-  font-family: foundrysterling-bold, arial, sans-serif;
+  font-family: "Microsoft Yahei", arial, sans-serif;
   font-size: 19px;
   border-bottom: 1px solid #efeeec;
   padding-bottom: 10px;
@@ -3888,7 +3888,7 @@ a:hover {
   margin-bottom: 40px
 }
 .m-filter .projectCount {
-  font-family: foundrysterling-bold, arial, sans-serif
+  font-family: "Microsoft Yahei", arial, sans-serif
 }
 .m-filterTags {
   position: absolute;
@@ -4813,7 +4813,7 @@ a:hover {
 .pavilions .pavilion-item {
   width: 86px;
   height: 79px;
-  font-size:20px;
+  font-size:16px;
   line-height: 79px;
   text-align: center;
   /*position:absolute;*/
@@ -4854,6 +4854,7 @@ a:hover {
 
   width:108px;
   height: 79px;
+  font-size: 20px;
   position:absolute;
   right:0;
   background: #0967a8 url(../img/pavilion-bg.png) no-repeat;
@@ -5058,7 +5059,7 @@ a:hover {
   height: 82.5px;
   text-align: center;
   background: #fff;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 24px;
   position: absolute;
   left: -86px;
@@ -5211,7 +5212,7 @@ a:hover {
 .m-map-container .project .map-point-country-name {
   font-size: 14px;
   color:#5b9fc7;
-  font-family: foundrysterling-bold, arial, sans-serif;
+  font-family: "Microsoft Yahei", arial, sans-serif;
   position: absolute;
   /*left:0;*/
   /*right:0;*/
