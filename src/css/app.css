@@ -5269,10 +5269,10 @@ a:hover {
  /*https://jsfiddle.net/otv52zxb/3/ */
 @-webkit-keyframes loop {
   0% {
-    -moz-transform: translateX(-1500px);
-    -ms-transform: translateX(-1500px);
-    -webkit-transform: translateX(-1500px);
-    transform: translateX(-1500px);
+    -moz-transform: translateX(-3000px);
+    -ms-transform: translateX(-3000px);
+    -webkit-transform: translateX(-3000px);
+    transform: translateX(-3000px);
   }
   100% {
     -moz-transform: translateX(3000px); /* -1594px = crop-div's width - img's width */
@@ -5283,10 +5283,10 @@ a:hover {
 }
 @-moz-keyframes loop {
   0% {
-    -moz-transform: translateX(-1500px);
-    -ms-transform: translateX(-1500px);
-    -webkit-transform: translateX(-1500px);
-    transform: translateX(-1500px);
+    -moz-transform: translateX(-3000px);
+    -ms-transform: translateX(-3000px);
+    -webkit-transform: translateX(-3000px);
+    transform: translateX(-3000px);
   }
   100% {
     -moz-transform: translateX(3000px);
@@ -5297,10 +5297,10 @@ a:hover {
 }
 @-ms-keyframes loop {
   0% {
-    -moz-transform: translateX(-1500px);
-    -ms-transform: translateX(-1500px);
-    -webkit-transform: translateX(-1500px);
-    transform: translateX(-1500px);
+    -moz-transform: translateX(-3000px);
+    -ms-transform: translateX(-3000px);
+    -webkit-transform: translateX(-3000px);
+    transform: translateX(-3000px);
   }
   100% {
     -moz-transform: translateX(3000px);
@@ -5311,10 +5311,10 @@ a:hover {
 }
 @keyframes loop {
   0% {
-    -moz-transform: translateX(-1500px);
-    -ms-transform: translateX(-1500px);
-    -webkit-transform: translateX(-1500px);
-    transform: translateX(-1500px);
+    -moz-transform: translateX(-3000px);
+    -ms-transform: translateX(-3000px);
+    -webkit-transform: translateX(-3000px);
+    transform: translateX(-3000px);
   }
   100% {
     -moz-transform: translateX(3000px);

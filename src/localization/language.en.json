@@ -11,7 +11,7 @@
         "searchResult": "Not found the specific country"
       },
       "appTitle":"JUMORE National Pavilion",
-      "continent": ["South America","North America","Europe","Africa","Oceania","Asia"],
+      "continent": ["North America","South America","Europe","Africa","Oceania","Asia"],
       "pavilions": {
         "national":"National Pavilion",
         "provincial": "Provincial Pavilion",
