@@ -1,0 +1,24 @@
+{
+  "localization": {
+    "EN": {
+      "key": "EN",
+      "fullKeyName":"English",
+      "searchPanel": {
+        "searchLabel": "Search country list",
+        "searchTitle": "Please input the country for searching",
+        "allCountry": "All Counties",
+        "hotCountry": "Hot Countries",
+        "searchResult": "Not found the specific country"
+      },
+      "appTitle":"JUMORE National Pavilion",
+      "continent": ["South America","North America","Europe","Africa","Oceania","Asia"],
+      "pavilions": {
+        "national":"National Pavilion",
+        "provincial": "Provincial Pavilion",
+        "brand": "Brand Pavilion"
+      },
+      "aboutUs": "About Us",
+      "contactUs": "Contact Us"
+    }
+  }
+}

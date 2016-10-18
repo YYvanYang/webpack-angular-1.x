@@ -21,6 +21,7 @@
   "homepage": "https://github.com/Foxandxss/angular-webpack-workflow",
   "dependencies": {
     "jquery": "^1.12.4",
+    "json-loader": "^0.5.4",
     "kartograph-js": "^0.8.7"
   },
   "devDependencies": {

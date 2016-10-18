@@ -325,15 +325,15 @@
                 
                 scope.switchLanguage = function ($event, item) {
                     if (item == "CN") {
-                        scope.app.language = "EN";
+                        //scope.app.language = "EN";
+                        $location.path('/index.en.html');
                     } else {
-                        scope.app.language = "CN";
+                        //scope.app.language = "CN";
+                        $location.path('/index.html');
                     }
 
-                    $location.path('/index.html?'+scope.app.language);
                     $window.location.reload();
-                    // $location.path('/');
-                    // $route.reload();
+
                 }
                 
                 scope.$watch("app.panel.navigationActive", function(value) {

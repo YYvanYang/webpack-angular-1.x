@@ -64,7 +64,9 @@ module.exports = function makeWebpackConfig () {
       path.join(__dirname, 'src/dep/angular-animate/angular-animate.js'),
       path.join(__dirname, 'src/dep/angular-route/angular-route.js'),
       path.join(__dirname, 'src/dep/angular-bindonce/bindonce.js')
-    ]
+    ],
+    en: path.join(__dirname, 'src/js/language/en.js'),
+    cn: path.join(__dirname, 'src/js/language/cn.js')
   };
 
   /**
@@ -184,10 +186,17 @@ module.exports = function makeWebpackConfig () {
         // (Only use these entries)
       }),
     new HtmlWebpackPlugin({
+      excludeChunks: ['en'],
       template: './src/index.tpl.html',
       inject: 'body',
       filename: 'index.html'
     }),
+      new HtmlWebpackPlugin({
+        excludeChunks: ['cn'],
+        template: './src/index.tpl.html',
+        inject: 'body',
+        filename: 'index.en.html'
+      }),
 
     // Reference: https://github.com/webpack/extract-text-webpack-plugin
     // Extract css files

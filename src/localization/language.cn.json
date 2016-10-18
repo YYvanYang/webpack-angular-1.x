@@ -1,0 +1,25 @@
+{
+  "localization": {
+    "CN": {
+      "key": "CN",
+      "fullKeyName":"中文",
+      "searchPanel": {
+        "searchLabel": "搜索国家列表",
+        "searchTitle": "请输入您需要查找的国家",
+        "allCountry": "全部国家",
+        "hotCountry": "热门国家",
+        "searchResult": "未搜索到相应国家"
+      },
+      "appTitle":"聚贸·国家馆",
+      "continent": ["南美洲","北美洲","欧洲","非洲","大洋洲","亚洲"],
+      "pavilions": {
+        "national":"国家馆",
+        "provincial": "省馆",
+        "brand": "品牌馆"
+      },
+      "aboutUs": "关于我们",
+      "contactUs": "联系我们"
+    }
+  }
+
+}

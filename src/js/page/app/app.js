@@ -16,9 +16,9 @@
                      , queryMallTrmplate
                      , queryFriendshipLink
             ) {
-                // todo: this should change to $routeParams or $location.path()
-                var language = $location.search();
-                AppService.language = language.EN ? "EN" : AppService.language;
+                // // todo: this should change to $routeParams or $location.path()
+                // var language = $location.search();
+                AppService.language = window.GJG_LOCALIZATION || AppService.language;
 
             $scope.app = AppService;
             $scope.listType = "thumbnails";
@@ -47,12 +47,12 @@
 
                 var promise = $http({
                     method: "GET",
-                    url: "localization/language.json",
+                    url: "localization/language."+AppService.language.toLowerCase()+".json",
                     headers: {
                         "Content-Type": "application/json; charset=utf-8"
                     }
                 }).success(function(data) {
-                    $rootScope.localization = data.localization;
+                    //$rootScope.localization = data.localization;
                     AppService.localization = data.localization;
                 })
 
@@ -101,10 +101,10 @@
             };
 
                 $scope.aboutUs = function() {
-                    window.open($scope.app.localization.aboutUsLink, '_blank');
+                    window.open('http://www.jumore.com/bottom-376.shtml', '_blank');
                 };
                 $scope.contactUs = function() {
-                    window.open($scope.app.localization.contactUsLink, '_blank');
+                    window.open('http://www.jumore.com/bottom-380.shtml', '_blank');
                 };
             // "mobile" === $scope.app.states.isBreakpoint && $scope.$watch("search.mobile", function(c) {
             //     $scope.searchedItems = "" !== c ? $filter("filter")($rootScope.projectsData, $scope.search.mobile) : $rootScope.projectsData
