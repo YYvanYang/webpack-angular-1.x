@@ -300,9 +300,9 @@ module.exports = function makeWebpackConfig () {
       new CopyWebpackPlugin([
         { from: __dirname + '/src/img', to: 'img' },
         // { from: __dirname + '/src/assets', to: 'assets' },
-        { from: __dirname + '/src/mocks', to: 'mocks' },
+        //{ from: __dirname + '/src/mocks', to: 'mocks' },
         { from: __dirname + '/src/localization', to: 'localization' },
-        { from: __dirname + '/src/project_images', to: 'project_images' } // todo: testing data
+        //{ from: __dirname + '/src/project_images', to: 'project_images' } // todo: testing data
       ])
     )
   }

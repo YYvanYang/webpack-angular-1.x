@@ -555,39 +555,39 @@ a:hover {
   display: inline-block;
   position: relative
 }
-@media (min-width: 600px) {
-  .l-header {
-    overflow: visible
-  }
-  .l-header .actalliance {
-    text-indent: -119988px;
-    overflow: hidden;
-    text-align: left;
-    text-transform: capitalize;
-    -moz-transition-property: margin;
-    -o-transition-property: margin;
-    -webkit-transition-property: margin;
-    transition-property: margin;
-    -moz-transition-duration: .3s;
-    -o-transition-duration: .3s;
-    -webkit-transition-duration: .3s;
-    transition-duration: .3s;
-    position: absolute;
-    top: 42px;
-    right: 45px;
-    width: 129px;
-    height: 19px;
-    display: block;
-    z-index: 1;
-    background: url(../img/actalliance_bw.png) no-repeat
-  }
-}
-@media (min-width: 600px) and (-webkit-min-device-pixel-ratio: 1.5) {
-  .l-header .actalliance {
-    background: url(../img/actalliance_bw@2x.png) no-repeat;
-    background-size: 129px 19px
-  }
-}
+/*@media (min-width: 600px) {*/
+  /*.l-header {*/
+    /*overflow: visible*/
+  /*}*/
+  /*.l-header .actalliance {*/
+    /*text-indent: -119988px;*/
+    /*overflow: hidden;*/
+    /*text-align: left;*/
+    /*text-transform: capitalize;*/
+    /*-moz-transition-property: margin;*/
+    /*-o-transition-property: margin;*/
+    /*-webkit-transition-property: margin;*/
+    /*transition-property: margin;*/
+    /*-moz-transition-duration: .3s;*/
+    /*-o-transition-duration: .3s;*/
+    /*-webkit-transition-duration: .3s;*/
+    /*transition-duration: .3s;*/
+    /*position: absolute;*/
+    /*top: 42px;*/
+    /*right: 45px;*/
+    /*width: 129px;*/
+    /*height: 19px;*/
+    /*display: block;*/
+    /*z-index: 1;*/
+    /*!*background: url(../img/actalliance_bw.png) no-repeat*!*/
+  /*}*/
+/*}*/
+/*@media (min-width: 600px) and (-webkit-min-device-pixel-ratio: 1.5) {*/
+  /*.l-header .actalliance {*/
+    /*background: url(../img/actalliance_bw@2x.png) no-repeat;*/
+    /*background-size: 129px 19px*/
+  /*}*/
+/*}*/
 @media (min-width: 600px) {
   .l-header .m-welcome .content {
     margin-top: 30px
@@ -634,23 +634,23 @@ a:hover {
     line-height: 1.05em;
     text-align: center
   }
-  .m-welcome .btn-explore .background {
-    -moz-transition-property: all;
-    -o-transition-property: all;
-    -webkit-transition-property: all;
-    transition-property: all;
-    -moz-transition-duration: .3s;
-    -o-transition-duration: .3s;
-    -webkit-transition-duration: .3s;
-    transition-duration: .3s;
-    width: 100%;
-    height: 100%;
-    background: url(../img/btn-explore.png) no-repeat;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0
-  }
+  /*.m-welcome .btn-explore .background {*/
+    /*-moz-transition-property: all;*/
+    /*-o-transition-property: all;*/
+    /*-webkit-transition-property: all;*/
+    /*transition-property: all;*/
+    /*-moz-transition-duration: .3s;*/
+    /*-o-transition-duration: .3s;*/
+    /*-webkit-transition-duration: .3s;*/
+    /*transition-duration: .3s;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*background: url(../img/btn-explore.png) no-repeat;*/
+    /*display: block;*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0*/
+  /*}*/
   .m-welcome .btn-explore .text {
     z-index: 1;
     padding: 50px 40px 0;

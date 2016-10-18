@@ -2,23 +2,9 @@
     'use strict';
 
     angular.module('jm-np.app')
-        .controller('AppCtrl', ["$scope", "$rootScope", "$routeParams", "$http", "$q", "$location", "$filter", "$timeout", "AppService",
-            //"RemoteCallService",
-            "GetProjectsService",
-           // "GetProjectOfTheMonthService",
-            "queryMallTrmplate",
-            "queryFriendshipLink",
-            // "GetThemes", "GetCountry",
-            function($scope, $rootScope, $routeParams, $http, $q, $location, $filter, $timeout, AppService
-                //, RemoteCallService
-                     , GetProjectsService
-                    // , GetProjectOfTheMonthService
-                     , queryMallTrmplate
-                     , queryFriendshipLink
-            ) {
-                // // todo: this should change to $routeParams or $location.path()
-                // var language = $location.search();
-                AppService.language = window.GJG_LOCALIZATION || AppService.language;
+        .controller('AppCtrl', ["$scope", "$rootScope", "$routeParams", "$http", "$q", "$location", "$filter", "$timeout", "AppService", "GetProjectsService",
+            function($scope, $rootScope, $routeParams, $http, $q, $location, $filter, $timeout, AppService, GetProjectsService) {
+            AppService.language = window.GJG_LOCALIZATION || AppService.language;
 
             $scope.app = AppService;
             $scope.listType = "thumbnails";
@@ -71,15 +57,6 @@
             })
 
 
-                // queryMallTrmplate.get({lanType: 0}, function (data) {
-                //     AppService.pavilionEntryList = data.pavilionEntryList;
-                //     console.log(AppService.pavilionEntryList)
-                // })
-                //
-                // queryFriendshipLink.get({positionType: 1}, function (data) {
-                //     AppService.friendshipLinkList = data.friendshipLinkList;
-                //     console.log(AppService.friendshipLinkList)
-                // })
 
             // $scope.click = function() {
             //     $scope.panel.active = ""
@@ -100,12 +77,6 @@
                 window.open('http://weibo.com/jumore', '_blank');
             };
 
-                // $scope.aboutUs = function() {
-                //     window.open('http://www.jumore.com/bottom-376.shtml', '_blank');
-                // };
-                // $scope.contactUs = function() {
-                //     window.open('http://www.jumore.com/bottom-380.shtml', '_blank');
-                // };
             // "mobile" === $scope.app.states.isBreakpoint && $scope.$watch("search.mobile", function(c) {
             //     $scope.searchedItems = "" !== c ? $filter("filter")($rootScope.projectsData, $scope.search.mobile) : $rootScope.projectsData
             // })
